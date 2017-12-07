@@ -1,0 +1,259 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Benjamin Caure</title>
+  <style>
+    /* Tips basic design */
+
+    body {
+      margin: 0 auto;
+      max-width: 50em;
+      font-family: "Helvetica", "Arial", sans-serif;
+      line-height: 1.5;
+      color: #555;
+      background-color: goldenrod;
+    }
+
+    h1,
+    h2,
+    strong {
+      color: #333;
+    }
+
+    details p {
+      background: #eee;
+    }
+
+    details {
+      padding: 2px 4px;
+      vertical-align: text-bottom;
+    }
+
+    /* Custom */
+
+    .container {
+      padding: 3em 4em;     
+      display: flex;
+      flex-direction: row-reverse;
+      background-color: white;
+      box-shadow: 5px 5px;
+    }
+
+    .identity {
+      margin-left: 4vw;
+    }
+
+    /* Improve details summary */
+
+    summary {
+      outline: none;
+      cursor: pointer;
+    }
+
+    summary:hover,
+    details[open] summary {
+      font-weight: bold;
+    }
+
+    summary span {
+      padding: 1em;
+      width: 200px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none
+    }
+
+    summary:after {
+
+      background: #fff;
+      border-radius: 3px;
+      border-width: 1px;
+      border-style: solid;
+      border-color: #555;
+      content: "+";
+      color: #555;
+      float: left;
+      font-weight: bold;
+      padding: 0 2 8 2;
+      text-align: center;
+      width: 15px;
+      height: 15px;
+    }
+
+    details[open] summary:after {
+      content: "-";
+      padding: 0 2 10 2;
+    }
+
+    details p {
+      margin-left: 35px;
+    }
+
+    .icon-bar img {
+      height: 40px;
+    }
+
+    ul {
+      padding-left: 27px; /* align with details summary */
+    }
+    li {
+      padding-left: 15px; /* align with details summary */
+      margin-bottom: 0.6em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="identity">
+      <img src="https://avatars3.githubusercontent.com/u/3490516?s=460&v=4">
+      <div>Benjamin Caure</div>
+      <div>36 ans - Clermont-Ferrand</div>
+      <div>
+        <a href="tel:+33689329745">+33 6 89 32 97 45</a>
+      </div>
+      <div class="icon-bar">
+        <a href="mailto:benjamin.caure@gmail.com"><img src="https://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300"></a>
+        <a href="https://www.linkedin.com/in/benjamin-caure/"><img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANyAAAAJGRlZTNlZDQwLTk4YTItNDA1MS04MzBjLWJmNGQ5M2RmZGUxYw.png"></a>
+        <a href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile"><img src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded"></a>
+        <a href="https://github.com/bcaure"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"></a>
+      </div>
+    </div>
+    <div>
+      <h1>Développeur full-stack</h1>
+      <hr />
+      <div>
+        <h2>Expériences</h2>
+        <div>
+          <details>
+            <summary>
+              <span>2016-2017</span>Développeur web et mobile
+            </summary>
+            <p>
+              Au sein d'une
+              <strong>squad spécialisée dans le développement web et mobile</strong>, je participe à la réalisation d'applications
+              B2B.
+              <br /> Approche lean, développements javascript (Angular), cordova, redux.
+            </p>
+            <p>
+              J'interviens toujours en tant qu'architecte SI sur des projets autour de la refonte du CRM Michelin avec Salesforce.com.
+            </p>
+            <p>
+              Je participe également à plusieurs initiatives pour le recrutement, la montée en compétences de développeurs et l'amélioration
+              continue de la filère technique CGI.
+              <ul>
+                <li>Participation à la communauté de pratiques Javascript</li>
+                <li>Coaching certifications Java</li>
+                <li>Recrutement et tutorat de stagiaires</li>
+                <li>Présentations sur des sujets techniques</li>
+              </ul>
+            </p>
+          </details>
+        </div>
+        <div>
+          <details>
+            <summary>
+              <span>2013-2016</span>Développeur web</summary>
+            <p>
+              Au sein du domaine B2B Michelin, j'ai mené la réécriture et la modernisation du portail de prise de commande Europe Web &
+              JEE.
+            </p>
+            <p>
+              J'ai également lancé la migration de sa plateforme historique IBM z/OS vers Linux Red Hat.
+            </p>
+            <p>
+              <strong>Cette initiative m'a permis de me voir confier la mission d'architecte SI</strong> : définir et mettre en place
+              pour les nouveaux projets l'architecture métier, applicative, infrastructure et sécurité.
+            </p>
+          </details>
+        </div>
+        <div>
+          <details>
+            <summary>
+              <span>2012-2013</span>Développeur d'applications</summary>
+            <p>
+              IFCE (ministère de l'agriculture) Développement d'un projet au forfait PHP/JEE/Oracle
+            </p>
+          </details>
+        </div>
+        <div>
+          <details>
+            <summary>
+              <span>2010-2012</span>Développeur d'applications</summary>
+            <p>
+              Supply chain Michelin Développement de plusieurs projets au forfait JEE/Oracle Pilotage backoffice Inde
+            </p>
+          </details>
+        </div>
+        <div>
+          <details>
+            <summary>
+              <span>2009-2010</span>Analyste fonctionnel</summary>
+            <p>
+              Domaine supply chain Michelin, mise en place du progiciel Sage X3 de WMS (Geode) pour l'Europe et l'Amérique du Nord
+            </p>
+          </details>
+        </div>
+        <div>
+          <details>
+            <summary>
+              <span>2008-2009</span>Devops</summary>
+            <p>Domaine supply chain Michelin, intégration d’applications JEE - Websphere - Oracle - MQ </p>
+          </details>
+        </div>
+        <div>
+          <details>
+            <summary>
+              <span>2007-2008</span>Développeur d'applications</summary>
+            <p>
+              Crédit Agricole - Projet de migration GED régionale vers SI France Développements Java.
+            </p>
+          </details>
+        </div>
+        <div>
+          <details>
+            <summary>
+              <span>2006-2007</span>Développeur d'applications</summary>
+            <p>
+              Pour le compte de Petit Forestier - Locations de camions frigorifiques. Développements ASP .Net d'une application de gestion
+              du parc, des commandes et de la facturation.
+            </p>
+          </details>
+        </div>
+      </div>
+      <div>
+        <h2>Formation</h2>
+        <ul>
+          <li>2015 - Certification Java Oracle Certified Professional</li>
+          <li>2006 - Certification ASP.Net web developer</li>
+          <li>2005 - Ingénieur ISIMA</li>
+          <li>2001 - DUT Informatique</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Compétences</h2>
+        <ul>
+          <li>Développement web : HTML, CSS, javascript (Angular, RxJs, Redux), mobile hybride (Ionic, Cordova)</li>
+          <li>Développement d'applications : JEE, JSF, Spring, Grails, Websphere, Oracle</li>
+          <li>Architecture applicative, technique (infrastructure), intégration, sécurité</li>
+          <li>Gestion de projets</li>
+          <li>
+            <strong>Bon niveau d'anglais</strong> (nombreuses missions en environnement anglophones)
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h2>Centres d'intérêt</h2>
+        <ul>
+          <li>Membre de l'APIMA</li>
+          <li>Sport automobile</li>
+          <li>La guitare électrique et la modélisation électronique</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
