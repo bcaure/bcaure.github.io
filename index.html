@@ -3,46 +3,117 @@
 <head>
   <meta charset="utf-8">
   <title>Benjamin Caure</title>
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   <style>
     /* Tips basic design */
 
     body {
-      margin: 0 auto;
       max-width: 50em;
-      font-family: "Helvetica", "Arial", sans-serif;
+      font-family: 'Source Sans Pro', sans-serif;
       line-height: 1.5;
       color: #555;
-      background-color: goldenrod;
+      margin: 0;
+    }
+
+    h1 {
+      font-weight: 600;
+      text-align: center;
     }
 
     h1,
+    h2 {
+      font-family: 'Josefin Sans';
+    }
+
     h2,
     strong {
       color: #333;
     }
 
-    details p {
-      background: #eee;
+    /* Header */
+
+    .header,
+    .container {
+      width: 100vw;
+    }
+    @media screen and (orientation:portrait) {
+      .header {
+        height: 25vh;
+      }
+      .content {
+        width: 100vw;
+      }
+    }
+    @media screen and (orientation:landscape) {
+      .header {
+        height: 45vh;
+      }
+      .content {
+        width: 60vw;
+      }
+    }    
+    .header {
+      min-height: 200px;
+      background-color: #f57c00;
+      color: white;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+      padding-top: 10vh;
     }
 
-    details {
-      padding: 2px 4px;
-      vertical-align: text-bottom;
+    .header hr {
+      width: 50vw;
     }
 
-    /* Custom */
+    .subheading {
+      font-style: italic;
+      word-spacing: 0.3em;
+    }
+
+    .photo {
+      position: absolute;
+      left: 40px;
+      top: 20px;
+    }
+    .photo img {
+      max-width: 20vw;
+      max-height: 30vh;
+    }
+
+    .icon-bar {
+      position: absolute;
+      right: 40px;
+      top: 20px;
+    }
+
+    .icon-bar img {
+      height: 40px;
+    }
+
+    /* Body */
 
     .container {
-      padding: 3em 4em;     
       display: flex;
-      flex-direction: row-reverse;
-      background-color: white;
-      box-shadow: 5px 5px;
+      justify-content: center;
+      margin-top: -15vh;
+      position: relative;
     }
 
-    .identity {
-      margin-left: 4vw;
+    .content {
+      min-width: 400px;
+      padding: 3rem;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      background-color: white;
     }
+
+    a {
+      text-decoration: none;
+    }
+
 
     /* Improve details summary */
 
@@ -66,7 +137,6 @@
     }
 
     summary:after {
-
       background: #fff;
       border-radius: 3px;
       border-width: 1px;
@@ -88,42 +158,104 @@
     }
 
     details p {
+      border-left: 3px solid#f57c00;
+      padding-left: 10px;
+    }
+
+    details {
+      padding: 2px 4px;
+      vertical-align: text-bottom;
+    }
+
+    details p {
       margin-left: 35px;
     }
 
-    .icon-bar img {
-      height: 40px;
+    ul {
+      padding-left: 27px;
+      /* align with details summary */
     }
 
-    ul {
-      padding-left: 27px; /* align with details summary */
-    }
     li {
-      padding-left: 15px; /* align with details summary */
+      padding-left: 15px;
+      /* align with details summary */
       margin-bottom: 0.6em;
+    }
+
+    /* Tooltip container */
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Tooltip text */
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: white;
+      color: #555;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+
+
+      position: absolute;
+      top: 110%;
+      right: 0%;
+      margin-left: -50px;
+      z-index: 1;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="identity">
+
+  <div class="header">
+    <div class="photo">
       <img src="https://avatars3.githubusercontent.com/u/3490516?s=460&v=4">
-      <div>Benjamin Caure</div>
-      <div>36 ans - Clermont-Ferrand</div>
-      <div>
-        <a href="tel:+33689329745">+33 6 89 32 97 45</a>
-      </div>
-      <div class="icon-bar">
-        <a href="mailto:benjamin.caure@gmail.com"><img src="https://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300"></a>
-        <a href="https://www.linkedin.com/in/benjamin-caure/"><img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANyAAAAJGRlZTNlZDQwLTk4YTItNDA1MS04MzBjLWJmNGQ5M2RmZGUxYw.png"></a>
-        <a href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile"><img src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded"></a>
-        <a href="https://github.com/bcaure"><img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png"></a>
-      </div>
+      <div style="width: 100%;text-align: center">36 ans - Clermont-Ferrand</div>
     </div>
-    <div>
-      <h1>Développeur full-stack</h1>
-      <hr />
+    <h1>
+      BENJAMIN CAURE
+      <br /> 
+      Développeur full-stack
+    </h1>
+    <hr />
+    <div class="subheading">web / mobile / back-end</div>
+    <div class="icon-bar">
+      <a class="tooltip" href="tel:+33689329745">
+        <img style="background-color: white; border-radius: 20px" src="http://www.urbanleagueneb.org/wp-content/uploads/2016/10/Mobile-Phone-Icon.png">
+        <span class="tooltiptext">+33 (0)6-89-32-97-45</span>
+      </a>
+      <a class="tooltip" href="mailto:benjamin.caure@gmail.com">
+        <img src="https://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300">
+        <span class="tooltiptext">benjamin.caure@gmail.com</span>
+      </a>
+      <a class="tooltip" href="https://www.linkedin.com/in/benjamin-caure/">
+        <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANyAAAAJGRlZTNlZDQwLTk4YTItNDA1MS04MzBjLWJmNGQ5M2RmZGUxYw.png">
+        <span class="tooltiptext">Mon réseau LinkedIn</span>
+      </a>
+      <a class="tooltip" href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
+        <img style="background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+        <span class="tooltiptext">Mon activité Stackoverflow</span>
+      </a>
+      <a class="tooltip" href="https://github.com/bcaure">
+        <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png">
+        <span class="tooltiptext">Mes projets Github</span>
+      </a>
+    </div>
+
+  </div>
+  <div class="container">
+    <div class="content">
       <div>
         <h2>Expériences</h2>
         <div>
