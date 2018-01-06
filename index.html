@@ -16,6 +16,9 @@
       line-height: 1.5;
       color: #555;
       margin: 0;
+      background-color:#1e1e1e;
+      background-size: 300%;
+      
     }
 
     h1 {
@@ -60,7 +63,10 @@
 
     .header {
       min-height: 200px;
-      background: url('bg-cv-2.jpg') no-repeat fixed center;
+      background: url('bg-cv-2.jpg') no-repeat;
+      background-position-y: 0%;
+      background-position-x: 70%;
+      background-color: saddlebrown;     
       color: white;
       display: flex;
       justify-content: flex-start;
@@ -112,7 +118,7 @@
     .content {
       min-width: 400px;
       padding: 3rem;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
       background-color: white;
     }
 
@@ -223,6 +229,7 @@
     .tooltip:hover .tooltiptext {
       visibility: visible;
     }
+    
   </style>
 </head>
 
@@ -235,7 +242,7 @@
     </div>
     <h1>
       BENJAMIN CAURE
-      <br /> Développeur full-stack
+      <br /> Développeur
     </h1>
     <hr />
     <div class="subheading">web / mobile / back-end</div>
@@ -268,7 +275,7 @@
       <div>
         <h2>Expériences</h2>
         <div>
-          <details>
+          <details open>
             <summary>
               <span>2016-2017</span>Développeur web et mobile - Architecte SI
             </summary>
