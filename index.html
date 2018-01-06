@@ -24,11 +24,18 @@
     h1 {
       font-weight: 600;
       text-align: center;
+      margin-top: 1vh;
+      margin-bottom: 1vh;
     }
 
     h1,
     h2 {
       font-family: 'Josefin Sans';
+    }
+
+    h2 {
+      width: 100%;
+      text-align: center;
     }
 
     h2,
@@ -229,7 +236,31 @@
     .tooltip:hover .tooltiptext {
       visibility: visible;
     }
+
+    @media screen {
+      .print-only {
+        display: none;
+      }      
+    }
     
+    @media print {
+      .container {
+        margin-top: 0;
+      }
+      .content {
+        box-shadow: initial;
+      }
+      .header, video {
+        display: none;
+      }
+      .container {
+        width: 100%;
+      }
+      .print-only {
+        display: block;
+      }
+    }
+    @page { size: auto;  margin: 0mm; } /* remove date and file name header */
   </style>
 </head>
 
@@ -259,14 +290,33 @@
         <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANyAAAAJGRlZTNlZDQwLTk4YTItNDA1MS04MzBjLWJmNGQ5M2RmZGUxYw.png">
         <span class="tooltiptext">Mon réseau LinkedIn</span>
       </a>
+      <a class="tooltip" href="cv.pdf">
+        <img src="download-pdf.png">
+        <span class="tooltiptext">Télécharger en PDF</span>
+      </a>      
     </div>
 
   </div>
   <div class="container">
     <div class="content">
+      <div class="print-only">
+        <h1> BENJAMIN CAURE </h1>
+        <h2> Développeur</h2>
+        <div style="display:flex;width:100%">
+          <div style="flex:1">
+            <div>36 ans - Clermont-Ferrand</div>
+            <div>CV en ligne : http://bcaure.github.io</div>
+          </div>
+          <div style="flex:1">
+            <div>Tel: +33 (0)6-89-32-97-45</div>
+            <div>Email: benjamin.caure@gmail.com</div>
+          </div>
+        </div>
+      </div> 
       <div>
         <h2>Expériences</h2>
         <div>
+          <h3>CGI Clermont-Ferrand</h3>
           <details open>
             <summary>
               <span>2016-2017</span>Développeur web et mobile - Architecte SI
@@ -282,7 +332,7 @@
             </p>
             <p>
               Je participe également à plusieurs initiatives pour le recrutement, la montée en compétences de développeurs et l'amélioration
-              continue de la filère technique CGI.
+              continue de la filère technique de mon entreprise.
             </p>
           </details>
         </div>
@@ -293,11 +343,11 @@
             </summary>
             <p>
               Au sein du
-              <strong>domaine B2B Michelin</strong>, j'ai mené la réécriture et la modernisation du portail de prise de commande
-              Europe Web & JEE.
+              <strong>domaine B2B Michelin</strong>, j'ai mené la réécriture et la modernisation du portail e-Commerce
+              Europe.
             </p>
             <p>
-              J'ai également lancé la migration de sa plateforme historique IBM z/OS vers Linux Red Hat.
+              J'ai également lancé la migration de sa plateforme historique JEE depuis IBM z/OS vers Linux Red Hat.
             </p>
             <p>
               <strong>Cette initiative m'a permis de me voir confier la mission d'architecte SI</strong> : définir et mettre en place
@@ -346,6 +396,7 @@
             </p>
           </details>
         </div>
+        <h3>Aquisystem Bordeaux</h3>
         <div>
           <details>
             <summary>
@@ -363,6 +414,7 @@
             </p>
           </details>
         </div>
+        <h3>Sopra Paris</h3>
         <div>
           <details>
             <summary>
@@ -404,21 +456,61 @@
       <div>
         <h2>Centres d'intérêt</h2>
         <ul>
-          <li style="display: flex"><span style="align-self: center">Mon activité Stackoverflow : </span>
+          <li style="display: flex"><span style="align-self: center">Mon activité Stackoverflow :&nbsp;</span>
             <a class="tooltip" href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
               <img style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
             </a>
           </li>
-          <li style="display: flex"><span style="align-self: center">Mes projets Github : </span>
+          <li style="display: flex"><span style="align-self: center">Mes projets Github :&nbsp;</span>
             <a class="tooltip" href="https://github.com/bcaure">
             <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="width: 2em">
             </a>
           </li>
-          <li style="display: flex">Sport automobile -  Mécanique - Membre de l'<a href="http://apima.lex-network.com/">APIMA</a></li>
+          <li style="display: flex"><span style="align-self: center">La mécanique avec l'APIMA :&nbsp;</span>
+            <a class="tooltip" href="http://apima.lex-network.com">
+            <img src="apima.png" style="width: 2em">
+            </a>
+          </li><!--
+          <li style="display: flex">Les sorties circuits</li>
+          <video src="https://photos.app.goo.gl/E5HpaPrc7dz3U1zE3" controls height="300">
+            Votre navigateur ne permet pas de lire les vidéos.
+            Mais vous pouvez toujours 
+            <a href="https://photos.app.goo.gl/E5HpaPrc7dz3U1zE3">la télécharger</a> !
+          </video>-->          
         </ul>
       </div>
     </div>
   </div>
 </body>
+<script> 
+(function() {
+    var beforePrint = function() {
+      var details = document.querySelectorAll('details');
+      Array.from(details).forEach(function(obj, idx) {
+        obj.open = true;
+      });
+    };
+    var afterPrint = function() {
+      var details = document.querySelectorAll('details');
+      Array.from(details).forEach(function(obj, idx) {
+        obj.open = false;
+      });
+    };
+
+    if (window.matchMedia) {
+        var mediaQueryList = window.matchMedia('print');
+        mediaQueryList.addListener(function(mql) {
+            if (mql.matches) {
+                beforePrint();
+            } else {
+                afterPrint();
+            }
+        });
+    }
+
+    window.onbeforeprint = beforePrint;
+    window.onafterprint = afterPrint;
+}());
+</script>
 
 </html>
