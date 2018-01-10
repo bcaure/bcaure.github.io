@@ -16,9 +16,9 @@
       line-height: 1.5;
       color: #555;
       margin: 0;
-      background-color:#1e1e1e;
+      background-color: #1e1e1e;
       background-size: 300%;
-      
+
     }
 
     h1 {
@@ -70,10 +70,11 @@
 
     .header {
       min-height: 200px;
-      background: url('bg-cv-2.jpg') no-repeat;
+      /*background: url('bg-cv-2.jpg') no-repeat;
       background-position-y: 0%;
-      background-position-x: 70%;
-      background-color: saddlebrown;     
+      background-position-x: 70%;*/
+      background-color: rgba(31, 31, 31, 0.98);
+      /*background-color: rgba(245, 124, 0, 0.7); */
       color: white;
       display: flex;
       justify-content: flex-start;
@@ -127,6 +128,7 @@
       padding: 3rem;
       box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
       background-color: white;
+      z-index: 2;
     }
 
     a {
@@ -144,6 +146,7 @@
     summary:hover {
       color: #f57c00;
     }
+
     details[open] summary {
       font-weight: bold;
     }
@@ -237,12 +240,14 @@
       visibility: visible;
     }
 
+    /* Print */
+
     @media screen {
       .print-only {
         display: none;
-      }      
+      }
     }
-    
+
     @media print {
       .container {
         margin-top: 0;
@@ -250,7 +255,8 @@
       .content {
         box-shadow: initial;
       }
-      .header, video {
+      .header,
+      video {
         display: none;
       }
       .container {
@@ -260,7 +266,32 @@
         display: block;
       }
     }
-    @page { size: auto;  margin: 0mm; } /* remove date and file name header */
+
+    @page {
+      size: auto;
+      margin: 0mm;
+    }
+
+    /* remove date and file name header */
+
+    /* Video */
+    .layer {
+      position: absolute;
+      top: 15vh;
+      left: 0px;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+    #myVideo {
+      position: fixed;
+      left: -40vw;
+      top: -40vh;
+      min-width: 150%;
+      min-height: 150%;
+      z-index: -1;
+    }
   </style>
 </head>
 
@@ -279,25 +310,26 @@
     <div class="subheading">web / mobile / back-end</div>
     <div class="icon-bar">
       <a class="tooltip" href="tel:+33689329745">
-        <img style="background-color: white; border-radius: 20px" src="http://www.urbanleagueneb.org/wp-content/uploads/2016/10/Mobile-Phone-Icon.png">
+        <img style="background-color: white; border-radius: 20px" src="mobile.png">
         <span class="tooltiptext">+33 (0)6-89-32-97-45</span>
       </a>
       <a class="tooltip" href="mailto:benjamin.caure@gmail.com">
-        <img src="https://lh6.ggpht.com/8-N_qLXgV-eNDQINqTR-Pzu5Y8DuH0Xjz53zoWq_IcBNpcxDL_gK4uS_MvXH00yN6nd4=w300">
+        <img src="gmail.png">
         <span class="tooltiptext">benjamin.caure@gmail.com</span>
       </a>
       <a class="tooltip" href="https://www.linkedin.com/in/benjamin-caure/">
-        <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAANyAAAAJGRlZTNlZDQwLTk4YTItNDA1MS04MzBjLWJmNGQ5M2RmZGUxYw.png">
+        <img src="linkedin.png">
         <span class="tooltiptext">Mon réseau LinkedIn</span>
       </a>
       <a class="tooltip" href="cv.pdf">
         <img src="download-pdf.png">
         <span class="tooltiptext">Télécharger en PDF</span>
-      </a>      
+      </a>
     </div>
 
   </div>
   <div class="container">
+    <div class="layer"></div>
     <div class="content">
       <div class="print-only">
         <h1> BENJAMIN CAURE </h1>
@@ -312,7 +344,7 @@
             <div>Email: benjamin.caure@gmail.com</div>
           </div>
         </div>
-      </div> 
+      </div>
       <div>
         <h2>Expériences</h2>
         <div>
@@ -343,8 +375,7 @@
             </summary>
             <p>
               Au sein du
-              <strong>domaine B2B Michelin</strong>, j'ai mené la réécriture et la modernisation du portail e-Commerce
-              Europe.
+              <strong>domaine B2B Michelin</strong>, j'ai mené la réécriture et la modernisation du portail e-Commerce Europe.
             </p>
             <p>
               J'ai également lancé la migration de sa plateforme historique JEE depuis IBM z/OS vers Linux Red Hat.
@@ -456,61 +487,68 @@
       <div>
         <h2>Centres d'intérêt</h2>
         <ul>
-          <li style="display: flex"><span style="align-self: center">Mon activité Stackoverflow :&nbsp;</span>
+          <li style="display: flex">
+            <span style="align-self: center">Mon activité Stackoverflow :&nbsp;</span>
             <a class="tooltip" href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
               <img style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
             </a>
           </li>
-          <li style="display: flex"><span style="align-self: center">Mes projets Github :&nbsp;</span>
+          <li style="display: flex">
+            <span style="align-self: center">Mes projets Github :&nbsp;</span>
             <a class="tooltip" href="https://github.com/bcaure">
-            <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="width: 2em">
+              <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="width: 2em">
             </a>
           </li>
-          <li style="display: flex"><span style="align-self: center">La mécanique avec l'APIMA :&nbsp;</span>
+          <li style="display: flex">
+            <span style="align-self: center">La mécanique avec l'APIMA :&nbsp;</span>
             <a class="tooltip" href="http://apima.lex-network.com">
-            <img src="apima.png" style="width: 2em">
+              <img src="apima.png" style="width: 2em">
             </a>
-          </li><!--
+          </li>
+          <!--
           <li style="display: flex">Les sorties circuits</li>
           <video src="https://photos.app.goo.gl/E5HpaPrc7dz3U1zE3" controls height="300">
             Votre navigateur ne permet pas de lire les vidéos.
             Mais vous pouvez toujours 
             <a href="https://photos.app.goo.gl/E5HpaPrc7dz3U1zE3">la télécharger</a> !
-          </video>-->          
+          </video>-->
         </ul>
       </div>
     </div>
   </div>
+  <video autoplay muted loop id="myVideo">
+    <source src="background2.mp4" type="video/mp4">
+  </video>
 </body>
 <script> 
-(function() {
-    var beforePrint = function() {
+  (function () {
+    var beforePrint = function () {
       var details = document.querySelectorAll('details');
-      Array.from(details).forEach(function(obj, idx) {
+      Array.from(details).forEach(function (obj, idx) {
         obj.open = true;
       });
     };
-    var afterPrint = function() {
+    var afterPrint = function () {
       var details = document.querySelectorAll('details');
-      Array.from(details).forEach(function(obj, idx) {
+      Array.from(details).forEach(function (obj, idx) {
         obj.open = false;
       });
     };
 
     if (window.matchMedia) {
-        var mediaQueryList = window.matchMedia('print');
-        mediaQueryList.addListener(function(mql) {
-            if (mql.matches) {
-                beforePrint();
-            } else {
-                afterPrint();
-            }
-        });
+      var mediaQueryList = window.matchMedia('print');
+      mediaQueryList.addListener(function (mql) {
+        if (mql.matches) {
+          beforePrint();
+        } else {
+          afterPrint();
+        }
+      });
     }
 
     window.onbeforeprint = beforePrint;
     window.onafterprint = afterPrint;
-}());
+  }());
 </script>
 
 </html>
