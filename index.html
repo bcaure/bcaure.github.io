@@ -73,8 +73,7 @@
       /*background: url('bg-cv-2.jpg') no-repeat;
       background-position-y: 0%;
       background-position-x: 70%;*/
-      background-color: rgba(31, 31, 31, 0.98);
-      /*background-color: rgba(245, 124, 0, 0.7); */
+      background-color: rgba(31, 31, 31, 0.9);
       color: white;
       display: flex;
       justify-content: flex-start;
@@ -240,6 +239,14 @@
       visibility: visible;
     }
 
+    /* interest */
+    .interest {
+      align-self: center;
+      margin-left: 10px;
+    }
+
+
+
     /* Print */
 
     @media screen {
@@ -282,12 +289,12 @@
       height: 100%;
       width: 100%;
       z-index: 1;
-      background-color: rgba(255, 255, 255, 0.8);
+      /* background-color: rgba(255, 255, 255, 0.4); */
     }
     #myVideo {
       position: fixed;
-      left: -40vw;
-      top: -40vh;
+      /*left: -40vw;*/
+      top: -60vh;
       min-width: 150%;
       min-height: 150%;
       z-index: -1;
@@ -488,36 +495,30 @@
         <h2>Centres d'intérêt</h2>
         <ul>
           <li style="display: flex">
-            <span style="align-self: center">Mon activité Stackoverflow :&nbsp;</span>
             <a class="tooltip" href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
               <img style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
             </a>
+            <span class="interest">Mon activité Stackoverflow</span>
+            <span class="print-only"> : https://stackoverflow.com/users/3580357/benjamin-caure</span>
           </li>
           <li style="display: flex">
-            <span style="align-self: center">Mes projets Github :&nbsp;</span>
             <a class="tooltip" href="https://github.com/bcaure">
               <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="width: 2em">
             </a>
+            <span class="interest">Mes projets Github</span>
+            <span class="print-only"> : https://github.com/bcaure</span>
           </li>
           <li style="display: flex">
-            <span style="align-self: center">La mécanique avec l'APIMA :&nbsp;</span>
-            <a class="tooltip" href="http://apima.lex-network.com">
-              <img src="apima.png" style="width: 2em">
-            </a>
-          </li>
-          <!--
-          <li style="display: flex">Les sorties circuits</li>
-          <video src="https://photos.app.goo.gl/E5HpaPrc7dz3U1zE3" controls height="300">
-            Votre navigateur ne permet pas de lire les vidéos.
-            Mais vous pouvez toujours 
-            <a href="https://photos.app.goo.gl/E5HpaPrc7dz3U1zE3">la télécharger</a> !
-          </video>-->
+              <a class="tooltip" href="http://apima.lex-network.com">
+                <img src="apima.png" style="width: 2em">
+              </a>            
+            <span class="interest">La mécanique avec l'APIMA, la compétition automobile et les sorties circuits</li>
         </ul>
       </div>
     </div>
   </div>
   <video autoplay muted loop id="myVideo">
-    <source src="background2.mp4" type="video/mp4">
+    <source src="track2.mp4" type="video/mp4">
   </video>
 </body>
 <script> 
