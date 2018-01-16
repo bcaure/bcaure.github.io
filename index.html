@@ -43,6 +43,16 @@
       color: #333;
     }
 
+    a  {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .vertical-middle {
+      display:inline-block;
+      vertical-align: middle;
+    }
+
     /* Header */
 
     .header,
@@ -181,7 +191,7 @@
 
     details p {
       border-left: 3px solid#f57c00;
-      padding-left: 10px;
+      padding-left: 5px;
     }
 
     details {
@@ -253,6 +263,12 @@
     }
 
     @media print {
+      body  {
+        line-height: 1.3;
+      }
+      h1 {
+        margin-top: 40px;
+      }
       .container {
         margin-top: 0;
       }
@@ -274,13 +290,12 @@
         margin-top: 4em;
       }
     }
-
-    @page {
+    
+    @page { /* remove date and file name header */
       size: auto;
       margin: 0mm;
     }
-
-    /* remove date and file name header */
+    
 
     /* Video */
     .layer {
@@ -340,6 +355,9 @@
     <div class="layer"></div>
     <div class="content">
       <div class="print-only">
+        <div class="photo">
+          <img src="https://avatars3.githubusercontent.com/u/3490516?s=460&v=4">
+        </div>  
         <h1> BENJAMIN CAURE </h1>
         <h2> Développeur</h2>
         <div style="display:flex;width:100%">
@@ -394,26 +412,19 @@
             </p>
           </details>
         </div>
-        <div class="print-page-break-before">
+        <div>
           <details>
             <summary>
               <span>2010-2013</span>Lead developer</summary>
             <p>
-              <strong>IFCE (ministère de l'agriculture)</strong>
-              <br />Refonte du SI historique
-              <br />Pilotage des développements avec le centre de service de Lyon
-              <br />Front-end jQuery - PHP - Zend, back-end JEE - Oracle
-            </p>
-            <p>
-              <strong>Supply chain Michelin</strong>
-              <br />Développement de plusieurs projets au forfait JEE/Oracle
-              <br />Spécifications techniques, pilotage des développements depuis un backoffice en Inde
-              <br />Intégration chez le client
-              <br />JEE - Websphere - Oracle
+              <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
+              <br />Pilotage du développement de plusieurs projets au forfait.
+              <br />Management des équipes de 2 à 6 développeurs dont backoffice en Inde
+              <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
             </p>
           </details>
         </div>
-        <div>
+        <div class="print-page-break-before">
           <details>
             <summary>
               <span>2009-2010</span>Analyste fonctionnel</summary>
@@ -453,7 +464,7 @@
             </p>
           </details>
         </div>
-        <h3 class="print-page-break-before">Sopra Paris</h3>
+        <h3>Sopra Paris</h3>
         <div>
           <details>
             <summary>
@@ -471,7 +482,7 @@
           </details>
         </div>
       </div>
-      <div>
+      <div class="print-page-break-before">
         <h2>Formation</h2>
         <ul>
           <li>2015 - Certification Java Oracle Certified Professional</li>
@@ -483,37 +494,38 @@
       <div>
         <h2>Compétences</h2>
         <ul>
-          <li>Développement web : HTML, CSS, javascript (Angular, RxJs, Redux), mobile hybride (Ionic, Cordova)</li>
-          <li>Développement d'applications : JEE, JSF, Spring, Grails, Websphere, Oracle</li>
+          <li>Développement web : HTML, CSS, javascript (Angular, ReactiveX, Redux)</li> 
+          <li>Développement mobile hybride : Ionic, Cordova. Android (débutant)</li>
+          <li>Développement backend : JEE, JSF, Spring, Oracle, MySQL</li>
+          <li>Opérations : Azure, Jenkins, Docker, Linux</li>
           <li>Architecture applicative, technique (infrastructure), intégration, sécurité</li>
-          <li>Gestion de projets</li>
+          <li>Gestion de projets, méthodologie Agile (Scrum), pilotage d'équipe</li>
           <li>
-            <strong>Bon niveau d'anglais</strong> (nombreuses missions en environnement anglophones)
+            <strong>Bon niveau d'anglais</strong> grâce à de nombreuses missions en environnement anglophones
           </li>
         </ul>
       </div>
       <div>
         <h2>Centres d'intérêt</h2>
         <ul>
-          <li style="display: flex">
+          <li>
             <a class="tooltip" href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
-              <img style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
-            </a>
-            <span class="interest">Mon activité Stackoverflow</span>
-            <span class="interest print-only">: https://stackoverflow.com/users/3580357/benjamin-caure</span>
+              <span class="interest">Mon activité Stackoverflow </span>
+              <img class="vertical-middle" style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+            </a>            
           </li>
-          <li style="display: flex">
+          <li>
             <a class="tooltip" href="https://github.com/bcaure">
-              <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="width: 2em">
+              <span class="interest">Mes projets Github </span>
+              <img class="vertical-middle" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" style="width: 2em">
             </a>
-            <span class="interest">Mes projets Github</span>
-            <span class="interest print-only">: https://github.com/bcaure</span>
           </li>
-          <li style="display: flex">
-              <a class="tooltip" href="http://apima.lex-network.com">
-                <img src="apima.png" style="width: 2em">
-              </a>            
-            <span class="interest">La mécanique avec l'APIMA, la compétition automobile et les sorties circuits</li>
+          <li>
+            <a class="tooltip" href="http://apima.lex-network.com">
+              <span class="interest">Le sport automobile et la mécanique avec l'APIMA </span>
+              <img class="vertical-middle" src="apima.png" style="width: 2em">
+            </a>      
+          </li>
         </ul>
       </div>
     </div>
