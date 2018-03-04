@@ -1,0 +1,465 @@
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Julie Caure</title>
+  <script src="details-polyfill.js"></script>
+  <link rel="icon" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <style>
+    /* color theme */
+
+    /* Bleu clair #19ABC2 */
+
+    /* Jaune #4AD555 */
+
+    /* Rose fonce #FF5992 */
+
+    /* Violet fonce #841983 */
+
+    /* Tips basic design */
+
+    body {
+      max-width: 50em;
+      font-family: 'Source Sans Pro', sans-serif;
+      line-height: 1.5;
+      color: #3E3E3E;
+      margin: 0;
+      font-size: 8pt;
+    }
+
+    /* Header */
+
+    .header,
+    .header h1,
+    .header h2 {
+      text-align: left;
+    }
+
+    .photo {
+      max-width: 20vw;
+      max-height: 20vh;
+    }
+
+    img {
+      width: 80px;
+    }
+
+    h1 {
+      font-weight: 600;
+      text-align: center;
+      margin-top: 1vh;
+      margin-bottom: 1vh;
+    }
+
+    .subtitle {
+      color: #FF5992;
+    }
+
+    h1,
+    h2 {
+      font-family: 'Josefin Sans';
+      color: #841983;
+    }
+
+    h2 {
+      width: 100%;
+      text-align: left;
+    }
+
+    blockquote {
+      font-size: 1em;
+    }
+    blockquote span {
+      color: #FF5992;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .vertical-middle {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    hr {
+      color: #841983;
+      background-color: #841983;
+      width: 50vw;
+      height: 5px;
+      border: 0px;
+    }
+
+    /* Body */
+
+    .container {
+      width: 100vw;
+    }
+
+    .content {
+      display: flex;
+      min-width: 400px;
+      border-top-right-radius: 20px;
+    }
+
+    .content,
+    .header {
+      padding: 3rem;
+    }
+
+    .formation,
+    .competences,
+    .loisirs {
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      margin-left: 20px;
+      color: white;
+    }
+
+    .formation {
+      border-top-right-radius: 20px;
+    }
+
+    .formation,
+    .competences {
+      background-color: #4AD555;
+    }
+
+    .formation, .experiences {
+      padding-top: 10px;
+    }
+
+    .loisirs {
+      margin-top: 15px;
+      border-bottom-right-radius: 20px;
+      background-color: #19ABC2;
+    }
+
+    .loisirs h2,
+    .competences h2,
+    .formation h2 {
+      color: white
+    }
+
+    .competences ul.informatique {
+      margin-left: 30px;
+      line-height: 10px;
+      padding-left: 5px;
+      list-style-position: inside;
+    }
+
+
+    a {
+      text-decoration: none;
+    }
+
+
+    /* Improve details summary */
+
+    summary {
+      outline: none;
+      cursor: pointer;
+    }
+
+    summary:hover {
+      color: #FF5992;
+    }
+
+    details[open] summary {
+      font-weight: bold;
+    }
+
+    summary span {
+      padding: 1em;
+      width: 200px;
+    }
+
+    summary::-webkit-details-marker {
+      display: none
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+      summary:after {
+        background: #fff;
+        border-radius: 3px;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #841983;
+        content: '+';
+        color: #841983;
+        float: left;
+        font-weight: bold;
+        padding: 0 2 8 2;
+        text-align: center;
+        width: 15px;
+        height: 15px;
+      }
+
+      details[open] summary:after {
+        content: '-';
+        padding: 0 2 10 2;
+      }
+    }
+
+    details p {
+      border-left: 3px solid#FF5992;
+      padding-left: 5px;
+    }
+
+    details {
+      padding: 2px 4px;
+      vertical-align: text-bottom;
+    }
+
+    details p {
+      margin-left: 35px;
+    }
+
+    ul {
+      padding-left: 27px;
+      /* align with details summary */
+    }
+
+    li {
+      padding-left: 15px;
+      /* align with details summary */
+      margin-bottom: 0.6em;
+    }
+
+    /* interest */
+
+    .interest {
+      align-self: center;
+      margin-left: 10px;
+    }
+
+
+
+    /* Print */
+
+    @media screen {
+      .print-only {
+        display: none;
+      }
+    }
+
+    @media print {
+
+      body {
+        line-height: 1.3;
+      }
+      h1 {
+        font-size: 1.5em;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
+      h3 {
+        font-size: 1em;
+      }
+
+
+      .print-only {
+        display: block;
+      }
+    }
+
+    @page {
+      /* remove date and file name header */
+      size: auto;
+      margin: 0mm;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+      <div style="display:flex;width:100%">
+        <div style="flex:3">
+          <h1>JULIE CAURE </h1>
+          <h3 class="subtitle">Assistante Ressources Humaines</h3>
+          <div>
+            <div>33 ans</div>
+            <div>Tel: +33 (0)6 63 17 24 04</div>
+            <div>Email: caurejulie@yahoo.fr</div>
+          </div>
+        </div>
+        <blockquote style="flex:5; text-align: center; align-self: center;display: flex;">
+          <span style="font-size: 5em;flex: 1;align-self: flex-start;text-align:right;line-height: 0.8em;">“ </span>
+          <div style="flex: 8;font-style: italic">Benéficiant de 5 ans d'expérience dans différents services de Ressources Humaines, je suis spécialisée en droit
+            du travail et je conseille les entreprises dans la gestion de leur personnel</div>
+          <span style="font-size: 5em;flex: 1;align-self: flex-end;text-align:left;line-height: 0em;"> ”</span>
+        </blockquote>
+        <div class="photo" style="flex:2;text-align: right">
+          <img src="julie_id_small.JPG">
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div class="content">
+      <div class="experiences">
+        <h2>Expériences</h2>
+        <div>
+          <h3>Groupe ESC CLERMONT</h3>
+          <details open>
+            <summary>
+              <span>2016-2018</span>Gestionnaire Paie - Assistante Ressources Humaines
+            </summary>
+            <ul>
+              <li>Administration du personnel</li>
+              <li>Gestion des rémunérations</li>
+              <li>Développement des ressources Humaines (Élaboration et gestion du plan de formation, des entretiens annuels,
+                mise en œuvre des dispositifs de la GPEC)</li>
+              <li>Participation à la gestion des relations avec les IRP</li>
+            </ul>
+          </details>
+        </div>
+        <h3>Cabinet PERRIN DE NEVE</h3>
+        <div>
+          <details>
+            <summary>
+              <span>2011-2016</span>Conseillère Sociale
+            </summary>
+            <ul>
+              <li>Gestion d'un portefeuille de 70 clients PME</li>
+              <li>Établissement des payes, charges sociales et déclarations annuelles</li>
+              <li>Gestion du personnel : contrats de travail, arrêts maladies, accidents du travail, formations, procédures de
+                rupture de contrat</li>
+              <li>Conseils aux chefs d'entreprise en droit social</li>
+            </ul>
+          </details>
+        </div>
+        <h3>UNIVERSITE B. PASCAL</h3>
+        <div>
+          <details>
+            <summary>
+              <span>Jan. à juillet 2011</span>Agent Administratif RH
+            </summary>
+            <ul>
+              <li>Gestion des accidents de travail et des maladies professionnelles</li>
+              <li>Facturation des remboursements de frais médicaux</li>
+              <li>Gestion des dossiers et procédures concernant le personnel enseignant.</li>
+            </ul>
+          </details>
+        </div>
+        <h3>TOUPARGEL</h3>
+        <div>
+          <details>
+            <summary>
+              <span>Fév. à décembre 2010</span>Assistante RH
+            </summary>
+            <ul>
+              <li>Gestion des contrats de travail</li>
+              <li>Conseil en Droit du Travail aux responsables d'agence</li>
+              <li>Gestion des accidents du travail, des contrats de professionnalisation et de la portabilité</li>
+            </ul>
+          </details>
+        </div>
+        <h3>KPMG</h3>
+        <div>
+          <details>
+            <summary>
+              <span>Nov. 2009 à jan. 2010</span>Technicienne Paye
+            </summary>
+            <ul>
+              <li>Établissement des bulletins de paye, contrats de travail, déclarations sociales</li>
+            </ul>
+          </details>
+        </div>
+        <h3>TOUPARGEL</h3>
+        <div>
+          <details>
+            <summary>
+              <span>Juil. à Août 2009</span>Technicienne Paye</summary>
+            <ul>
+              <li>Établissement des bulletins de paye</li>
+            </ul>
+          </details>
+        </div>
+      </div>
+      <div>
+        <div class="formation">
+          <h2>Formation</h2>
+          <ul>
+            <li>Master droit social – première année</li>
+            <li>BTS comptabilité et gestion des organisations</li>
+            <li>Anglais technique</li>
+          </ul>
+        </div>
+        <div class="competences">
+          <h2>Compétences</h2>
+          <ul>
+            <li>Gestion du personnel</li>
+            <li>Tenue de la veille juridique</li>
+            <li>Recrutements et formations</li>
+            <li>Gestion des conflits</li>
+            <li>Comptabilité</li>
+            <li>
+              Informatique :
+              <ul class="informatique">
+                <li>Sage Coala</li>
+                <li>Cegid</li>
+                <li>SAP</li>
+                <li>Office</li>
+              </ul>
+            </li>
+            <li>Bonnes qualités rédactionnelles</li>
+          </ul>
+        </div>
+        <div class="loisirs">
+          <h2>Centres d'intérêt</h2>
+          <ul>
+            <li>
+              Je pratique l'équitation et je m'occupe d'une pension de chevaux
+            </li>
+            <li>
+              Trésorière du C.U.C. escalade, j'ai découvert ce sport il y a 3 ans
+            </li>
+            <li>
+              Je suis titulaire de l'A.F.P.S
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script> 
+  (function () {
+    var beforePrint = function () {
+      var details = document.querySelectorAll('details');
+      Array.from(details).forEach(function (obj, idx) {
+        obj.open = true;
+      });
+    };
+    var afterPrint = function () {
+      var details = document.querySelectorAll('details');
+      Array.from(details).forEach(function (obj, idx) {
+        obj.open = false;
+      });
+    };
+
+    if (window.matchMedia) {
+      var mediaQueryList = window.matchMedia('print');
+      mediaQueryList.addListener(function (mql) {
+        if (mql.matches) {
+          beforePrint();
+        } else {
+          afterPrint();
+        }
+      });
+    }
+
+    window.onbeforeprint = beforePrint;
+    window.onafterprint = afterPrint;
+  }());
+</script>
+
+</html>
