@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Benjamin Caure</title>
-  <script src="details-polyfill.js"></script>
+  <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
   <link rel="icon" href="favicon.png">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
@@ -55,65 +55,38 @@
 
     /* Header */
 
-    .header,
     .container {
       width: 100vw;
     }
 
     @media screen and (orientation:portrait) {
-      .header {
-        height: 25vh;
-      }
       .content {
         width: 100vw;
       }
     }
 
     @media screen and (orientation:landscape) {
-      .header {
-        height: 45vh;
-      }
       .content {
         width: 60vw;
       }
     }
 
-    .header {
-      min-height: 200px;
-      background-color: rgba(31, 31, 31, 0.9);
-      color: white;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      flex-direction: column;
-      position: relative;
-      padding-top: 10vh;
-    }
-
-    .header hr {
-      width: 50vw;
-    }
-
-    .subheading {
-      font-style: italic;
-      word-spacing: 0.3em;
-    }
-
-    .photo {
+    .LI-profile-badge {
       position: absolute;
-      left: 40px;
-      top: 20px;
+      top: -105px;
+      z-index: 3;
+      right: 30vw; /* (100vw - content(60vw) / 2) + badge(10vw) / 2   */
+      width: 10vw;
     }
-
-    .photo img {
-      max-width: 20vw;
-      max-height: 30vh;
+    .LI-badge-container.vertical.light {
+      box-shadow: 0 0 0px!important;
     }
 
     .icon-bar {
       position: absolute;
-      right: 40px;
+      left: 40px;
       top: 20px;
+      z-index: 4;
     }
 
     .icon-bar img {
@@ -125,14 +98,13 @@
     .container {
       display: flex;
       justify-content: center;
-      margin-top: -15vh;
+      margin-top: 120px;
       position: relative;
     }
 
     .content {
       min-width: 400px;
       padding: 3rem;
-      box-shadow: 0 4px 8px 0 black, 0 6px 20px 0 black;
       background-color: white;
       z-index: 2;
     }
@@ -141,6 +113,21 @@
       text-decoration: none;
     }
 
+    @media screen and (min-width: 1024px) {
+      .experience h2 {
+        text-align: start;
+      }
+
+      .experience .first-experience  p {
+        max-width: 50%;
+      }
+    }
+
+    @media screen and (max-width: 1023px) {
+      .LI-profile-badge {
+        display: none;
+      }
+    }
 
     /* Improve details summary */
 
@@ -275,7 +262,6 @@
       .content {
         box-shadow: initial;
       }
-      .header,
       video {
         display: none;
       }
@@ -289,6 +275,9 @@
         page-break-before: always;
         margin-top: 4em;
       }
+      .LI-profile-badge {
+        top: -170px;
+      }      
     }
     
     @page { /* remove date and file name header */
@@ -299,8 +288,8 @@
 
     /* Video */
     .layer {
-      position: absolute;
-      top: 15vh;
+      position: fixed;
+      top: 0px;
       left: 0px;
       height: 100%;
       width: 100%;
@@ -309,8 +298,7 @@
     }
     #myVideo {
       position: fixed;
-      /*left: -40vw;*/
-      top: -40vh;
+      top: 0px;
       min-width: 110%;
       min-height: 110%;
       z-index: -1;
@@ -320,64 +308,53 @@
 
 <body>
 
-  <div class="header">
-    <div class="photo">
-      <img src="https://avatars3.githubusercontent.com/u/3490516?s=460&v=4">
-      <div style="width: 100%;text-align: center">36 ans - Clermont-Ferrand</div>
-    </div>
-    <h1>
-      BENJAMIN CAURE
-      <br /> Développeur
-    </h1>
-    <hr />
-    <div class="subheading">web / mobile / back-end</div>
-    <div class="icon-bar">
-      <a class="tooltip" href="tel:+33689329745">
-        <img style="background-color: white; border-radius: 20px" src="mobile.png">
-        <span class="tooltiptext">+33 (0)6-89-32-97-45</span>
-      </a>
-      <a class="tooltip" href="mailto:benjamin.caure@gmail.com">
-        <img src="gmail.png">
-        <span class="tooltiptext">benjamin.caure@gmail.com</span>
-      </a>
-      <a class="tooltip" href="https://www.linkedin.com/in/benjamin-caure/">
-        <img src="linkedin.png">
-        <span class="tooltiptext">Mon réseau LinkedIn</span>
-      </a>
-      <a class="tooltip" href="cv.pdf">
-        <img src="download-pdf.png">
-        <span class="tooltiptext">Télécharger en PDF</span>
-      </a>
-    </div>
-
-  </div>
+<div class="icon-bar">
+  <a class="tooltip" href="tel:+33689329745">
+    <img style="background-color: white; border-radius: 20px" src="mobile.png">
+    <span class="tooltiptext">+33 (0)6-89-32-97-45</span>
+  </a>
+  <a class="tooltip" href="mailto:benjamin.caure@gmail.com">
+    <img src="gmail.png">
+    <span class="tooltiptext">benjamin.caure@gmail.com</span>
+  </a>
+  <a class="tooltip" href="cv.pdf">
+    <img src="download-pdf.png">
+    <span class="tooltiptext">Télécharger en PDF</span>
+  </a>
+</div>
+<div class="layer"></div>
   <div class="container">
-    <div class="layer"></div>
+    <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="fr_FR" data-type="vertical" data-theme="light" data-vanity="benjamin-caure"><a class="LI-simple-link" href='https://fr.linkedin.com/in/benjamin-caure?trk=profile-badge'>Benjamin Caure</a></div>
     <div class="content">
       <div class="print-only">
-        <div class="photo">
-          <img src="https://avatars3.githubusercontent.com/u/3490516?s=460&v=4">
-        </div>  
-        <h1> BENJAMIN CAURE </h1>
-        <h2> Développeur</h2>
         <div style="display:flex;width:100%">
-          <div style="flex:1">
-            <div>36 ans - Clermont-Ferrand</div>
-            <div>CV en ligne : http://bcaure.github.io</div>
-          </div>
-          <div style="flex:1">
+          <div>
             <div>Tel: +33 (0)6-89-32-97-45</div>
             <div>Email: benjamin.caure@gmail.com</div>
           </div>
         </div>
       </div>
-      <div>
+      <div class="experience">
         <h2>Expériences</h2>
-        <div>
-          <h3>CGI Clermont-Ferrand</h3>
+        <div class="first-experience">
+          <h3>AMUE Clermont-Ferrand</h3>
           <details open>
             <summary>
-              <span>2016-2017</span>Développeur web et mobile - Architecte SI
+              <span>Depuis Mai 2018</span>Développeur full-stack
+            </summary>
+            <p>
+              Développement d'une application de gestion basée sur Angular et Springboot.
+            </p>
+            <p>
+              Utilisation de Docker et Gitlab CI.
+            </p>
+          </details>
+        </div>
+        <div>
+          <h3>CGI Clermont-Ferrand</h3>
+          <details>
+            <summary>
+              <span>2016-2017</span>Développeur mobile - Architecte SI
             </summary>
             <p>
               Au sein d'une
@@ -495,9 +472,9 @@
         <h2>Compétences</h2>
         <ul>
           <li>Développement web : HTML, CSS, javascript (Angular, ReactiveX, Redux)</li> 
-          <li>Développement mobile hybride : Ionic, Cordova. Android (débutant)</li>
+          <li>Développement mobile : Ionic, Cordova.</li>
           <li>Développement backend : JEE, JSF, Spring, Oracle, MySQL</li>
-          <li>Opérations : Azure, Jenkins, Docker, Linux</li>
+          <li>Opérations : Azure, Jenkins, Gitlab CI, Docker, Linux</li>
           <li>Architecture applicative, technique (infrastructure), intégration, sécurité</li>
           <li>Gestion de projets, méthodologie Agile (Scrum), pilotage d'équipe</li>
           <li>
@@ -564,5 +541,6 @@
     window.onafterprint = afterPrint;
   }());
 </script>
+<script src="details-polyfill.js"></script>
 
 </html>
