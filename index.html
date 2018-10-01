@@ -84,11 +84,15 @@
 
     .icon-bar {
       position: absolute;
-      left: 40px;
-      top: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      top: 50px;
       z-index: 4;
     }
-
+    .icon-bar a {
+      margin-left: 20px;
+    }
     .icon-bar img {
       height: 40px;
     }
@@ -141,7 +145,7 @@
       font-weight: bold;
     }
 
-    summary span {
+    summary .dates {
       padding: 1em;
       width: 200px;
     }
@@ -294,15 +298,20 @@
       height: 100%;
       width: 100%;
       z-index: 1;
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(50, 50, 255, 0.6);
     }
     #myVideo {
+      background-image: url('BeZh.gif');
+      background-repeat: repeat;
+      background-size: 67%;
       position: fixed;
       top: 0px;
+      left: 0px;
       min-width: 110%;
       min-height: 110%;
       z-index: -1;
     }
+
   </style>
 </head>
 
@@ -319,7 +328,8 @@
   </a>
   <a class="tooltip" href="cv.pdf">
     <img src="download-pdf.png">
-    <span class="tooltiptext">Télécharger en PDF</span>
+    <span class="tooltiptext french">Télécharger en PDF</span>
+    <span class="tooltiptext english">Download as PDF</span>
   </a>
 </div>
 <div class="layer"></div>
@@ -343,19 +353,30 @@
         </div>
       </div>
       <div class="experience">
-        <h2>Expériences</h2>
+        <h2 class="french">Expériences</h2>
+        <h2 class="english">Work Experience</h2>
         <hr />
         <div class="first-experience">
-          <h3>AMUE Clermont-Ferrand</h3>
+          <h3 class="french">Université Clermont-Auvergne</h3>
+          <h3 class="english">Clermont-Ferrand University</h3>
           <details open>
             <summary>
-              <span>Depuis Mai 2018</span>Développeur full-stack
+              <span class="dates french">Depuis Mai 2018</span>
+              <span class="dates english">May 2018 to Present</span>
+              <span class="french">Développeur full-stack</span>
+              <span class="english">Full-stack developer</span>
             </summary>
-            <p>
+            <p class="french">
               Développement d'une application de gestion basée sur Angular et Springboot.
             </p>
-            <p>
+            <p class="french">
               Utilisation de Docker et Gitlab CI.
+            </p>
+            <p class="english">
+              Research project management software development, based on Angular/Springboot stack.
+            </p>
+            <p class="english">
+              Gitlab CI and Docker-based infrastructure.
             </p>
           </details>
         </div>
@@ -363,27 +384,40 @@
           <h3>CGI Clermont-Ferrand</h3>
           <details>
             <summary>
-              <span>2016-2017</span>Développeur mobile - Architecte SI
+              <span class="dates">2016-2017</span>
+              <span class="french">Développeur mobile - Architecte SI</span>
+              <span class="english">Mobile developer - IT architect</span>
             </summary>
-            <p>
+            <p class="french">
               Au sein d'une
-              <strong>squad spécialisée dans le développement web et mobile</strong> Michelin, je participe à la réalisation d'applications
+              <strong>squad spécialisée dans le développement web et mobile</strong> Michelin, j'ai participé à la réalisation d'applications
               B2B.
               <br />Approche lean, développements javascript (Angular), cordova, redux.
             </p>
-            <p>
-              J'interviens toujours en tant qu'architecte SI sur des projets autour de la refonte du CRM Michelin avec Salesforce.com.
+            <p class="english">
+                Within 
+                <strong>web & mobile development team</strong> at Michelin, design and delivery of new B2B solutions.
+                <br />Lean approach, Javascript development (Angular), cordova, redux.
             </p>
-            <p>
+            <p class="french">
+              J'ai continué d'intervenir en tant qu'architecte SI sur des projets de refonte du CRM Michelin avec Salesforce.com.
+            </p>
+            <p class="english">
+              Technical architecture on B2B applications integration with Salesforce.com CRM.
+            </p>
+            <p class="french">
               Je participe également à plusieurs initiatives pour le recrutement, la montée en compétences de développeurs et l'amélioration
               continue de la filère technique de mon entreprise.
             </p>
-          </details>
+            <p class="english">
+                Recruitment, software craftmanship and students mentor.
+              </p>
+            </details>
         </div>
         <div>
           <details>
             <summary>
-              <span>2013-2015</span>Développeur web - Architecte SI
+              <span class="dates">2013-2015</span>Développeur web - Architecte SI
             </summary>
             <p>
               Au sein du
@@ -401,7 +435,7 @@
         <div class="print-page-break-before">
           <details>
             <summary>
-              <span>2010-2013</span>Lead developer</summary>
+              <span class="dates">2010-2013</span>Lead developer</summary>
             <p>
               <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
               <br />Pilotage du développement de plusieurs projets au forfait.
@@ -413,7 +447,7 @@
         <div>
           <details>
             <summary>
-              <span>2009-2010</span>Analyste fonctionnel</summary>
+              <span class="dates">2009-2010</span>Analyste fonctionnel</summary>
             <p>
               <strong>Supply chain Michelin</strong>
               <br />Mise en place d'un progiciel de Gestion d'entrepôts pour l'Europe et l'Amérique du Nord
@@ -424,7 +458,7 @@
         <div>
           <details>
             <summary>
-              <span>2008-2009</span>Devops</summary>
+              <span class="dates">2008-2009</span>Devops</summary>
             <p>
               <strong>Supply chain Michelin</strong>
               <br />Participation à la mise en place de l'intégration continue des applications
@@ -436,7 +470,7 @@
         <div>
           <details>
             <summary>
-              <span>2006-2008</span>Développeur d'applications Java</summary>
+              <span class="dates">2006-2008</span>Développeur d'applications Java</summary>
             <p>
               <strong>Crédit Agricole</strong>
               <br />Participation à la réalisation du projet GED (Gestion Electronique de Documents)
@@ -454,7 +488,7 @@
         <div>
           <details>
             <summary>
-              <span>2005-2006</span>Développeur d'applications .Net</summary>
+              <span class="dates">2005-2006</span>Développeur d'applications .Net</summary>
             <p>
               <strong>Groupe Nestlé</strong>
               <br />Développement d'une application supply chain
@@ -469,7 +503,9 @@
         </div>
       </div>
       <div class="print-page-break-before">
-        <h2>Formation</h2>
+        <h2 class="french">Formation</h2>
+        <h2 class="english">Education</h2>
+
         <hr />
         <ul>
           <li>2015 - Certification Java Oracle Certified Professional</li>
@@ -479,7 +515,8 @@
         </ul>
       </div>
       <div>
-        <h2>Compétences</h2>
+        <h2 class="french">Compétence</h2>
+        <h2 class="english">Technical Skills</h2>
         <hr />
         <ul>
           <li>Développement web : HTML, CSS, javascript (Angular, ReactiveX, Redux)</li> 
@@ -493,7 +530,7 @@
           </li>
         </ul>
       </div>
-      <div>
+      <div class="french">
         <h2>Centres d'intérêt</h2>
         <hr />
         <ul>
@@ -519,11 +556,10 @@
       </div>
     </div>
   </div>
-  <video autoplay muted loop id="myVideo">
-    <source src="background2.mp4" type="video/mp4">
-  </video>
+  <div id="myVideo"></div>
 </body>
-<script> 
+<script>
+  // Printing
   (function () {
     var beforePrint = function () {
       var details = document.querySelectorAll('details');
@@ -551,6 +587,14 @@
 
     window.onbeforeprint = beforePrint;
     window.onafterprint = afterPrint;
+
+    // Language
+    var urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('lang') === 'en') {
+      document.querySelectorAll('.french').forEach(el => el.style.display = 'none');
+    } else {
+      document.querySelectorAll('.english').forEach(el => el.style.display = 'none');
+    }
   }());
 </script>
 <script src="details-polyfill.js"></script>
