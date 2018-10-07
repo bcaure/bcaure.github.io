@@ -318,6 +318,10 @@
 <body>
 
 <div class="icon-bar">
+  <a id="flagLink" class="tooltip" href="index.html?lang=en">
+    <img id="flagImage" style="background-color: white; border-radius: 20px" src="united-kingdom.svg">
+    <span id="flagTooltip" class="tooltiptext">English version</span>
+  </a>
   <a class="tooltip" href="tel:+33689329745">
     <img style="background-color: white; border-radius: 20px" src="mobile.png">
     <span class="tooltiptext">+33 (0)6-89-32-97-45</span>
@@ -419,16 +423,18 @@
             <summary>
               <span class="dates">2013-2015</span>Développeur web - Architecte SI
             </summary>
-            <p>
+            <p class="french">
               Au sein du
               <strong>domaine B2B Michelin</strong>, j'ai mené la réécriture et la modernisation du portail <a href="https://bibserve.com" target="_blank">e-Commerce Europe</a>.
             </p>
-            <p>
-              J'ai également lancé la migration de sa plateforme historique JEE depuis IBM z/OS vers Linux Red Hat.
+            <p class="english">
+              Development of the brand new <a href="https://bibserve.com" target="_blank">e-Business Europe portal</a> 
             </p>
             <p>
-              <strong>Cette initiative m'a permis de me voir confier la mission d'architecte SI</strong> : définir et mettre en place
-              pour les nouveaux projets l'architecture métier, applicative, infrastructure et sécurité.
+              Migration of its legacy IBM z/OS platform to new Linux Red Hat VMs.
+            </p>
+            <p>
+              <strong>This project was my chance to start new mission as IS Architect</strong>: define and set-up new business solution architectures including technical platform, data integration and security.
             </p>
           </details>
         </div>
@@ -592,11 +598,17 @@
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('lang') === 'en') {
       document.querySelectorAll('.french').forEach(el => el.style.display = 'none');
+      document.getElementById('flagImage').src = 'france.svg';
+      document.getElementById('flagLink').href = 'index.html';
+      document.getElementById('flagTooltip').innerText = 'Version française';
     } else {
       document.querySelectorAll('.english').forEach(el => el.style.display = 'none');
+      document.getElementById('flagImage').src = 'united-kingdom.svg';
+      document.getElementById('flagLink').href = 'index.html?lang=en';
+      document.getElementById('flagTooltip').innerText = 'English version';
     }
   }());
 </script>
 <script src="details-polyfill.js"></script>
-
+<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> 
 </html>
