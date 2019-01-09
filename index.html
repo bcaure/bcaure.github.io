@@ -70,16 +70,19 @@
       }
     }
 
-    .LI-profile-badge {
+    /* badges */
+    .profile-badge {
       position: absolute;
+      z-index: 3;      
       top: -105px;
-      z-index: 3;
-      /*right: 30vw;  (100vw - content(60vw) / 2) + badge(10vw) / 2   */
-      left: 60vw;
-      width: 10vw;
     }
-    .LI-badge-container.vertical.light {
-      box-shadow: 0 0 0px!important;
+    .LI-profile-badge {
+      width: 10vw;
+      left: 60vw;
+    }
+    .prog-online {
+      color:white;
+      left: 40px;
     }
 
     .icon-bar {
@@ -339,7 +342,7 @@
 <div class="layer"></div>
   <div class="container">
     <div class="content">
-      <div  class="LI-profile-badge" 
+      <div  class="LI-profile-badge profile-badge" 
             data-version="v1" 
             data-size="large" 
             data-locale="fr_FR" 
@@ -347,6 +350,10 @@
             data-theme="light" 
             data-vanity="benjamin-caure">
             <a class="LI-simple-link" href='https://fr.linkedin.com/in/benjamin-caure?trk=profile-badge'>Benjamin Caure</a>
+      </div>
+      <div class="prog-online profile-badge">
+        <a title='PRESTATAIRE ProgOnline' href='https://www.progonline.com/freelance-informatique-progonline-bcaure.html'>
+          <img alt="PRESTATAIRE ProgOnline" src='https://www.progonline.com/images/certif.php?nickname=bcaure' border='0'/><br/><br/>Prestataire<br/>ProgOnline</a>          
       </div>
       <div class="print-only">
         <div style="display:flex;width:100%">
@@ -563,6 +570,7 @@
     </div>
   </div>
   <div id="myVideo"></div>
+  <div style="width: 200px;color: white">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> 
 </body>
 <script>
   // Printing
@@ -610,5 +618,4 @@
   }());
 </script>
 <script src="details-polyfill.js"></script>
-<div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> 
 </html>
