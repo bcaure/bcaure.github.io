@@ -58,6 +58,19 @@
       width: 100vw;
     }
 
+    /* identity */
+    .identity {
+      display:flex;
+      width:100%;
+      position: relative;
+    }
+    .photo {
+      position: absolute;
+      height: 130px;
+      right: 0px;
+      top: -30px;
+    }
+
     /* badges */
     .profile-badge {
       position: absolute;
@@ -166,6 +179,9 @@
 
     summary::-webkit-details-marker {
       display: none
+    }
+    details > summary {
+      list-style: none;
     }
 
     @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
@@ -277,9 +293,6 @@
       .content {
         box-shadow: initial;
       }
-      video {
-        display: none;
-      }
       .container {
         width: 100%;
       }
@@ -293,7 +306,7 @@
       .LI-profile-badge {
         top: 0px;
       }
-      .icon-bar {
+      .no-print {
         display: none;
       }
     }
@@ -331,21 +344,25 @@
 
 <body>
 
-<div class="icon-bar">
+<div class="icon-bar no-print">
   <a id="flagLink" class="tooltip" href="index.html?lang=en">
     <img id="flagImage" style="background-color: white; border-radius: 20px" src="united-kingdom.svg">
     <span id="flagTooltip" class="tooltiptext">English version</span>
   </a>
-  <a class="tooltip" href="cv.pdf">
+  <a class="tooltip french" href="cv.pdf">
     <img src="download-pdf.png">
-    <span class="tooltiptext french">Télécharger en PDF</span>
-    <span class="tooltiptext english">Download as PDF</span>
+    <span class="tooltiptext">Télécharger en PDF</span>
+  </a>
+  <a class="tooltip english" href="cv-en.pdf">
+    <img src="download-pdf.png">
+    <span class="tooltiptext">Download as PDF</span>
   </a>
 </div>
 <div class="layer"></div>
   <div class="container">
     <div class="content">
-      <div  class="LI-profile-badge profile-badge" 
+      <div  class="LI-profile-badge profile-badge"
+            style="display: none;" 
             data-version="v1" 
             data-size="large" 
             data-locale="fr_FR" 
@@ -354,16 +371,17 @@
             data-vanity="benjamin-caure">
             <a class="LI-simple-link" href='https://fr.linkedin.com/in/benjamin-caure?trk=profile-badge'>Benjamin Caure</a>
       </div>
-      <div class="prog-online profile-badge">
+      <div class="prog-online profile-badge no-print">
         <a title='PRESTATAIRE ProgOnline' href='https://www.progonline.com/freelance-informatique-progonline-bcaure.html'>
-          <img alt="PRESTATAIRE ProgOnline" src='https://www.progonline.com/images/certif.php?nickname=bcaure' border='0'/><br/><br/>Prestataire<br/>ProgOnline</a>          
+          <img alt="PRESTATAIRE ProgOnline" src='https://www.progonline.com/images/certif.php?nickname=bcaure' style="border: 0px"/><p>Prestataire</p><p>ProgOnline</p></a>          
       </div>
       <div>
-        <div style="display:flex;width:100%">
+        <div class="identity">
           <div>
-            <div>Tel: +33 (0)6-89-32-97-45</div>
+            <div><span class="french">Tel : </span><span class="english">Phone: </span>+33 (0)6-89-32-97-45</div>
             <div>Email: benjamin.caure@gmail.com</div>
           </div>
+          <img src="id.jpeg" class="photo" />
         </div>
       </div>
       <div class="experience">
@@ -399,13 +417,13 @@
               <span class="dates french">Depuis Mai 2018</span>
               <span class="dates english">May 2018 to Present</span>
               <span class="french">Enseignant vacataire école d'ingénieur</span>
-              <span class="english">Master degree part-time teacher</span>
+              <span class="english">Part-time teacher</span>
             </summary>
             <p class="french">
               Cours de développement Web avec React JS et Spring - 2ème année <a href="https://isima.fr">ISIMA</a>
             </p>
             <p class="english">
-              Web development with React JS and Spring. <a href="https://isima.fr">ISIMA IT school</a>
+              Web development with React JS and Spring. <a href="https://isima.fr">ISIMA IT engineering school</a>
             </p>
           </details>
         </div>
@@ -465,7 +483,7 @@
             </p>
           </details>
         </div>
-        <div class="print-page-break-before">
+        <div>
           <details>
             <summary>
               <span class="dates">2010-2013</span>Lead developer</summary>
@@ -483,7 +501,7 @@
             </p>
           </details>
         </div>
-        <div>
+        <div class="print-page-break-before">
           <details>
             <summary>
               <span class="dates">2009-2010</span>
@@ -618,34 +636,38 @@
           </li>
         </ul>
       </div>
-      <div class="french">
-        <h2>Centres d'intérêt</h2>
+      <div>
+        <h2 class="french">Projets personnels</h2>
+        <h2 class="english">Personal projects</h2>
         <hr />
         <ul>
           <li>
-            <a class="tooltip" href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
-              <span class="interest">Mon activité Stackoverflow </span>
-              <img class="vertical-middle" style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
-            </a>            
-          </li>
-          <li>
             <a class="tooltip" href="https://github.com/bcaure">
-              <span class="interest">Mes projets Github </span>
+              <span class="interest french">Mes projets Github </span>
+              <span class="interest english">My Github projects </span>
               <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 2em">
             </a>
           </li>
           <li>
-            <a class="tooltip" href="http://apima.lex-network.com">
-              <span class="interest">Le sport automobile et la mécanique avec l'APIMA </span>
-              <img class="vertical-middle" src="apima.png" style="width: 2em">
-            </a>      
+            <a class="tooltip" href="https://gitlab.com/pjben">
+              <span class="interest french">Mes projets Gitlab </span>
+              <span class="interest english">My Gitlab projects </span>
+              <img class="vertical-middle" src="gitlab-icon-rgb.svg" style="width: 2em">
+            </a>
+          </li>
+          <li>
+            <a class="tooltip" href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
+              <span class="interest french">Mon activité Stackoverflow </span>
+              <span class="interest english">My Stackoverflow activity</span>
+              <img class="vertical-middle" style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+            </a>            
           </li>
         </ul>
       </div>
     </div>
   </div>
-  <div id="myVideo"></div>
-  <div style="width: 200px;color: white">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> 
+  <div id="myVideo" class="no-print"></div>
+  <div class="no-print" style="width: 200px;color: white">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> 
 </body>
 <script>
   // Printing
