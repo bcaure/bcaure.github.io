@@ -23,7 +23,7 @@
 
     h1 {
       font-weight: 600;
-      text-align: center;
+      font-size: 2rem;
       margin-top: 1vh;
       margin-bottom: 1vh;
     }
@@ -40,6 +40,10 @@
     h2,
     strong {
       color: #333;
+    }
+
+    hr {
+      margin: 3rem 0 0 0;
     }
 
     a  {
@@ -62,13 +66,30 @@
     .identity {
       display:flex;
       width:100%;
-      position: relative;
+      justify-content: space-between;
+    }
+    .name {
+      flex: 2;
+      text-align: right;
+    }
+    .title {
+      color: gray;
+      font-size: 1.2rem;
     }
     .photo {
-      position: absolute;
-      height: 130px;
-      right: 0px;
-      top: -30px;
+      height: 150px;
+      margin-left: 20px;
+      margin-right: 20px;
+      border-left: 5px solid #555;
+      border-right: 5px solid #555;
+    }
+    .contact {
+      flex: 3;
+      font-size: 0.8rem;
+    }
+    .bold {
+      font-weight: bold;
+      font-size: 1rem;
     }
 
     /* badges */
@@ -80,10 +101,6 @@
     .LI-profile-badge {
       width: 10vw;
       left: 60vw;
-    }
-    .prog-online {
-      color:white;
-      left: 40px;
     }
 
     .icon-bar {
@@ -112,7 +129,7 @@
 
     .content {
       min-width: 400px;
-      padding: 3rem;
+      padding: 1rem 3rem 3rem 3rem;
       background-color: white;
       z-index: 2;
     }
@@ -150,9 +167,6 @@
 
     @media screen and (max-width: 1023px) {
       .LI-profile-badge {
-        display: none;
-      }
-      .prog-online {
         display: none;
       }
     }
@@ -284,9 +298,6 @@
       body  {
         line-height: 1.3;
       }
-      h1 {
-        margin-top: 40px;
-      }
       .container {
         margin-top: 0;
       }
@@ -371,25 +382,27 @@
             data-vanity="benjamin-caure">
             <a class="LI-simple-link" href='https://fr.linkedin.com/in/benjamin-caure?trk=profile-badge'>Benjamin Caure</a>
       </div>
-      <div class="prog-online profile-badge no-print">
-        <a title='PRESTATAIRE ProgOnline' href='https://www.progonline.com/freelance-informatique-progonline-bcaure.html'>
-          <img alt="PRESTATAIRE ProgOnline" src='https://www.progonline.com/images/certif.php?nickname=bcaure' style="border: 0px"/><p>Prestataire</p><p>ProgOnline</p></a>          
-      </div>
       <div>
         <div class="identity">
-          <div>
-            <div><span class="french">Tel : </span><span class="english">Phone: </span>+33 (0)6-89-32-97-45</div>
-            <div>Email: benjamin.caure@gmail.com</div>
+          <div class="name">
+            <h1><div style="font-size: 1.2rem;">BENJAMIN</div>CAURE</h1>
+            <div class="title"><span class="french">DEVELOPPEUR</span><span class="english">DEVELOPER</span></div>
           </div>
           <img src="id.jpeg" class="photo" />
+          <div class="contact">
+            <div><span class="french bold">Tél : </span><span class="english bold">Mobile: </span>+33 (0)6 89 32 97 45</div>
+            <div><span class="bold">Email : </span>benjamin.caure@gmail.com</div>
+            <div><span class="french bold">Site : </span><span class="english bold">Website: </span>bcaure.github.io</div>
+            <div><span class="bold">Linkedin : </span>fr.linkedin.com/in/benjamin-caure</div>
+          </div>
         </div>
       </div>
       <div class="experience">
+        <hr />
         <h2 class="french">Expériences</h2>
         <h2 class="english">Work Experience</h2>
-        <hr />
         <div class="first-experience">
-          <h3 class="french"><a href="http://www.amue.fr/">Agence de mutualisation des universités et établissements de recherche</a></h3>
+          <h3 class="french"><a href="http://www.amue.fr/">Agence de mutualisation des Universités et Etablissements de Recherche</a></h3>
           <h3 class="english"><a href="http://www.amue.fr/">Universities and research organizations agency</a></h3>
           <details open>
             <summary>
@@ -399,11 +412,13 @@
               <span class="english">Full-stack developer</span>
             </summary>
             <p class="french">
-              Développement d'une application de gestion basée sur Angular et Springboot.
+              Dans le cadre de la création du SI pour la Recherche, développement de la brique de gestion de projets de Recherche :
+              <a href="www.amue.fr/recherche/logiciels/caplab/">www.amue.fr/recherche/logiciels/caplab</a>
             </p>
             <p class="french">
+              Frontend Angular, backend Spring.
               Intégration continue Gitlab.
-              Architecture de production Docker.
+              Architecture Docker (Swarm).
             </p>
             <p class="english">
               Research project management software development, based on Angular/Springboot stack.
@@ -483,25 +498,25 @@
             </p>
           </details>
         </div>
-        <div>
+        <div class="print-page-break-before">
           <details>
             <summary>
               <span class="dates">2010-2013</span>Lead developer</summary>
-            <p class="french">
-              <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
-              <br />Pilotage du développement de plusieurs projets au forfait.
-              <br />Management des équipes de 2 à 6 développeurs dont backoffice en Inde
-              <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
-            </p>
-            <p class="english">
-              <strong>IFCE (Ministry of Agriculture) and Michelin Supply chain</strong>
-              <br />Project technical leader
-              <br />2 - 6 developers teams, India backoffice management
-              <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
-            </p>
+              <p class="french">
+                <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
+                <br />Pilotage du développement de plusieurs projets au forfait.
+                <br />Management des équipes de 2 à 6 développeurs dont backoffice en Inde
+                <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
+              </p>
+              <p class="english">
+                <strong>IFCE (Ministry of Agriculture) and Michelin Supply chain</strong>
+                <br />Project technical leader
+                <br />2 - 6 developers teams, India backoffice management
+                <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
+              </p>
           </details>
-        </div>
-        <div class="print-page-break-before">
+        </div class="print-page-break-before">
+        <div>
           <details>
             <summary>
               <span class="dates">2009-2010</span>
@@ -598,10 +613,10 @@
         </div>
       </div>
       <div class="print-page-break-before">
+        <hr />
         <h2 class="french">Formation</h2>
         <h2 class="english">Education</h2>
 
-        <hr />
         <ul>
           <li class="french">2015 - Certification "Java Oracle Certified Professional"</li>
           <li class="french">2006 - Certification "ASP.Net Web Developer"</li>
@@ -612,9 +627,9 @@
         </ul>
       </div>
       <div>
+        <hr />
         <h2 class="french">Compétences</h2>
         <h2 class="english">Technical Skills</h2>
-        <hr />
         <ul>
           <li class="french">Développement web : HTML, CSS, javascript (Angular, ReactiveX, Redux)</li> 
           <li class="french">Développement mobile : Ionic, Cordova.</li>
@@ -623,7 +638,7 @@
           <li class="french">Architecture applicative, technique (infrastructure), intégration, sécurité</li>
           <li class="french">Gestion de projets, méthodologie Agile (Scrum), pilotage d'équipe</li>
           <li class="french">
-            <strong>Bon niveau d'anglais</strong> grâce à de nombreuses missions en environnement anglophones
+            <strong>Bon niveau d'anglais</strong> grâce à de nombreuses missions anglophones
           </li>
           <li class="english">Web development : HTML, CSS, javascript (Angular, ReactiveX, Redux)</li> 
           <li class="english">Mobile development : Ionic, Cordova.</li>
@@ -632,34 +647,37 @@
           <li class="english">Software architecture, infrastructure, integration, security</li>
           <li class="english">Project management, Agile (Scrum), team leadership</li>
           <li class="english">
-            <strong>Fluent in english</strong> thanks to several years of works with remote english teams
+            <strong>Fluent in english</strong> thanks to several years of work with remote english teams
           </li>
         </ul>
       </div>
       <div>
+        <hr />
         <h2 class="french">Projets personnels</h2>
         <h2 class="english">Personal projects</h2>
-        <hr />
         <ul>
           <li>
             <a class="tooltip" href="https://github.com/bcaure">
-              <span class="interest french">Mes projets Github </span>
-              <span class="interest english">My Github projects </span>
               <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 2em">
+              <span class="interest french">Mes projets Github : </span>
+              <span class="interest english">My Github projects: </span>
+              github.com/bcaure
             </a>
           </li>
           <li>
             <a class="tooltip" href="https://gitlab.com/pjben">
-              <span class="interest french">Mes projets Gitlab </span>
-              <span class="interest english">My Gitlab projects </span>
               <img class="vertical-middle" src="gitlab-icon-rgb.svg" style="width: 2em">
+              <span class="interest french">Mes projets Gitlab : </span>
+              <span class="interest english">My Gitlab projects: </span>
+              gitlab.com/pjben
             </a>
           </li>
           <li>
             <a class="tooltip" href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
-              <span class="interest french">Mon activité Stackoverflow </span>
-              <span class="interest english">My Stackoverflow activity</span>
               <img class="vertical-middle" style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+              <span class="interest french">Mon activité Stackoverflow : </span>
+              <span class="interest english">My Stackoverflow activity: </span>
+              stackoverflow.com/users/3580357
             </a>            
           </li>
         </ul>
