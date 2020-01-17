@@ -9,10 +9,15 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   <style>
     /* Tips basic design */
+    * {
+      --font-header: 'Heebo', sans-serif;
+      --font-body: 'Source Sans Pro', sans-serif;
+      --font-print: 'Helvetica', 'Arial', sans-serif;
+    }
 
     body {
       max-width: 50em;
-      font-family: 'Source Sans Pro', sans-serif;
+      font-family: var(--font-body);
       line-height: 1.5;
       color: #555;
       margin: 0;
@@ -23,7 +28,7 @@
 
     h1,
     h2 {
-      font-family: 'Heebo', sans-serif;
+      font-family: var(--font-header);
     }
 
     h2 {
@@ -64,7 +69,7 @@
     .fullname {
       flex: 2;
       text-align: right;
-      font-family: 'Heebo', sans-serif;
+      font-family: var(--font-header);
     }
     .fullname, .contact {
       margin-top: 7px;
@@ -304,6 +309,7 @@
     @media print {
       body  {
         line-height: 1.3;
+        font-family: var(--font-print);
       }
       .container {
         margin-top: 0;
@@ -394,6 +400,10 @@
           <div class="fullname">
             <h1><div class="firstname">BENJAMIN</div>CAURE</h1>
             <div class="title"><span class="french"><div>DEVELOPPEUR</div>FULL-STACK</span><span class="english"><div>FULL-STACK</div>DEVELOPER</span></div>
+            <div class="title">
+              <span class="french"><div style="padding-right: 45px;">-</div>FREELANCE</span>
+              <span class="english"><div style="padding-right: 45px;">-</div>FREELANCER</span>
+            </div>
           </div>
           <img src="id.png" class="photo" />
           <div class="contact">
@@ -415,8 +425,8 @@
             <summary>
               <span class="dates french">Depuis Mai 2018</span>
               <span class="dates english">May 2018 to Present</span>
-              <span class="french">Développeur full-stack</span>
-              <span class="english">Full-stack developer</span>
+              <span class="french">Développeur full-stack / Enseignant vacataire</span>
+              <span class="english">Full-stack developer / Part-time teacher</span>
             </summary>
             <p class="french">
               Dans le cadre de la création du SI pour la Recherche, développement de la brique de gestion de projets de Recherche :
@@ -427,22 +437,14 @@
               Intégration continue Gitlab.
               Architecture Docker (Swarm).
             </p>
+            <p class="french">
+              Cours de développement Web avec React JS et Spring - 2ème année <a href="https://isima.fr">ISIMA</a>
+            </p>
             <p class="english">
               Research project management software development, based on Angular/Springboot stack.
             </p>
             <p class="english">
               Gitlab CI and Docker-based infrastructure.
-            </p>
-          </details>
-          <details open>
-            <summary>
-              <span class="dates french">Depuis Mai 2018</span>
-              <span class="dates english">May 2018 to Present</span>
-              <span class="french">Enseignant vacataire école d'ingénieur</span>
-              <span class="english">Part-time teacher</span>
-            </summary>
-            <p class="french">
-              Cours de développement Web avec React JS et Spring - 2ème année <a href="https://isima.fr">ISIMA</a>
             </p>
             <p class="english">
               Web development with React JS and Spring. <a href="https://isima.fr">ISIMA IT engineering school</a>
@@ -451,7 +453,7 @@
         </div>
         <div>
           <h3>CGI Clermont-Ferrand</h3>
-          <details>
+          <details open>
             <summary>
               <span class="dates">2016-2017</span>
               <span class="french">Développeur mobile - Architecte SI</span>
@@ -460,7 +462,8 @@
             <p class="french">
               Au sein d'une
               <strong>squad spécialisée dans le développement web et mobile</strong> Michelin, j'ai participé à la réalisation d'applications
-              B2B.
+              B2B mobiles hybrides et de leur distribution sur les différents stores.
+              Cette expérience m'a permis de développer considérablement mes compétences mobiles ainsi que l'approche marketing d'un produit.
               <br />Approche lean, développements javascript (Angular), cordova, redux.
             </p>
             <p class="english">
@@ -481,31 +484,38 @@
             <p class="english">
                 Recruitment, software craftmanship and students mentor.
               </p>
-            </details>
+            </details open>
         </div>
-        <div>
-          <details>
+        <div class="print-page-break-before">
+          <details open>
             <summary>
               <span class="dates">2013-2015</span>
               <span class="french">Développeur web - Architecte SI</span>
               <span class="english">Web developer - IT architect</span>
             </summary>
             <p class="french">
-              Au sein du
-              <strong>domaine B2B Michelin</strong>, j'ai mené la réécriture et la modernisation du portail <a href="https://bibserve.com" target="_blank">e-Commerce Europe</a>.
+              Au sein du domaine B2B Michelin, j'ai été le leader technique de la réécriture et la modernisation du portail <a href="https://bibserve.com" target="_blank">e-Commerce Europe</a>.
+            </p>
+            <p class="french">
+              J'ai lancé l'initiative de revoir l'infrastructure sous-jacente afin de migrer l'architecture Mainframe Z/OS vers x86/Linux.
+              Ce projet "Replatforming" a permis de diviser ses coûts d'infrastructure et de maintenance.
+            </p>
+            <p class="french">              
+              Suite à cette expérience réussie, on m'a confié le rôle d'<strong>architecte sur le domaine Marketing et Ventes</strong>.
+              Pour différents projets du domaine, j'ai été amené à définir les dossiers d'architecture et accompagner les équipes dans la réalisation de ces préconisations.
             </p>
             <p class="english">
               Development of the brand new <a href="https://bibserve.com" target="_blank">e-Business Europe portal</a> 
             </p>
-            <p>
+            <p class="english">
               Migration of its legacy IBM z/OS platform to new Linux Red Hat VMs.
             </p>
-            <p>
+            <p class="english">
               <strong>This project was my chance to start new mission as IS Architect</strong>: define and set-up new business solution architectures including technical platform, data integration and security.
             </p>
-          </details>
+          </details open>
         </div>
-        <div class="print-page-break-before">
+        <div>
           <details>
             <summary>
               <span class="dates">2010-2013</span>Lead developer</summary>
@@ -522,7 +532,7 @@
                 <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
               </p>
           </details>
-        </div class="print-page-break-before">
+        </div>
         <div>
           <details>
             <summary>
@@ -588,7 +598,7 @@
             </p>
           </details>
         </div>
-        <h3>Sopra Paris</h3>
+        <h3 class="print-page-break-before">Sopra Paris</h3>
         <div>
           <details>
             <summary>
@@ -619,7 +629,7 @@
           </details>
         </div>
       </div>
-      <div class="print-page-break-before">
+      <div>
         <hr />
         <h2 class="french">Formation</h2>
         <h2 class="english">Education</h2>
