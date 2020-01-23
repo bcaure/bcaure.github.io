@@ -16,6 +16,9 @@
       --font-size: 1rem;
       --font-size-xl: 2vh;
       --font-size-xxl: 2.4vh;
+      --button-bar-height: 6vh;
+      --white-page-width-phone: 100vw;
+      --white-page-width: 60vw;
     }
 
     body {
@@ -116,17 +119,19 @@
 
     .icon-bar {
       position: absolute;
-      width: 95%;
+      width: var(--white-page-width);
       display: flex;
-      justify-content: flex-end;
-      top: 1vh;
+      justify-content: center;
+      top: 0;
       z-index: 4;
+      align-items: center;
+      height: var(--button-bar-height);
     }
     .icon-bar a {
       margin-left: 20px;
     }
     .icon-bar img {
-      height: 4vh;
+      height: 80%;
     }
 
     /* Body */
@@ -134,7 +139,7 @@
     .container {
       display: flex;
       justify-content: center;
-      margin-top: 6vh;
+      margin-top: var(--button-bar-height);
       position: relative;
     }
 
@@ -153,13 +158,13 @@
 
     @media screen and (max-width: 1024px) {
       .content {
-        width: 100vw;
+        width: var(--white-page-width-phone);
       }
     }
 
     @media screen and (min-width: 1024px) {
       .content {
-        width: 60vw;
+        width: var(--white-page-width);
       }
     }
 
