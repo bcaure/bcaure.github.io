@@ -13,21 +13,25 @@
       --font-header: 'Heebo', sans-serif;
       --font-body: 'Source Sans Pro', sans-serif;
       --font-print: 'Helvetica', 'Arial', sans-serif;
-      --font-size: 1rem;
-      --font-size-xl: 2vh;
-      --font-size-xxl: 2.4vh;
+      --font-size: 1.2rem;
+      --font-size-xl: 1.5rem;
+      --font-size-xxl: 2rem;
       --button-bar-height: 6vh;
       --white-page-width-phone: 100vw;
       --white-page-width: 60vw;
+      --color-medium: #555;
+      --color-dark: #333;
+      --color-light: #AAA;
+      --color-highlight: #f57c00;
     }
 
     body {
-      max-width: 50em;
+      max-width: 100%;
       font-family: var(--font-body);
       line-height: 1.5;
-      color: #555;
+      color: var(--font-gray);
       margin: 0;
-      background-color: #1e1e1e;
+      background-color: var(--color-dark);
       background-size: 300%;
       font-size: var(--font-size);
     }
@@ -43,7 +47,7 @@
 
     h2,
     strong {
-      color: #333;
+      color: var(--color-dark);
     }
 
     hr {
@@ -60,22 +64,42 @@
       vertical-align: middle;
     }
 
-    .hide-long-text {
-      overflow: hidden;
+
+    /* Header - footer */
+    .header, .footer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+    .header > *, .footer > * {
+      width: var(--white-page-width);
     }
 
-    /* Header */
-
-    .container {
-      width: 100vw;
+    .icon-bar {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 15px;
+      top: 0;
+      z-index: 4;
+      align-items: center;
+      height: var(--button-bar-height);
     }
+    .icon-bar a {
+      margin-left: 20px;
+    }
+    .icon-bar img {
+      height: 80%;
+      background-color: white;
+      border-radius: 20px
+    }
+
 
     /* identity */
     .identity {
       display:flex;
       width:100%;
       justify-content: space-between;
-      font-size: var(--font-size-xl);
     }
     .fullname {
       flex: 2;
@@ -92,100 +116,59 @@
     }
 
     .title {
-      color: #AAA;
+      color: var(--color-light);
       line-height: 1.1;
       font-family: Source Sans Pro;
       font-weight: bold;
+      font-size: var(--font-size-xl);
+      display: flex;
     }
     .photo {
       height: 200px;
-      margin-left: 20px;
-      margin-right: 20px;
+      margin-left: 3vw;
+      margin-right: 3vw;
     }
     .contact {
       flex: 3;
-    }
-
-    /* badges */
-    .profile-badge {
-      position: absolute;
-      z-index: 3;      
-      top: -105px;
-    }
-    .LI-profile-badge {
-      width: 10vw;
-      left: 60vw;
-    }
-
-    .icon-bar {
-      position: absolute;
-      width: var(--white-page-width);
       display: flex;
-      justify-content: center;
-      top: 0;
-      z-index: 4;
-      align-items: center;
-      height: var(--button-bar-height);
-    }
-    .icon-bar a {
-      margin-left: 20px;
-    }
-    .icon-bar img {
-      height: 80%;
+      flex-direction: column;
     }
 
-    /* Body */
+    .contact-logo {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .contact-label {
+      display: flex;
+      align-items: center;
+    }
+
+    .resume {
+      text-align: justify;
+    }
+
+    /* main */
 
     .container {
       display: flex;
       justify-content: center;
-      margin-top: var(--button-bar-height);
       position: relative;
+      width: 100vw;
     }
 
-    .content {
+    .page {
       min-width: 400px;
       padding: 3rem 3rem 3rem 3rem;
       background-color: white;
       z-index: 2;
+      box-shadow: 20px 20px 20px 1px var(--color-dark);
     }
 
     a {
       text-decoration: none;
     }
 
-    /* Responsive */
-
-    @media screen and (max-width: 1024px) {
-      .content {
-        width: var(--white-page-width-phone);
-      }
-    }
-
-    @media screen and (min-width: 1024px) {
-      .content {
-        width: var(--white-page-width);
-      }
-    }
-
-    @media (min-width: 1024px) {
-
-      .experience .first-experience  p {
-        max-width: 50%;
-      }
-    }
-
-    @media screen and (max-width: 1400px) {
-      .LI-profile-badge {
-        display: none;
-      }
-    }
-
-    @media screen and (max-width: 1023px) {
-      .LI-profile-badge {
-        display: none;
-      }
-    }
 
     /* Improve details summary */
 
@@ -200,7 +183,7 @@
     }
 
     summary:hover {
-      color: #f57c00;
+      color: var(--color-highlight);
     }
 
     details[open] summary {
@@ -219,15 +202,15 @@
       list-style: none;
     }
 
-    @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+    @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) and (orientation: landscape) {
       summary:after {
         background: #fff;
         border-radius: 3px;
         border-width: 1px;
         border-style: solid;
-        border-color: #555;
+        border-color: var(--color-medium);
         content: '+';
-        color: #555;
+        color: var(--color-medium);
         float: left;
         font-weight: bold;
         padding: 0 2 8 2;
@@ -279,8 +262,8 @@
     .tooltip .tooltiptext {
       visibility: hidden;
       width: 200px;
-      background-color: white;
-      color: #555;
+      background-color: lightgray;
+      color: var(--color-medium);
       text-align: center;
       padding: 5px 0;
       border-radius: 6px;
@@ -307,7 +290,7 @@
 
 
 
-    /* Print */
+    /* Print  & responsive*/
 
     @media screen {
       .print-only {
@@ -323,7 +306,7 @@
       .container {
         margin-top: 0;
       }
-      .content {
+      .page {
         box-shadow: initial;
       }
       .container {
@@ -348,7 +331,47 @@
       size: auto;
       margin: 0mm;
     }
-    
+
+
+    /* Responsive */
+
+    @media screen and (orientation: portrait) {
+      .page {
+        width: var(--white-page-width-phone);
+      }
+      .no-mobile {
+        display: none
+      }
+
+      .contact {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .contact-logo {
+        width: 8vw;
+        margin-right: 10px;
+      }
+
+      .title {
+        flex-direction: column;
+      }
+    }
+
+    @media screen and (orientation: landscape) {
+      .page {
+        width: var(--white-page-width);
+      }
+      .mobile-only {
+        display: none
+      }
+    }
+
+    @media (orientation: landscape) {
+
+      .experience .first-experience  p {
+        max-width: 50%;
+      }
+    }    
 
     /* Video */
     .layer {
@@ -358,7 +381,7 @@
       height: 100%;
       width: 100%;
       z-index: 1;
-      background-color: rgba(50, 50, 255, 0.6);
+      background-color: var(--color-medium);
     }
     #myVideo {
       background-image: url('BeZh.gif');
@@ -377,51 +400,77 @@
 
 <body>
 
-<div class="icon-bar no-print">
-  <a id="flagLink" class="tooltip" href="index.html?lang=en">
-    <img id="flagImage" style="background-color: white; border-radius: 20px" src="united-kingdom.svg">
-    <span id="flagTooltip" class="tooltiptext">English version</span>
-  </a>
-  <a class="tooltip french" href="cv.pdf">
-    <img src="download-pdf.png">
-    <span class="tooltiptext">Télécharger en PDF</span>
-  </a>
-  <a class="tooltip english" href="cv-en.pdf">
-    <img src="download-pdf.png">
-    <span class="tooltiptext">Download as PDF</span>
-  </a>
-</div>
-<div class="layer"></div>
-  <div class="container">
-    <div class="content"><!--
-      <div  class="LI-profile-badge profile-badge no-print"
-            
-            data-version="v1" 
-            data-size="large" 
-            data-locale="fr_FR" 
-            data-type="vertical" 
-            data-theme="light" 
-            data-vanity="benjamin-caure">
-            <a class="LI-simple-link" href='https://fr.linkedin.com/in/benjamin-caure?trk=profile-badge'>Benjamin Caure</a>
-      </div>-->
+  <div class="layer"></div>
+
+  <header class="header">
+    <section class="icon-bar no-print">
+      <a class="tooltip french" href="cv.pdf">
+        <img src="download-pdf.png">
+        <span class="tooltiptext">Télécharger en PDF</span>
+      </a>
+      <a class="tooltip english" href="cv-en.pdf">
+        <img src="download-pdf.png">
+        <span class="tooltiptext">Download as PDF</span>
+      </a>
+      <div>
+        <a class="tooltip" href="index.html">
+          <img id="flagImageFr" src="france.svg">
+          <span id="flagTooltip" class="tooltiptext">Version française</span>
+        </a>
+        <a class="tooltip" href="index.html?lang=en">
+          <img id="flagImageEn" src="united-kingdom.svg">
+          <span id="flagTooltip" class="tooltiptext">English version</span>
+        </a>
+      </div>
+    </section>
+  </header>
+
+  <main class="container">
+
+    <div class="page">
       <div>
         <div class="identity">
           <div class="fullname">
             <h1><div class="firstname">BENJAMIN</div>CAURE</h1>
-            <div class="title"><span class="french"><div>DEVELOPPEUR</div>FULL-STACK</span><span class="english"><div>FULL-STACK</div>DEVELOPER</span></div>
             <div class="title">
-              <span class="french"><div style="padding-right: 45px;">-</div>FREELANCE</span>
-              <span class="english"><div style="padding-right: 45px;">-</div>FREELANCER</span>
+              <span class="french">DEVELOPPEUR</span>
+              <span class="english">FREELANCER</span>
+              <span class="french">&nbsp;&nbsp;FREELANCE</span>
+              <span class="english">&nbsp;&nbsp;DEVELOPER</span>
             </div>
           </div>
           <img src="id.png" class="photo" />
           <div class="contact">
-            <div class="hide-long-text"><a href="tel:+33771606631" class="hide-long-text">+33 (0)7 71 60 66 31</a></div>
-            <div class="hide-long-text"><a href="mailto:benjamin.caure@gmail.com" class="hide-long-text">benjamin.caure@gmail.com</a></div>
-            <div><a href="http://bcaure.github.io" class="hide-long-text">bcaure.github.io</a></div>
-            <div><a href="http://linkedin.com/in/benjamin-caure" class="hide-long-text">linkedin.com/in/benjamin-caure</a></div>
+            <a href="tel:+33771606631" class="contact-label">
+              <img class="contact-logo" src="phone.svg" />
+              <span class="no-mobile">+33 (0)7 71 60 66 31</span>
+            </a>
+            <a href="mailto:benjamin.caure@gmail.com" class="contact-label">
+              <img class="contact-logo" src="gmail.png" />
+              <span class="no-mobile">benjamin.caure@gmail.com</span>
+            </a>
+            <a href="http://bcaure.github.io" class="contact-label">
+              <img class="contact-logo" src="GitHub-Mark-64px.png" />
+              <span class="no-mobile">bcaure.github.io</span>
+            </a>
+            <a href="http://linkedin.com/in/benjamin-caure" class="contact-label">
+              <img class="contact-logo" src="linkedin-logo.png" />
+              <span class="no-mobile">linkedin.com/in/benjamin-caure</span>
+            </a>
           </div>
         </div>
+        <p class="resume french">
+          Je suis développeur <i>full-stack</i> : 
+          mon expertise porte sur la plupart des frameworks Java (10 ans d'xp) et Javascript (5 ans d'xp).<br />
+          Je développe également des applications mobiles (2 ans d'xp).<br />
+          Je suis également architecte SI, poste que j'ai occupé pendant plus de 2 ans.
+        </p>
+        <p class="resume english">
+          I'm a <i>full-stack developer</i> : 
+          I'm very experienced on java and javascript frameworks.<br />
+          I'm also familiar with mobkle app development.<br />
+          I'm also software architect, position I held for more than 2 years.
+        </p>
       </div>
       <div class="experience">
         <hr />
@@ -430,7 +479,7 @@
         <div class="first-experience">
           <h3 class="french"><a href="http://www.amue.fr/">Agence de mutualisation des Universités et Etablissements de Recherche</a></h3>
           <h3 class="english"><a href="http://www.amue.fr/">Universities and research organizations agency</a></h3>
-          <details open>
+          <details>
             <summary>
               <span class="dates french">Depuis Mai 2018</span>
               <span class="dates english">May 2018 to Present</span>
@@ -462,7 +511,7 @@
         </div>
         <div>
           <h3>CGI Clermont-Ferrand</h3>
-          <details open>
+          <details>
             <summary>
               <span class="dates">2016-2017</span>
               <span class="french">Développeur mobile - Architecte SI</span>
@@ -493,10 +542,10 @@
             <p class="english">
                 Recruitment, software craftmanship and students mentor.
               </p>
-            </details open>
+            </details>
         </div>
-        <div class="print-page-break-before">
-          <details open>
+        <div>
+          <details>
             <summary>
               <span class="dates">2013-2015</span>
               <span class="french">Développeur web - Architecte SI</span>
@@ -522,24 +571,27 @@
             <p class="english">
               <strong>This project was my chance to start new mission as IS Architect</strong>: define and set-up new business solution architectures including technical platform, data integration and security.
             </p>
-          </details open>
+          </details>
         </div>
         <div>
           <details>
             <summary>
-              <span class="dates">2010-2013</span>Lead developer</summary>
-              <p class="french">
-                <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
-                <br />Pilotage du développement de plusieurs projets au forfait.
-                <br />Management des équipes de 2 à 6 développeurs dont backoffice en Inde
-                <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
-              </p>
-              <p class="english">
-                <strong>IFCE (Ministry of Agriculture) and Michelin Supply chain</strong>
-                <br />Project technical leader
-                <br />2 - 6 developers teams, India backoffice management
-                <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
-              </p>
+              <span class="dates">2010-2013</span>
+              <span class="french">Lead developer</span>
+              <span class="english">Lead developer</span>
+            </summary>
+            <p class="french">
+              <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
+              <br />Pilotage du développement de plusieurs projets au forfait.
+              <br />Management des équipes de 2 à 6 développeurs dont backoffice en Inde
+              <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
+            </p>
+            <p class="english">
+              <strong>IFCE (Ministry of Agriculture) and Michelin Supply chain</strong>
+              <br />Project technical leader
+              <br />2 - 6 developers teams, India backoffice management
+              <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
+            </p>
           </details>
         </div>
         <div>
@@ -563,7 +615,10 @@
         <div>
           <details>
             <summary>
-              <span class="dates">2008-2009</span>Devops</summary>
+              <span class="dates">2008-2009</span>
+              <span class="french">Devops</span>
+              <span class="english">Devops</span>
+            </summary>
             <p class="french">
               <strong>Supply chain Michelin</strong>
               <br />Participation à la mise en place de l'intégration continue des applications
@@ -607,7 +662,7 @@
             </p>
           </details>
         </div>
-        <h3 class="print-page-break-before">Sopra Paris</h3>
+        <h3>Sopra Paris</h3>
         <div>
           <details>
             <summary>
@@ -638,7 +693,7 @@
           </details>
         </div>
       </div>
-      <div>
+      <div class="print-page-break-before">
         <hr />
         <h2 class="french">Formation</h2>
         <h2 class="english">Education</h2>
@@ -657,23 +712,25 @@
         <h2 class="french">Compétences</h2>
         <h2 class="english">Technical Skills</h2>
         <ul>
-          <li class="french">Développement web : HTML, CSS, javascript (Angular, ReactiveX, Redux)</li> 
-          <li class="french">Développement mobile : Ionic, Cordova.</li>
-          <li class="french">Développement backend : JEE, JSF, Spring, Oracle, MySQL</li>
-          <li class="french">Devops : Azure, Jenkins, Gitlab CI, Docker, Linux</li>
-          <li class="french">Architecture applicative, technique (infrastructure), intégration, sécurité</li>
+          <li class="french"><strong>Web</strong> : HTML, CSS, javascript (React, Angular, RxJs, Redux)</li> 
+          <li class="french"><strong>Mobile</strong> : Ionic, Cordova, Stores Android et Apple.</li>
+          <li class="french"><strong>Back</strong> : Node.js, Spring, JEE</li>
+          <li class="french"><strong>Bases de données</strong> : Oracle, Mongodb, Postgresql, Mysql</li>
+          <li class="french"><strong>Devops</strong> : Docker, Azure, Gitlab CI, Jenkins, Linux</li>
+          <li class="french"><strong>Architecture</strong> applicative, technique (infrastructure), intégration, sécurité</li>
           <li class="french">Gestion de projets, méthodologie Agile (Scrum), pilotage d'équipe</li>
           <li class="french">
-            <strong>Bon niveau d'anglais</strong> grâce à de nombreuses missions anglophones
+            <strong>Bon niveau d'anglais</strong>, grâce à de nombreuses missions anglophones
           </li>
-          <li class="english">Web development : HTML, CSS, javascript (Angular, ReactiveX, Redux)</li> 
-          <li class="english">Mobile development : Ionic, Cordova.</li>
-          <li class="english">Backend development : JEE, JSF, Spring, Oracle, MySQL</li>
-          <li class="english">Devops : Azure, Jenkins, Gitlab CI, Docker, Linux</li>
-          <li class="english">Software architecture, infrastructure, integration, security</li>
-          <li class="english">Project management, Agile (Scrum), team leadership</li>
+          <li class="english"><strong>Web</strong>: HTML, CSS, javascript (React, Angular, RxJs, Redux)</li> 
+          <li class="english"><strong>Mobile</strong>: Ionic, Cordova, Android & Apple Stores .</li>
+          <li class="english"><strong>Back</strong>: Node.js, Spring, JEE</li>
+          <li class="english"><strong>Databases</strong>: Oracle, Mongodb, Postgresql, Mysql</li>
+          <li class="english"><strong>Devops</strong>: Azure, Jenkins, Gitlab CI, Docker, Linux</li>
+          <li class="english"><strong>Architecture</strong>: software, infrastructure, integration, security</li>
+          <li class="english"><strong></strong>Project management, Agile (Scrum), team leadership</li>
           <li class="english">
-            <strong>Fluent in english</strong> thanks to several years of work with remote english teams
+            <strong>Fluent in english</strong>, thanks to several years of work with remote english teams
           </li>
         </ul>
       </div>
@@ -683,24 +740,24 @@
         <h2 class="english">Personal projects</h2>
         <ul>
           <li>
-            <a class="tooltip" href="https://github.com/bcaure">
-              <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 2em">
+            <a href="https://github.com/bcaure">
+              <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 2em" />
               <span class="interest french">Mes projets Github : </span>
               <span class="interest english">My Github projects: </span>
               github.com/bcaure
             </a>
           </li>
           <li>
-            <a class="tooltip" href="https://gitlab.com/pjben">
-              <img class="vertical-middle" src="gitlab-icon-rgb.svg" style="width: 2em">
+            <a href="https://gitlab.com/pjben">
+              <img class="vertical-middle" src="gitlab-icon-rgb.svg" style="width: 2em" />
               <span class="interest french">Mes projets Gitlab : </span>
               <span class="interest english">My Gitlab projects: </span>
               gitlab.com/pjben
             </a>
           </li>
           <li>
-            <a class="tooltip" href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
-              <img class="vertical-middle" style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded">
+            <a href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
+              <img class="vertical-middle" style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded" />
               <span class="interest french">Mon activité Stackoverflow : </span>
               <span class="interest english">My Stackoverflow activity: </span>
               stackoverflow.com/users/3580357
@@ -709,52 +766,62 @@
         </ul>
       </div>
     </div>
-  </div>
+  </main>
   <div id="myVideo" class="no-print"></div>
-  <div class="no-print" style="width: 200px;color: white">Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> 
+
+  <footer class="no-print footer">
+    <section>
+      Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> 
+      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> 
+      is licensed by 
+      <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+    </section>
+  </footer> 
+
 </body>
 <script>
+
+  // Summary / details
+  const closeDetails = () => {
+    const details = document.querySelectorAll('details');
+    Array.from(details).forEach(obj => {
+      obj.open = false;
+    });
+  }
+
   // Printing
   (function () {
-    var beforePrint = function () {
-      var details = document.querySelectorAll('details');
-      Array.from(details).forEach(function (obj, idx) {
-        obj.open = true;
-      });
-    };
-    var afterPrint = function () {
-      var details = document.querySelectorAll('details');
-      Array.from(details).forEach(function (obj, idx) {
-        obj.open = false;
-      });
-    };
 
     if (window.matchMedia) {
-      var mediaQueryList = window.matchMedia('print');
-      mediaQueryList.addListener(function (mql) {
+      const mediaQueryList = window.matchMedia('print');
+      mediaQueryList.addListener((mql) => {
         if (mql.matches) {
-          beforePrint();
-        } else {
-          afterPrint();
+          closeDetails();
+        }
+        // else {
+        //   afterPrint();
+        // }
+      });
+
+      const mediaQueryMobile = window.matchMedia('(orientation: portrait)');
+      mediaQueryList.addListener((mql) => {
+        if (mql.matches) {
+          closeDetails();
         }
       });
     }
 
-    window.onbeforeprint = beforePrint;
-    window.onafterprint = afterPrint;
+    window.onbeforeprint = closeDetails;
+    // window.onafterprint = afterPrint;
 
     // Language
     var urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('lang') === 'en') {
       document.querySelectorAll('.french').forEach(el => el.style.display = 'none');
-      document.getElementById('flagImage').src = 'france.svg';
-      document.getElementById('flagLink').href = 'index.html';
-      document.getElementById('flagTooltip').innerText = 'Version française';
+      document.getElementById('flagImageFr').style.opacity = 0.5;
     } else {
       document.querySelectorAll('.english').forEach(el => el.style.display = 'none');
-      document.getElementById('flagImage').src = 'united-kingdom.svg';
-      document.getElementById('flagLink').href = 'index.html?lang=en';
-      document.getElementById('flagTooltip').innerText = 'English version';
+      document.getElementById('flagImageEn').style.opacity = 0.5;
     }
   }());
 </script>
