@@ -87,9 +87,12 @@
     }
     .icon-bar a {
       margin-left: 20px;
+      height: calc(var(--button-bar-height) - 1vw); /* useful for ff to limit img height */
+      width: var(--button-bar-height);
     }
     .icon-bar img {
-      height: 80%;
+      height: 100%;
+      width: 100%;
       background-color: white;
       border-radius: 20px
     }
@@ -412,16 +415,14 @@
         <img src="download-pdf.png">
         <span class="tooltiptext">Download as PDF</span>
       </a>
-      <div>
-        <a class="tooltip" href="index.html">
-          <img id="flagImageFr" src="france.svg">
-          <span id="flagTooltip" class="tooltiptext">Version française</span>
-        </a>
-        <a class="tooltip" href="index.html?lang=en">
-          <img id="flagImageEn" src="united-kingdom.svg">
-          <span id="flagTooltip" class="tooltiptext">English version</span>
-        </a>
-      </div>
+      <a class="tooltip" href="index.html">
+        <img id="flagImageFr" src="france.svg">
+        <span id="flagTooltip" class="tooltiptext">Version française</span>
+      </a>
+      <a class="tooltip" href="index.html?lang=en">
+        <img id="flagImageEn" src="united-kingdom.svg">
+        <span id="flagTooltip" class="tooltiptext">English version</span>
+      </a>
     </section>
   </header>
 
