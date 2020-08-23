@@ -14,8 +14,8 @@
       --font-body: 'Source Sans Pro', sans-serif;
       --font-print: 'Helvetica', 'Arial', sans-serif;
       --font-size: 1.2rem;
-      --font-size-xl: 1.5rem;
-      --font-size-xxl: 2rem;
+      --font-size-xl: 1.5em;
+      --font-size-xxl: 2em;
       --button-bar-height: 6vh;
       --white-page-width-phone: 100vw;
       --white-page-width: 60vw;
@@ -55,8 +55,7 @@
     }
 
     a  {
-      text-decoration: none;
-      color: inherit;
+      color: var(--color-highlight);
     }
 
     .vertical-middle {
@@ -88,7 +87,7 @@
     .icon-bar a {
       margin-left: 20px;
       height: calc(var(--button-bar-height) - 1vw); /* useful for ff to limit img height */
-      width: var(--button-bar-height);
+      width: calc(var(--button-bar-height) - .8vw);
     }
     .icon-bar img {
       height: 100%;
@@ -100,8 +99,8 @@
 
     /* identity */
     .identity {
-      display:flex;
-      width:100%;
+      display: flex;
+      width: 100%;
       justify-content: space-between;
     }
     .fullname {
@@ -115,7 +114,7 @@
     .fullname h1 {
       font-weight: 600;
       font-size: var(--font-size-xxl);
-      margin: 0 0 20px 0;
+      margin: 0 0 10px 0;
     }
 
     .title {
@@ -125,14 +124,19 @@
       font-weight: bold;
       font-size: var(--font-size-xl);
       display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      border-top: 1px solid;
+      padding-top: 7px;
     }
     .photo {
       height: 200px;
       margin-left: 3vw;
       margin-right: 3vw;
+      align-self: center;
     }
     .contact {
-      flex: 3;
+      flex: 2;
       display: flex;
       flex-direction: column;
     }
@@ -145,6 +149,11 @@
     .contact-label {
       display: flex;
       align-items: center;
+    }
+
+    a.contact-label {
+      color: var(--font-gray);
+      text-decoration: none;
     }
 
     .resume {
@@ -166,10 +175,6 @@
       background-color: white;
       z-index: 2;
       box-shadow: 20px 20px 20px 1px var(--color-dark);
-    }
-
-    a {
-      text-decoration: none;
     }
 
 
@@ -205,26 +210,22 @@
       list-style: none;
     }
 
-    @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) and (orientation: landscape) {
+    @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) 
+      and (orientation: landscape) {
       summary:after {
         background: #fff;
-        border-radius: 3px;
-        border-width: 1px;
-        border-style: solid;
-        border-color: var(--color-medium);
-        content: '+';
-        color: var(--color-medium);
+        content: '˃';
+        color: var(--color-highlight);
         float: left;
         font-weight: bold;
-        padding: 0 2 8 2;
+        padding: 0 8;
         text-align: center;
         width: 15px;
         height: 15px;
       }
 
       details[open] summary:after {
-        content: '-';
-        padding: 0 2 10 2;
+        content: '˅';
       }
     }
 
@@ -285,13 +286,24 @@
       visibility: visible;
     }
 
-    /* interest */
-    .interest {
-      align-self: center;
-      margin-left: 10px;
+    /* Personal projects */
+    .personal-projects {
+      display: flex;
+      justify-content: space-evenly;
     }
-
-
+    .personal-project {
+      flex-grow: 1;
+      flex-shrink: 1;
+      margin-bottom: 20px;
+    }
+    .personal-project h3 {
+      margin-top: 0;
+    }
+    .code {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
 
     /* Print  & responsive*/
 
@@ -339,6 +351,11 @@
     /* Responsive */
 
     @media screen and (orientation: portrait) {
+
+      body {
+        font-size: 2em!important;
+      }
+
       .page {
         width: var(--white-page-width-phone);
       }
@@ -358,14 +375,21 @@
       .title {
         flex-direction: column;
       }
+
+      .personal-projects {
+        flex-direction: column;
+      }
     }
 
     @media screen and (orientation: landscape) {
-      .page {
-        width: var(--white-page-width);
-      }
       .mobile-only {
         display: none
+      }
+    }
+
+    @media screen and (min-width: 1128px) {
+      .page {
+        width: var(--white-page-width);
       }
     }
 
@@ -444,48 +468,69 @@
           <div class="contact">
             <a href="tel:+33771606631" class="contact-label">
               <img class="contact-logo" src="phone.svg" />
-              <span class="no-mobile">+33 (0)7 71 60 66 31</span>
+              <span class="no-mobile">+33 7 71 60 66 31</span>
             </a>
             <a href="mailto:benjamin.caure@gmail.com" class="contact-label">
               <img class="contact-logo" src="gmail.png" />
               <span class="no-mobile">benjamin.caure@gmail.com</span>
             </a>
-            <a href="http://bcaure.github.io" class="contact-label">
-              <img class="contact-logo" src="GitHub-Mark-64px.png" />
-              <span class="no-mobile">bcaure.github.io</span>
-            </a>
             <a href="http://linkedin.com/in/benjamin-caure" class="contact-label">
               <img class="contact-logo" src="linkedin-logo.png" />
-              <span class="no-mobile">linkedin.com/in/benjamin-caure</span>
+              <span class="no-mobile">linked.in/in/benjamin-caure</span>
             </a>
           </div>
         </div>
         <p class="resume french">
-          Je suis développeur <i>full-stack</i> : 
-          mon expertise porte sur la plupart des frameworks Java (10 ans d'xp) et Javascript (5 ans d'xp).<br />
-          Je développe également des applications mobiles (2 ans d'xp).<br />
-          Je suis également architecte SI, poste que j'ai occupé pendant plus de 2 ans.
+          Je suis développeur <i>full-stack</i> : j'ai 10 ans d'expérience Java et j'écris des articles Spring chez <a href="https://baeldung.com">Baeldung.com</a><br />
+          Depuis 5 ans, je développe principalement en Javascript (Angular et ReactJS), langage que j'enseigne en école d'ingénieur.
+          J'ai également fait du développement mobile pendant 2 ans (Ionic). 
         </p>
         <p class="resume english">
           I'm a <i>full-stack developer</i> : 
           I'm very experienced on java and javascript frameworks.<br />
-          I'm also familiar with mobkle app development.<br />
-          I'm also software architect, position I held for more than 2 years.
+          I'm also familiar with mobile app development.<br />
         </p>
+      </div>
+      <div>
+        <hr />
+        <h2 class="french">Projets personnels</h2>
+        <h2 class="english">Personal projects</h2>
+        <div class="personal-projects">
+          <div class="personal-project">
+            <a href="http://perfect-garage.org"><h3 class="interest">Perfect-garage.org</h3></a>
+            <span class="french">Site réalisé avec Gatsby, Graphql et ReactJS</span>
+            <span class="english">Gatsby/Graphql/ReactJS website</span>
+            <span class="code">
+              <a href="https://github.com/freelance-info">
+                <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 1em" />&nbsp;github.com/le-garage-ideal
+              </a>
+            </span>
+          </div>
+          <div class="personal-project">
+            <a href="https://github.com/freelance-info/freelance-compta"><h3 class="interest">Freelance Compta</h3></a>
+            <span class="french">Logiciels ReactJS et Electron</span>
+            <span class="english">Accounting/billing software for freelancers using ReactJS and Electron</span>
+            <span class="code">
+              <a href="https://github.com/freelance-info/compta">
+                <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 1em" />&nbsp;github.com/freelance-info
+              </a>
+            </span>
+          </div>
+        </div>
       </div>
       <div class="experience">
         <hr />
         <h2 class="french">Expériences</h2>
         <h2 class="english">Work Experience</h2>
         <div class="first-experience">
-          <h3 class="french"><a href="http://www.amue.fr/">Agence de mutualisation des Universités et Etablissements de Recherche</a></h3>
-          <h3 class="english"><a href="http://www.amue.fr/">Universities and research organizations agency</a></h3>
+          <h3 class="french">Agence de mutualisation des Universités et Etablissements de Recherche</h3>
+          <h3 class="english">Universities and Research Organizations Agency</h3>
           <details>
             <summary>
               <span class="dates french">Depuis Mai 2018</span>
               <span class="dates english">May 2018 to Present</span>
-              <span class="french">Développeur full-stack / Enseignant vacataire</span>
-              <span class="english">Full-stack developer / Part-time teacher</span>
+              <span class="french">Développeur (Angular + Spring) / Enseignant vacataire / Auteur blog technique</span>
+              <span class="english">Full-stack developer / Part-time teacher / Technical blog author</span>
             </summary>
             <p class="french">
               Dans le cadre de la création du SI pour la Recherche, développement de la brique de gestion de projets de Recherche :
@@ -494,7 +539,7 @@
             <p class="french">
               Frontend Angular, backend Spring.
               Intégration continue Gitlab.
-              Architecture Docker (Swarm).
+              Plateforme Docker.
             </p>
             <p class="french">
               Cours de développement Web avec React JS et Spring - 2ème année <a href="https://isima.fr">ISIMA</a>
@@ -515,7 +560,7 @@
           <details>
             <summary>
               <span class="dates">2016-2017</span>
-              <span class="french">Développeur mobile - Architecte SI</span>
+              <span class="french">Développeur mobile (Angular + Ionic) - Architecte SI</span>
               <span class="english">Mobile developer - IT architect</span>
             </summary>
             <p class="french">
@@ -549,7 +594,7 @@
           <details>
             <summary>
               <span class="dates">2013-2015</span>
-              <span class="french">Développeur web - Architecte SI</span>
+              <span class="french">Développeur JEE - Architecte SI</span>
               <span class="english">Web developer - IT architect</span>
             </summary>
             <p class="french">
@@ -578,7 +623,7 @@
           <details>
             <summary>
               <span class="dates">2010-2013</span>
-              <span class="french">Lead developer</span>
+              <span class="french">Tech leader JEE</span>
               <span class="english">Lead developer</span>
             </summary>
             <p class="french">
@@ -617,8 +662,7 @@
           <details>
             <summary>
               <span class="dates">2008-2009</span>
-              <span class="french">Devops</span>
-              <span class="english">Devops</span>
+              <span>Devops Jenkins</span>
             </summary>
             <p class="french">
               <strong>Supply chain Michelin</strong>
@@ -632,7 +676,7 @@
             </p>
           </details>
         </div>
-        <h3>Aquisystem Bordeaux</h3>
+        <h3 class="print-page-break-before">Aquisystem Bordeaux</h3>
         <div>
           <details>
             <summary>
@@ -694,7 +738,7 @@
           </details>
         </div>
       </div>
-      <div class="print-page-break-before">
+      <div>
         <hr />
         <h2 class="french">Formation</h2>
         <h2 class="english">Education</h2>
@@ -713,56 +757,20 @@
         <h2 class="french">Compétences</h2>
         <h2 class="english">Technical Skills</h2>
         <ul>
-          <li class="french"><strong>Web</strong> : HTML, CSS, javascript (React, Angular, RxJs, Redux)</li> 
-          <li class="french"><strong>Mobile</strong> : Ionic, Cordova, Stores Android et Apple.</li>
+          <li class="french"><strong>Web</strong> : HTML, CSS, javascript (ReactJS, Angular, RxJs, Redux)</li> 
           <li class="french"><strong>Back</strong> : Node.js, Spring, JEE</li>
-          <li class="french"><strong>Bases de données</strong> : Oracle, Mongodb, Postgresql, Mysql</li>
-          <li class="french"><strong>Devops</strong> : Docker, Azure, Gitlab CI, Jenkins, Linux</li>
-          <li class="french"><strong>Architecture</strong> applicative, technique (infrastructure), intégration, sécurité</li>
-          <li class="french">Gestion de projets, méthodologie Agile (Scrum), pilotage d'équipe</li>
+          <li class="french"><strong>Mobile</strong> : Ionic.</li>
+          <li class="french"><strong>Méthodologies</strong> : Agile/Lean, team leader</li>
           <li class="french">
             <strong>Bon niveau d'anglais</strong>, grâce à de nombreuses missions anglophones
           </li>
           <li class="english"><strong>Web</strong>: HTML, CSS, javascript (React, Angular, RxJs, Redux)</li> 
-          <li class="english"><strong>Mobile</strong>: Ionic, Cordova, Android & Apple Stores .</li>
           <li class="english"><strong>Back</strong>: Node.js, Spring, JEE</li>
-          <li class="english"><strong>Databases</strong>: Oracle, Mongodb, Postgresql, Mysql</li>
-          <li class="english"><strong>Devops</strong>: Azure, Jenkins, Gitlab CI, Docker, Linux</li>
-          <li class="english"><strong>Architecture</strong>: software, infrastructure, integration, security</li>
-          <li class="english"><strong></strong>Project management, Agile (Scrum), team leadership</li>
+          <li class="english"><strong>Mobile</strong>: Ionic.</li>
+          <li class="english"><strong>Devops</strong>: Gitlab CI, Docker</li>
+          <li class="english"><strong>Management</strong>: Agile/Lean, team leader</li>
           <li class="english">
             <strong>Fluent in english</strong>, thanks to several years of work with remote english teams
-          </li>
-        </ul>
-      </div>
-      <div>
-        <hr />
-        <h2 class="french">Projets personnels</h2>
-        <h2 class="english">Personal projects</h2>
-        <ul>
-          <li>
-            <a href="https://github.com/bcaure">
-              <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 2em" />
-              <span class="interest french">Mes projets Github : </span>
-              <span class="interest english">My Github projects: </span>
-              github.com/bcaure
-            </a>
-          </li>
-          <li>
-            <a href="https://gitlab.com/pjben">
-              <img class="vertical-middle" src="gitlab-icon-rgb.svg" style="width: 2em" />
-              <span class="interest french">Mes projets Gitlab : </span>
-              <span class="interest english">My Gitlab projects: </span>
-              gitlab.com/pjben
-            </a>
-          </li>
-          <li>
-            <a href="https://stackoverflow.com/users/3580357/benjamin-caure?tab=profile">
-              <img class="vertical-middle" style="width: 2em; background-color: white" src="https://cdn.sstatic.net/Sites/stackoverflow/img/apple-touch-icon@2.png?v=73d79a89bded" />
-              <span class="interest french">Mon activité Stackoverflow : </span>
-              <span class="interest english">My Stackoverflow activity: </span>
-              stackoverflow.com/users/3580357
-            </a>            
           </li>
         </ul>
       </div>
