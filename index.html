@@ -63,6 +63,13 @@
       vertical-align: middle;
     }
 
+    .flex {
+      display: flex;
+    }
+
+    .flex1 {
+      flex: 1;
+    }
 
     /* Header - footer */
     .header, .footer {
@@ -142,7 +149,7 @@
     }
 
     .contact-logo {
-      width: 20px;
+      width: 30px;
       margin-right: 10px;
     }
 
@@ -340,6 +347,9 @@
       .no-print {
         display: none;
       }
+      .mobile-only {
+        display: none
+      }
     }
     
     @page { /* remove date and file name header */
@@ -466,30 +476,37 @@
           </div>
           <img src="id.png" class="photo" />
           <div class="contact">
-            <a href="tel:+33771606631" class="contact-label">
-              <img class="contact-logo" src="phone.svg" />
-              <span class="no-mobile">+33 7 71 60 66 31</span>
-            </a>
-            <a href="mailto:benjamin.caure@gmail.com" class="contact-label">
-              <img class="contact-logo" src="gmail.png" />
-              <span class="no-mobile">benjamin.caure@gmail.com</span>
-            </a>
-            <a href="http://linkedin.com/in/benjamin-caure" class="contact-label">
-              <img class="contact-logo" src="linkedin-logo.png" />
-              <span class="no-mobile">linked.in/in/benjamin-caure</span>
-            </a>
+            <div class="contact-label">
+              <img class="contact-logo no-mobile" src="phone.png" />
+              <a class="no-mobile" href="tel:+33771606631">+33 7 71 60 66 31</a>
+              <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="phone.svg" /></a>
+            </div>
+            <div class="contact-label">
+              <img class="contact-logo no-mobile" src="mail.png" />
+              <a href="mailto:benjamin.caure@gmail.com" class="no-mobile">benjamin.caure@gmail.com</a>
+              <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="gmail.png" /></a>
+            </div>
+            <div class="contact-label">
+              <img class="contact-logo no-mobile" src="network.png" />
+              <a href="https://linkedin.com/in/benjamin-caure" class="no-mobile">linked.in/in/benjamin-caure</a>
+              <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="linkedin-logo.png" /></a>
+            </div>
+            <div class="contact-label no-mobile">
+              <img class="contact-logo" src="cv.png" />
+              <span class="french"><a href="https://bcaure.github.io">bcaure.github.io</a></span>
+              <span class="english"><a href="https://bcaure.github.io">bcaure.github.io</a></span>
+            </div>
           </div>
         </div>
         <p class="resume french">
-          Je suis développeur <i>full-stack</i> : j'ai 10 ans d'expérience Java et j'écris des articles pour <a href="https://www.baeldung.com/author/benjamincaure/">Baeldung.com</a><br />
-          Depuis 5 ans, je développe principalement en Javascript (Angular et ReactJS), langage que j'enseigne en école d'ingénieur.
-          J'ai également fait du développement mobile hybride pendant 2 ans (Ionic). 
+          Développeur sur les écosystèmes Java (10+ XP) et Javascript et Mobile (5+ XP),
+          mon ardeur pour apprendre est toujours intacte. Mes prochaines cibles : VueJS, React Native, Python.<br>
+          Avec l'Architecture Logicielle en activité rémanente.
         </p>
         <p class="resume english">
-          I'm a <i>full-stack developer</i> : 
-          I'm very experienced on Java and I'm writing articles at <a href="https://www.baeldung.com/author/benjamincaure/">Baeldung.com</a>. 
-          Since 5 years I develop mainly with Javascript (Angular et ReactJS), language that I teach in Software Engineering School.<br />
-          I'm also experienced in hybrid mobile app development (2 years).<br />
+          Enthusiastic Fullstack Developer with 10+ years of broad experience in Java and Javascript areas,
+          with willingness to master every front-end and backend tech.<br>
+          Goal Oriented Software Architect.
         </p>
       </div>
       <div>
@@ -524,7 +541,7 @@
         <h2 class="french">Expériences</h2>
         <h2 class="english">Work Experience</h2>
         <div class="first-experience">
-          <h3 class="french">Agence de mutualisation des Universités et Etablissements de Recherche</h3>
+          <h3 class="french">AMUE Clermont-Ferrand</h3>
           <h3 class="english">Universities and Research Organizations Agency</h3>
           <details>
             <summary>
@@ -535,34 +552,39 @@
             </summary>
             <p class="french">
               Dans le cadre de la création du SI pour la Recherche, développement de la brique de gestion de projets de Recherche :
-              <a href="www.amue.fr/recherche/logiciels/caplab/">www.amue.fr/recherche/logiciels/caplab</a>
+              <a href="www.amue.fr/recherche/logiciels/caplab/">www.amue.fr/recherche/logiciels/caplab</a><br />
+              Stack Angular + Spring. Plateforme Gitlab + Docker.
             </p>
             <p class="french">
-              Frontend Angular, backend Spring.
-              Intégration continue Gitlab.
-              Plateforme Docker.
+              Cours de développement Web avec React JS et Spring<br />
+              en 2ème année d'école d'ingénieur <a href="https://isima.fr">ISIMA</a>
             </p>
             <p class="french">
-              Cours de développement Web avec React JS et Spring - 2ème année <a href="https://isima.fr">ISIMA</a>
+              Auteur d'articles techniques chez Baeldung.com.<br />
+              Voir mes articles ici :
+              <a href="https://www.baeldung.com/author/benjamincaure/">baeldung.com/author/benjamincaure</a>
             </p>
             <p class="english">
-              Research project management software development, based on Angular/Springboot stack.
+              Research project management software development, based on Angular/Springboot stack.<br />
+              Gitlab CI and Docker-based platorm.
             </p>
             <p class="english">
-              Gitlab CI and Docker-based infrastructure.
+              Part-time teacher on Web development (React JS and Spring).<br />
+              <a href="https://isima.fr">ISIMA IT engineering school</a>
             </p>
             <p class="english">
-              Web development with React JS and Spring. <a href="https://isima.fr">ISIMA IT engineering school</a>
+              Technical articles author at Baeldung.com.<br />
+              See my articles here: <a href="https://www.baeldung.com/author/benjamincaure/">baeldung.com/author/benjamincaure</a>
             </p>
           </details>
         </div>
-        <div>
+        <div class="print-page-break-before">
           <h3>CGI Clermont-Ferrand</h3>
           <details>
             <summary>
               <span class="dates">2016-2017</span>
               <span class="french">Développeur mobile (Angular + Ionic) - Architecte SI</span>
-              <span class="english">Mobile developer - IT architect</span>
+              <span class="english">Mobile developer - Software Architect</span>
             </summary>
             <p class="french">
               Au sein d'une
@@ -595,8 +617,8 @@
           <details>
             <summary>
               <span class="dates">2013-2015</span>
-              <span class="french">Développeur JEE - Architecte SI</span>
-              <span class="english">Web developer - IT architect</span>
+              <span class="french">Développeur Java - Architecte SI</span>
+              <span class="english">Java Developer - Software Architect</span>
             </summary>
             <p class="french">
               Au sein du domaine B2B Michelin, j'ai été le leader technique de la réécriture et la modernisation du portail <a href="https://bibserve.com" target="_blank">e-Commerce Europe</a>.
@@ -624,8 +646,8 @@
           <details>
             <summary>
               <span class="dates">2010-2013</span>
-              <span class="french">Tech leader JEE</span>
-              <span class="english">Lead developer</span>
+              <span class="french">Tech Leader Java</span>
+              <span class="english">Java Lead Developer</span>
             </summary>
             <p class="french">
               <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
@@ -645,7 +667,7 @@
           <details>
             <summary>
               <span class="dates">2009-2010</span>
-              <span class="french">Analyste fonctionnel</span>
+              <span class="french">Analyste Fonctionnel</span>
               <span class="english">Functional Analyst</span></summary>
             <p class="french">
               <strong>Supply chain Michelin</strong>
@@ -677,13 +699,13 @@
             </p>
           </details>
         </div>
-        <h3 class="print-page-break-before">Aquisystem Bordeaux</h3>
+        <h3>Aquisystem Bordeaux</h3>
         <div>
           <details>
             <summary>
               <span class="dates">2006-2008</span>
-              <span class="french">Développeur d'applications Java</span>
-              <span class="english">Java developer</span></summary>
+              <span class="french">Développeur Java</span>
+              <span class="english">Java Developer</span></summary>
             <p class="french">
               <strong>Crédit Agricole</strong>
               <br />Participation à la réalisation du projet GED (Gestion Electronique de Documents)
@@ -713,8 +735,8 @@
           <details>
             <summary>
               <span class="dates">2005-2006</span>
-              <span class="french">Développeur d'applications .Net</span>
-              <span class="english">.Net developer</span></summary>
+              <span class="french">Développeur .Net</span>
+              <span class="english">.Net Developer</span></summary>
             </summary>
             <p class="french">
               <strong>Groupe Nestlé</strong>
@@ -758,20 +780,21 @@
         <h2 class="french">Compétences</h2>
         <h2 class="english">Technical Skills</h2>
         <ul>
-          <li class="french"><strong>Web</strong> : HTML, CSS, javascript (ReactJS, Angular, RxJs, Redux)</li> 
-          <li class="french"><strong>Back</strong> : Node.js, Spring, JEE</li>
-          <li class="french"><strong>Mobile</strong> : Ionic.</li>
-          <li class="french"><strong>Méthodologies</strong> : Agile/Lean, team leader</li>
-          <li class="french">
-            <strong>Bon niveau d'anglais</strong>, grâce à de nombreuses missions anglophones
+          <li class="french flex">
+            <div class="flex1"><strong>Front-end</strong> : HTML, CSS, Javascript (ReactJS, Angular, RxJs, Redux), Mobile (Ionic)</div>
+            <div class="flex1"><strong>Back-end</strong> : Node.js, Spring, JEE, Gitlab CI, Docker</div>
           </li>
-          <li class="english"><strong>Web</strong>: HTML, CSS, javascript (React, Angular, RxJs, Redux)</li> 
-          <li class="english"><strong>Back</strong>: Node.js, Spring, JEE</li>
-          <li class="english"><strong>Mobile</strong>: Ionic.</li>
-          <li class="english"><strong>Devops</strong>: Gitlab CI, Docker</li>
-          <li class="english"><strong>Management</strong>: Agile/Lean, team leader</li>
-          <li class="english">
-            <strong>Fluent in english</strong>, thanks to several years of work with remote english teams
+          <li class="french flex">
+            <div class="flex1"><strong>Méthodologies</strong> : Agile/Lean, Team Leader (5 ans exp.)</div>
+            <div class="flex1"><strong>Bon niveau d'anglais</strong>, grâce à de nombreuses missions anglophones</div>
+          </li>
+          <li class="english flex">
+            <div class="flex1"><strong>Front-end</strong>: HTML, CSS, Javascript (React, Angular, RxJs, Redux), Mobile (Ionic)</div>
+            <div class="flex1"><strong>Back-end</strong>: Node.js, Spring, JEE, Gitlab CI, Docker</div>
+          </li>
+          <li class="english flex">
+            <div class="flex1"><strong>Management</strong>: Agile/Lean, Team Leader (5 ans exp.)</div>
+            <div class="flex1"><strong>Fluent in english</strong>, thanks to several years of work with remote english teams</div>
           </li>
         </ul>
       </div>
@@ -792,11 +815,8 @@
 <script>
 
   // Summary / details
-  const closeDetails = () => {
-    const details = document.querySelectorAll('details');
-    Array.from(details).forEach(obj => {
-      obj.open = false;
-    });
+  const openDetails = () => {
+    document.querySelector('details').open = true;
   }
 
   // Printing
@@ -806,7 +826,7 @@
       const mediaQueryList = window.matchMedia('print');
       mediaQueryList.addListener((mql) => {
         if (mql.matches) {
-          closeDetails();
+          openDetails();
         }
         // else {
         //   afterPrint();
@@ -816,12 +836,12 @@
       const mediaQueryMobile = window.matchMedia('(orientation: portrait)');
       mediaQueryList.addListener((mql) => {
         if (mql.matches) {
-          closeDetails();
+          openDetails();
         }
       });
     }
 
-    window.onbeforeprint = closeDetails;
+    window.onbeforeprint = openDetails;
     // window.onafterprint = afterPrint;
 
     // Language
