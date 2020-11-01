@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -5,7 +6,7 @@
   <title>Benjamin Caure</title>
   <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
   <link rel="icon" href="favicon.png">
-  <link href="https://fonts.googleapis.com/css?family=Heebo:700&display=swap" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Heebo:700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
   <style>
     /* Tips basic design */
@@ -16,6 +17,7 @@
       --font-size: 1.2rem;
       --font-size-xl: 1.5em;
       --font-size-xxl: 2em;
+      --font-size-print: 1em;
       --button-bar-height: 6vh;
       --white-page-width-phone: 100vw;
       --white-page-width: 60vw;
@@ -54,12 +56,12 @@
       margin: 1rem 0 0 0;
     }
 
-    a  {
+    a {
       color: var(--color-highlight);
     }
 
     .vertical-middle {
-      display:inline-block;
+      display: inline-block;
       vertical-align: middle;
     }
 
@@ -72,13 +74,16 @@
     }
 
     /* Header - footer */
-    .header, .footer {
+    .header,
+    .footer {
       width: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
     }
-    .header > *, .footer > * {
+
+    .header>*,
+    .footer>* {
       width: var(--white-page-width);
     }
 
@@ -91,11 +96,14 @@
       align-items: center;
       height: var(--button-bar-height);
     }
+
     .icon-bar a {
       margin-left: 20px;
-      height: calc(var(--button-bar-height) - 1vw); /* useful for ff to limit img height */
+      height: calc(var(--button-bar-height) - 1vw);
+      /* useful for ff to limit img height */
       width: calc(var(--button-bar-height) - .8vw);
     }
+
     .icon-bar img {
       height: 100%;
       width: 100%;
@@ -110,14 +118,18 @@
       width: 100%;
       justify-content: space-between;
     }
+
     .fullname {
       flex: 2;
       text-align: right;
       font-family: var(--font-header);
     }
-    .fullname, .contact {
+
+    .fullname,
+    .contact {
       margin-top: 7px;
     }
+
     .fullname h1 {
       font-weight: 600;
       font-size: var(--font-size-xxl);
@@ -136,12 +148,14 @@
       border-top: 1px solid;
       padding-top: 7px;
     }
+
     .photo {
       height: 200px;
       margin-left: 3vw;
       margin-right: 3vw;
       align-self: center;
     }
+
     .contact {
       flex: 2;
       display: flex;
@@ -190,7 +204,8 @@
     summary {
       outline: none;
       cursor: pointer;
-      font-size: 1rem; /* Size of bullets */
+      font-size: 1rem;
+      /* Size of bullets */
     }
 
     summary span {
@@ -213,12 +228,12 @@
     summary::-webkit-details-marker {
       display: none
     }
-    details > summary {
+
+    details>summary {
       list-style: none;
     }
 
-    @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) 
-      and (orientation: landscape) {
+    @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) and (orientation: landscape) {
       summary:after {
         background: #fff;
         content: '˃';
@@ -295,22 +310,26 @@
 
     /* Personal projects */
     .personal-projects {
-      display: flex;
-      justify-content: space-evenly;
+      display: grid;
+      grid-template-columns: 50% 50%;
     }
+
     .personal-project {
       flex-grow: 1;
       flex-shrink: 1;
       margin-bottom: 20px;
     }
+
     .personal-project h3 {
       margin-top: 0;
     }
+
     .code {
       display: flex;
       align-items: center;
       width: 100%;
     }
+
     .opensource {
       margin-bottom: 0px;
     }
@@ -318,44 +337,73 @@
     /* Print  & responsive*/
 
     @media screen {
-      .print-only {
+      .print-only, .print-only-inline, .print-only-flex {
         display: none;
       }
     }
 
     @media print {
-      body  {
+      body {
         line-height: 1.3;
         font-family: var(--font-print);
+        font-size: var(--font-size-print)!important;
       }
+
+      summary span {
+        font-size: var(--font-size-print)!important;
+      }
+
       .container {
         margin-top: 0;
       }
+
       .page {
         box-shadow: initial;
       }
+
       .container {
         width: 100%;
       }
+
       .print-only {
         display: block;
       }
+
+      .print-only-inline {
+        display: inline;
+      }
+
+      .print-only-flex {
+        display: flex;
+      }
+
       .print-page-break-before {
         page-break-before: always;
         margin-top: 4em;
       }
+
       .LI-profile-badge {
         top: 0px;
       }
+
       .no-print {
         display: none;
       }
+
       .mobile-only {
-        display: none
+        display: none;
+      }
+
+      .photo {
+        height: 130px;
+        margin-left: 3vw;
+        margin-right: 3vw;
+        align-self: center;
       }
     }
-    
-    @page { /* remove date and file name header */
+
+    @page {
+      /* remove date and file name header */
       size: auto;
       margin: 0mm;
     }
@@ -366,12 +414,13 @@
     @media screen and (orientation: portrait) {
 
       body {
-        font-size: 2em!important;
+        font-size: 2em !important;
       }
 
       .page {
         width: var(--white-page-width-phone);
       }
+
       .no-mobile {
         display: none
       }
@@ -380,6 +429,7 @@
         flex-direction: row;
         flex-wrap: wrap;
       }
+
       .contact-logo {
         width: 8vw;
         margin-right: 10px;
@@ -390,6 +440,8 @@
       }
 
       .personal-projects {
+        display: flex;
+        justify-content: space-evenly;
         flex-direction: column;
       }
     }
@@ -408,10 +460,10 @@
 
     @media (orientation: landscape) {
 
-      .experience .first-experience  p {
+      .experience .first-experience p {
         max-width: 50%;
       }
-    }    
+    }
 
     /* Video */
     .layer {
@@ -423,6 +475,7 @@
       z-index: 1;
       background-color: var(--color-medium);
     }
+
     #myVideo {
       background-image: url('BeZh.gif');
       background-repeat: repeat;
@@ -434,7 +487,6 @@
       min-height: 110%;
       z-index: -1;
     }
-
   </style>
 </head>
 
@@ -496,18 +548,24 @@
               <a href="https://linkedin.com/in/benjamin-caure" class="no-mobile">linked.in/in/benjamin-caure</a>
               <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="linkedin-logo.png" /></a>
             </div>
-            <div class="contact-label no-mobile">
+            <div class="contact-label print-only-flex">
               <img class="contact-logo" src="cv.png" />
-              <span class="french"><a href="https://bcaure.github.io">bcaure.github.io</a></span>
-              <span class="english"><a href="https://bcaure.github.io">bcaure.github.io</a></span>
+              <span class="french">CV détaillé :&nbsp;</span>
+              <span class="english">Full Resume at&nbsp;</span>
+              <span><a href="https://bcaure.github.io">bcaure.github.io</a></span>
+            </div>
+            <div class="contact-label no-mobile no-print">
+              <img class="contact-logo" src="GitHub-Mark-64px.png" />
+              <span class="french"><a href="https://github.com/bcaure">Mon Github</a></span>
+              <span class="english"><a href="https://github.com/bcaure">My Github</a></span>
             </div>
           </div>
         </div>
         <p class="resume french">
-          Développeur sur les écosystèmes Java (10+ XP), Javascript et Mobile (4+ XP), mon envie d'apprendre est toujours
-          intacte.<br>
-          Mes prochains objectifs : découvrir VueJS, React Native et l'analyse de données en masse avec Python.<br>
-          Avec l'Architecture Logicielle en activité rémanente.<br>
+          Développeur fullstack, mon expertise porte sur les backends Java et Nodejs, les frontends Javascript et le
+          développement mobile hybride.<br>
+          Mon envie d'apprendre est toujours intacte! Prochains objectifs : VueJS et Python<br>
+          Je suis également architecte technique avec 2 ans d'exp. et j'ai de solides compétences DEVOPS et Docker.<br>
         </p>
         <p class="resume english">
           Enthusiastic Fullstack Developer with 10+ years of broad experience in Java and Javascript areas,
@@ -517,16 +575,55 @@
       </div>
       <div>
         <hr />
-        <h2 class="french">Mes Projets Open-Source</h2>
-        <h2 class="english">My Open-Source Projects</h2>
-        <p class="french">Jugez-moi sur mon code 😉</p>
+        <h2 class="french">Projets Open Sources</h2>
+        <h2 class="english">My Open Source Projects</h2>
         <p class="english">Don't hesitate to check the code 😉</p>
         <div class="personal-projects">
           <div class="personal-project">
-            <a href="http://perfect-garage.org">
-              <h3 class="opensource">Perfect-garage.org</h3>
-            </a>
-            <div>Gatsby/Graphql/ReactJS</div>
+            <h3 class="french opensource">Création du logiciel <a
+                href="https://github.com/freelance-info/freelance-compta">Freelance Compta</a></h3>
+            <h3 class="english opensource"><a href="https://github.com/freelance-info/freelance-compta">Freelance
+                Compta</a>
+              Software</h3>
+            <div>ReactJS / Electron</div>
+            <span class="code">
+              <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 1em" />&nbsp;
+              <a href="https://github.com/freelance-info/compta">
+                github.com/freelance-info
+              </a>
+            </span>
+            </div>
+            <div class="personal-project">
+              <h3 class="french opensource">Auteur chez <a href="http://isima.fr">Baeldung.com</a></h3>
+              <h3 class="english opensource">Tech Blog Author at <a href="http://isima.fr">Baeldung.com</a></h3>
+              <div class="french">Consultez mes articles Java et Spring :</div>
+              <div class="english">Check my Java & Spring articles:</div>
+              <span class="code">
+                <a href="https://www.baeldung.com/author/benjamincaure/">
+                  www.baeldung.com/author/benjamincaure
+                </a>
+              </span>
+            </div>
+            <div class="personal-project">
+              <h3 class="french opensource">Enseignant vacataire <a href="http://isima.fr">ISIMA</a></h3>
+              <h3 class="english opensource">Javascript / ReactJS Teacher</h3>
+              <div class="french">Mes cours de Javascript et ReactJS : </div>
+              <div class="english">Part-time activity</div>
+              <span class="code">
+                <img class="vertical-middle" src="GitHub-Mark-64px.png" style="max-width: 1em;" />&nbsp;
+                <a href="https://gitlab.isima.fr/bcaure/sports-cars">
+                  gitlab.isima.fr/bcaure/sports-cars
+              </a>
+            </span>
+            </div>
+            <div class="personal-project">
+              <h3 class="french opensource">Création du site <a
+                  href="http://perfect-garage.org/?car1=5e4c011d1050a45c707d9e39&car2=5e4c011d1050a45c707d9fe4&edit=3&car=5e4c011e1050a45c707da2fa">Perfect-garage.org</a>
+              </h3>
+              <h3 class="english opensource">Website <a
+                  href="http://perfect-garage.org/?car1=5e4c011d1050a45c707d9e39&car2=5e4c011d1050a45c707d9fe4&edit=3&car=5e4c011e1050a45c707da2fa">Perfect-garage.org</a>
+              </h3>
+              <div>Gatsby / Graphql / ReactJS</div>
             <span class="code">
               <img class="vertical-middle" src="GitHub-Mark-64px.png" style="max-width: 1em;" />&nbsp;
               <a href="https://github.com/freelance-info">
@@ -534,342 +631,323 @@
               </a>
             </span>
           </div>
-          <div class="personal-project">
-            <a href="https://github.com/freelance-info/freelance-compta">
-              <h3 class="opensource">Freelance Compta</h3>
-            </a>
-            <div>ReactJS/Electron</div>
-            <span class="code">
-              <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 1em" />&nbsp;
-              <a href="https://github.com/freelance-info/compta">
-                github.com/freelance-info
-              </a>
-            </span>
+        </div>
+
+        <div class="experience">
+          <hr />
+          <h2 class="french">Expérience Professionelle</h2>
+          <h2 class="english">My Work Experience</h2>
+          <div class="first-experience">
+            <h3 class="french no-print">AMUE Clermont-Ferrand</h3>
+            <h3 class="english no-print">Universities and Research Organizations Agency</h3>
+            <details>
+              <summary>
+                <span class="dates french">Depuis Mai 2018</span>
+                <span class="dates english">May 2018 to Present</span>
+                <span class="french">Développeur Angular-Spring</span>
+                <span class="english">Full-stack developer</span>
+                <span class="french print-only-inline"> - AMUE (Enseignement Sup. et Recherche)</span>
+                <span class="english print-only-inline"> - Minister of Education and Research</span>
+              </summary>
+              <p class="french">
+                Dans le cadre de la création du SI pour la Recherche, développement de la brique de gestion de projets
+                de Recherche :
+                <a href="www.amue.fr/recherche/logiciels/caplab/">www.amue.fr/recherche/logiciels/caplab</a><br />
+                Stack Angular 10+, Spring Boot 2, Postgres, Gitlab CI, Docker.
+                Tests: Karma, Protractor, Mockito
+              </p>
+              <p class="english">
+                Help Scientific Researcher to collaborate and manage their teams in a centralized application called
+                CAPLAB.<br />
+                My achievements: automate 80% of manual tests, unify developers around the devops approach, and spread
+                the peer review
+                practices<br />
+                Angular 10+, Springboot 2, Postgres, Gitlab CI and Docker-based platorm.
+                Tests: Karma, Protractor, Mockito
+              </p>
+            </details>
           </div>
-        </div>
-      </div>
-      <div class="experience">
-        <hr />
-        <h2 class="french">Expériences</h2>
-        <h2 class="english">Work Experience</h2>
-        <div class="first-experience">
-          <h3 class="french">AMUE Clermont-Ferrand</h3>
-          <h3 class="english">Universities and Research Organizations Agency</h3>
-          <details>
-            <summary>
-              <span class="dates french">Depuis Mai 2018</span>
-              <span class="dates english">May 2018 to Present</span>
-              <span class="french">Développeur (Angular + Spring) / Enseignant vacataire / Auteur blog technique</span>
-              <span class="english">Full-stack developer / Part-time teacher / Tech blog author</span>
-            </summary>
-            <p class="french">
-              Dans le cadre de la création du SI pour la Recherche, développement de la brique de gestion de projets de Recherche :
-              <a href="www.amue.fr/recherche/logiciels/caplab/">www.amue.fr/recherche/logiciels/caplab</a><br />
-              Stack Angular + Spring. Plateforme Gitlab + Docker.
-            </p>
-            <p class="french">
-              Cours de développement Web avec React JS et Spring<br />
-              en 2ème année d'école d'ingénieur <a href="https://isima.fr">ISIMA</a>
-            </p>
-            <p class="french">
-              Auteur d'articles techniques chez Baeldung.com.<br />
-              Voir mes articles ici :
-              <a href="https://www.baeldung.com/author/benjamincaure/">baeldung.com/author/benjamincaure</a>
-            </p>
-            <p class="english">
-              Help Scientific Researcher to collaborate and manage their teams in a centralized application called CAPLAB.<br />
-              My achievements: automate 80% of manual tests, unify developers around the devops approach, and spread the peer review
-              practices<br />
-              Angular/Springboot stack, Gitlab CI and Docker-based platorm.          
-            </p>
-            <p class="english">
-              Part-time teacher on Web development (React JS and Spring).<br />
-              <a href="https://isima.fr">ISIMA IT engineering school</a>
-            </p>
-            <p class="english">
-              Technical articles author at Baeldung.com.<br />
-              See my articles here: <a href="https://www.baeldung.com/author/benjamincaure/">baeldung.com/author/benjamincaure</a>
-            </p>
-          </details>
-        </div>
-        <div class="print-page-break-before">
-          <h3>CGI Clermont-Ferrand</h3>
-          <details>
-            <summary>
-              <span class="dates">2016-2017</span>
-              <span class="french">Développeur mobile (Angular + Ionic) - Architecte SI</span>
-              <span class="english">Mobile developer - Software Architect</span>
-            </summary>
-            <p class="french">
-              Au sein d'une
-              <strong>squad spécialisée dans le développement web et mobile</strong> Michelin, j'ai participé à la réalisation
-              d'applications
-              B2B mobiles hybrides et de leur distribution sur les différents stores.
-              Cette expérience m'a permis de développer considérablement mes compétences mobiles ainsi que l'approche marketing d'un
-              produit.
-              <br />
-              Approche lean, développements Ionic, Redux.
-            </p>
-            <p class="english">
-              As a small dev team, we built a <strong>mobile app</strong> that turn a standard mobile phone into a multipurpose data
-              collecting tool.<br />
-              Michelin experts are now using it at every Moto GP and Le Mans. <br />
-              We were with them in the races to fix bugs and improve UX, stressful but so interesting experience!<br />
-              Stack: Ionic, Redux, Groovy backend
-            </p>
-            <p class="french">
-              J'ai continué d'intervenir en tant qu'architecte SI sur des projets de refonte du CRM Michelin avec Salesforce.com.
-            </p>
-            <p class="english">
-              Technical architecture on B2B applications integration with Salesforce.com CRM.
-            </p>
-            <p class="french">
-              Je participe également à plusieurs initiatives pour le recrutement, la montée en compétences de développeurs et
-              l'amélioration
-              continue de la filère technique de mon entreprise.
-            </p>
-            <p class="english">
+          <div>
+            <h3 class="no-print">CGI Clermont-Ferrand</h3>
+            <details>
+              <summary>
+                <span class="dates">2016-2017</span>
+                <span class="french">Développeur mobile (Angular + Ionic) - Architecte SI</span>
+                <span class="english">Mobile developer - Software Architect</span>
+                <span class="print-only-inline"> - Michelin</span>
+              </summary>
+              <p class="french">
+                Au sein d'une
+                <strong>squad spécialisée dans le développement web et mobile</strong> Michelin, j'ai participé à la
+                réalisation
+                d'applications
+                B2B mobiles hybrides et de leur distribution sur les différents stores.
+                Cette expérience m'a permis de développer considérablement mes compétences mobiles ainsi que
+                l'approche marketing d'un
+                produit.
+                <br />
+                Approche lean, développements Ionic 3+, Redux (NgRx), Grails 2, MySQL.
+              </p>
+              <p class="english">
+                As a small dev team, we built a <strong>mobile app</strong> that turn a standard mobile phone into a
+                multipurpose data
+                collecting tool.<br />
+                Michelin experts are now using it at every Moto GP and Le Mans. <br />
+                We were with them in the races to fix bugs and improve UX, stressful but so interesting
+                experience!<br />
+                Stack: Ionic, Redux, Groovy backend
+              </p>
+              <p class="french">
+                J'ai continué d'intervenir en tant qu'architecte SI sur des projets de refonte du CRM Michelin avec
+                Salesforce.com.
+              </p>
+              <p class="english">
+                Technical architecture on B2B applications integration with Salesforce.com CRM.
+              </p>
+              <p class="french">
+                Je participe également à plusieurs initiatives pour le recrutement, la montée en compétences de
+                développeurs et
+                l'amélioration
+                continue de la filère technique de mon entreprise.
+              </p>
+              <p class="english">
                 Recruitment, software craftmanship and students mentor.
               </p>
             </details>
+          </div>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2013-2015</span>
+                <span class="french">Développeur Java - Architecte SI</span>
+                <span class="english">Java Developer - Software Architect</span>
+                <span class="print-only-inline"> - Michelin</span>
+              </summary>
+              <p class="french">
+                Au sein du domaine B2B Michelin, j'ai été le leader technique de la réécriture et la modernisation du
+                portail <a href="https://bibserve.com" target="_blank">e-Commerce Europe</a>.
+              </p>
+              <p class="french">
+                J'ai lancé l'initiative de revoir l'infrastructure sous-jacente afin de migrer l'architecture
+                Mainframe Z/OS vers
+                x86/Linux.
+                Ce projet "Replatforming" a permis de diviser ses coûts d'infrastructure et de maintenance.
+              </p>
+              <p class="french">
+                Suite à cette expérience réussie, on m'a confié le rôle d'<strong>architecte sur le domaine Marketing
+                  et
+                  Ventes</strong>.
+                Pour différents projets du domaine, j'ai été amené à définir les dossiers d'architecture et
+                accompagner les équipes dans
+                la réalisation de ces préconisations.
+              </p>
+              <p class="english">
+                Development of the brand new <a href="https://bibserve.com" target="_blank">e-Business Europe
+                  portal</a>
+              </p>
+              <p class="english">
+                After revamping the B2B Portal UI (bibserve.com), I convinced my Sr Architect to move it from its
+                legacy platform (IBM
+                Z) to a more standard one (Red Hat), which was not an easy move... but successfull! A big cost
+                reduction.
+              </p>
+              <p class="english">
+                After that, I was called back as the IS Architect for the B2B Domain, to design technical platforms,
+                data integration
+                and security for new projects.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2010-2013</span>
+                <span class="french">Tech Leader Java</span>
+                <span class="english">Java Lead Developer</span>
+                <span class="french print-only-inline"> - Ministère de l'Agriculture</span>
+                <span class="english print-only-inline"> - Minister of Agriculture</span>
+              </summary>
+              <p class="french">
+                <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
+                <br />Pilotage du développement de plusieurs projets au forfait.
+                <br />Management des équipes de 2 à 6 développeurs dont backoffice en Inde
+                <br />jQuery - PHP 5 (Zend) - JEE 6 - Websphere 8 - JBoss - Oracle 11
+              </p>
+              <p class="english">
+                <strong>IFCE (Minister of Agriculture) and Michelin Supply chain</strong>
+                <br />Project technical leader
+                <br />2 - 6 developers teams, India backoffice management
+                <br />jQuery - PHP 5 (Zend) - JEE - Websphere - JBoss - Oracle
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2009-2010</span>
+                <span class="french">Analyste Fonctionnel</span>
+                <span class="english">Functional Analyst</span>
+                <span class="print-only-inline"> - Michelin</span>
+                </summary>
+              <p class="french">
+                <strong>Supply chain Michelin</strong>
+                <br />Mise en place d'un progiciel de Gestion d'entrepôts pour l'Europe et l'Amérique du Nord
+                <br />Recueil du besoin, rédaction des spécifications fonctionnelles, recette.
+              </p>
+              <p class="english">
+                <strong>Michelin Supply chain</strong>
+                <br />Warehouse management system integration for Europe and North America
+                <br />Requirements analysis, functional and technical specifications, tests.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2008-2009</span>
+                <span>Devops Jenkins</span>
+                <span class="print-only-inline"> - Michelin</span>
+              </summary>
+              <p class="french">
+                <strong>Supply chain Michelin</strong>
+                <br />Participation à la mise en place de l'intégration continue des applications
+                <br />Jenkins - JEE 5 - Websphere 7 - Oracle 10 - MQ6
+              </p>
+              <p class="english">
+                <strong>Michelin Supply chain</strong>
+                <br />Devops : continuous delivery of Java projects and software packages.
+                <br />Jenkins - JEE 5 - Websphere 7 - Oracle 10 - MQ6
+              </p>
+            </details>
+          </div>
+          <h3 class="no-print">Aquisystem Bordeaux</h3>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2006-2008</span>
+                <span class="french">Développeur Java</span>
+                <span class="english">Java Developer</span>
+                <span class="french print-only-inline"> - Crédit Agricole</span>
+                <span class="english print-only-inline"> - Crédit Agricole (bank)</span>
+                </summary>
+              <p class="french">
+                <strong>Crédit Agricole</strong>
+                <br />Participation à la réalisation du projet GED (Gestion Electronique de Documents)
+                <br />Développements de batchs d'intégration de documents
+                <br />Java - Perl - Awk
+              </p>
+              <p class="english">
+                <strong>Crédit Agricole (bank)</strong>
+                <br />Electronic Document Management system installation
+                <br />Java batchs dévelopment
+                <br />Java - Perl - Awk
+              </p>
+              <p class="french">
+                <strong>Groupe Les Mousquetaires</strong>
+                <br />Développement d'un référenciel articles
+                <br />STRUTS - Websphere - Oracle
+              </p>
+              <p class="english">
+                <strong>Les Mousquetaires Group (mass retail)</strong>
+                <br />Articles management system
+                <br />STRUTS - Websphere - Oracle
+              </p>
+            </details>
+          </div>
+          <h3 class="no-print">Sopra Paris</h3>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2005-2006</span>
+                <span class="french">Développeur .Net</span>
+                <span class="english">.Net Developer</span>
+                <span class="french print-only-inline"> - Nestlé, Les Mousquetaires</span>
+                <span class="english print-only-inline"> - Nestlé, Les Mousquetaires (Mass Retail)</span>
+              </summary>
+              <p class="french">
+                <strong>Groupe Nestlé</strong>
+                <br />Développement d'une application supply chain
+                <br />.Net - SQL Sever
+              </p>
+              <p class="english">
+                <strong>Nestlé Group (food industry)</strong>
+                <br />Supply chain management development
+                <br />.Net - SQL Sever
+              </p>
+              <p class="french">
+                <strong>Petit Forestier</strong> - Locations de véhicules
+                <br />Développements d'une application Web de gestion du parc, des commandes et de la facturation.
+                <br />ASP .Net - C# - SQL Server
+              </p>
+              <p class="english">
+                <strong>Petit Forestier</strong> - vehicle leasing
+                <br />Web application of vehicle management, contracts, orders and billing
+                <br />ASP .Net - C# - SQL Server
+              </p>
+            </details>
+          </div>
         </div>
         <div>
-          <details>
-            <summary>
-              <span class="dates">2013-2015</span>
-              <span class="french">Développeur Java - Architecte SI</span>
-              <span class="english">Java Developer - Software Architect</span>
-            </summary>
-            <p class="french">
-              Au sein du domaine B2B Michelin, j'ai été le leader technique de la réécriture et la modernisation du portail <a
-                href="https://bibserve.com" target="_blank">e-Commerce Europe</a>.
-            </p>
-            <p class="french">
-              J'ai lancé l'initiative de revoir l'infrastructure sous-jacente afin de migrer l'architecture Mainframe Z/OS vers
-              x86/Linux.
-              Ce projet "Replatforming" a permis de diviser ses coûts d'infrastructure et de maintenance.
-            </p>
-            <p class="french">              
-              Suite à cette expérience réussie, on m'a confié le rôle d'<strong>architecte sur le domaine Marketing et
-                Ventes</strong>.
-              Pour différents projets du domaine, j'ai été amené à définir les dossiers d'architecture et accompagner les équipes dans
-              la réalisation de ces préconisations.
-            </p>
-            <p class="english">
-              Development of the brand new <a href="https://bibserve.com" target="_blank">e-Business Europe portal</a> 
-            </p>
-            <p class="english">
-              After revamping the B2B Portal UI (bibserve.com), I convinced my Sr Architect to move it from its legacy platform (IBM
-              Z) to a more standard one (Red Hat), which was not an easy move... but successfull! A big cost reduction.
-            </p>
-            <p class="english">
-              After that, I was called back as the IS Architect for the B2B Domain, to design technical platforms, data integration
-              and security for new projects.
-            </p>
-          </details>
-        </div>
-        <div>
-          <details>
-            <summary>
-              <span class="dates">2010-2013</span>
-              <span class="french">Tech Leader Java</span>
-              <span class="english">Java Lead Developer</span>
-            </summary>
-            <p class="french">
-              <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
-              <br />Pilotage du développement de plusieurs projets au forfait.
-              <br />Management des équipes de 2 à 6 développeurs dont backoffice en Inde
-              <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
-            </p>
-            <p class="english">
-              <strong>IFCE (Ministry of Agriculture) and Michelin Supply chain</strong>
-              <br />Project technical leader
-              <br />2 - 6 developers teams, India backoffice management
-              <br />jQuery - PHP (Zend) - JEE - Websphere - JBoss - Oracle
-            </p>
-          </details>
-        </div>
-        <div>
-          <details>
-            <summary>
-              <span class="dates">2009-2010</span>
-              <span class="french">Analyste Fonctionnel</span>
-              <span class="english">Functional Analyst</span></summary>
-            <p class="french">
-              <strong>Supply chain Michelin</strong>
-              <br />Mise en place d'un progiciel de Gestion d'entrepôts pour l'Europe et l'Amérique du Nord
-              <br />Recueil du besoin, rédaction des spécifications fonctionnelles, recette.
-            </p>
-            <p class="english">
-              <strong>Michelin Supply chain</strong>
-              <br />Warehouse management system integration for Europe and North America
-              <br />Requirements analysis, functional and technical specifications, tests.
-            </p>
-          </details>
-        </div>
-        <div>
-          <details>
-            <summary>
-              <span class="dates">2008-2009</span>
-              <span>Devops Jenkins</span>
-            </summary>
-            <p class="french">
-              <strong>Supply chain Michelin</strong>
-              <br />Participation à la mise en place de l'intégration continue des applications
-              <br />Jenkins - JEE - Websphere - Oracle - MQ
-            </p>
-            <p class="english">
-              <strong>Michelin Supply chain</strong>
-              <br />Devops : continuous delivery of Java projects and software packages.
-              <br />Jenkins - JEE - Websphere - Oracle - MQ
-            </p>
-          </details>
-        </div>
-        <h3>Aquisystem Bordeaux</h3>
-        <div>
-          <details>
-            <summary>
-              <span class="dates">2006-2008</span>
-              <span class="french">Développeur Java</span>
-              <span class="english">Java Developer</span></summary>
-            <p class="french">
-              <strong>Crédit Agricole</strong>
-              <br />Participation à la réalisation du projet GED (Gestion Electronique de Documents)
-              <br />Développements de batchs d'intégration de documents
-              <br />Java - Perl - Awk
-            </p>
-            <p class="english">
-              <strong>Crédit Agricole (bank)</strong>
-              <br />Electronic Document Management system installation
-              <br />Java batchs dévelopment
-              <br />Java - Perl - Awk
-            </p>
-            <p class="french">
-              <strong>Groupe Les Mousquetaires</strong>
-              <br />Développement d'un référenciel articles
-              <br />STRUTS - Websphere - Oracle
-            </p>
-            <p class="english">
-              <strong>Les Mousquetaires Group (mass retail)</strong>
-              <br />Articles management system
-              <br />STRUTS - Websphere - Oracle
-            </p>
-          </details>
-        </div>
-        <h3>Sopra Paris</h3>
-        <div>
-          <details>
-            <summary>
-              <span class="dates">2005-2006</span>
-              <span class="french">Développeur .Net</span>
-              <span class="english">.Net Developer</span></summary>
-            </summary>
-            <p class="french">
-              <strong>Groupe Nestlé</strong>
-              <br />Développement d'une application supply chain
-              <br />.Net - SQL Sever
-            </p>
-            <p class="english">
-              <strong>Nestlé Group (food industry)</strong>
-              <br />Supply chain management development
-              <br />.Net - SQL Sever
-            </p>
-            <p class="french">
-              <strong>Petit Forestier</strong> - Locations de véhicules
-              <br />Développements d'une application Web de gestion du parc, des commandes et de la facturation.
-              <br />ASP .Net - C# - SQL Server
-            </p>
-            <p class="english">
-              <strong>Petit Forestier</strong> - vehicle leasing
-              <br />Web application of vehicle management, contracts, orders and billing
-              <br />ASP .Net - C# - SQL Server
-            </p>
-          </details>
+          <hr />
+          <h2 class="french">Formation et compétences</h2>
+          <h2 class="english">Education & Skills</h2>
+          <ul>
+            <li class="french flex"><strong>Diplôme</strong> : Ingénieur ISIMA</li>
+            <li class="english flex">ISIMA - <strong>Master School of IT</strong></li>
+            <li class="flex">
+              <div class="flex1"><strong>Front-end</strong> : Javascript (ES2017), Typescript, ReactJS, Angular, RxJs, Redux (NgRx),
+                Ionic
+              </div>
+              <div class="flex1"><strong>Back-end</strong> : Java (certif. Oracle), NodeJS, Express, Spring, JEE, Gitlab CI, Docker
+              </div>
+            </li>
+            <li class="french flex">
+              <div class="flex1"><strong>Méthodologies</strong> : Agile/Lean, Team Leader</div>
+              <div class="flex1"><strong>Bon niveau d'anglais</strong>, grâce à de nombreuses missions anglophones
+              </div>
+            </li>
+            <li class="english flex">
+              <div class="flex1"><strong>Management</strong>: Agile/Lean, Team Leader (5y XP)</div>
+              <div class="flex1"><strong>Fluent in english</strong>, thanks to several years of work with remote
+                coworkers</div>
+            </li>
+          </ul>
         </div>
       </div>
-      <div>
-        <hr />
-        <h2 class="french">Formation</h2>
-        <h2 class="english">Education</h2>
-
-        <ul>
-          <li class="french">2015 - Certification "Java Oracle Certified Professional"</li>
-          <li class="french">2006 - Certification "ASP.Net Web Developer"</li>
-          <li class="french">2005 - Ingénieur ISIMA</li>
-          <li class="english">2015 - Java Oracle Certified Professional</li>
-          <li class="english">2006 - ASP.Net Certified Web Developer</li>
-          <li class="english">2005 - ISIMA - Master School of IT</li>
-        </ul>
-      </div>
-      <div>
-        <hr />
-        <h2 class="french">Compétences</h2>
-        <h2 class="english">Technical Skills</h2>
-        <ul>
-          <li class="french flex">
-            <div class="flex1"><strong>Front-end</strong> : HTML, CSS, Javascript (ReactJS, Angular, RxJs, Redux), Mobile (Ionic)
-            </div>
-            <div class="flex1"><strong>Back-end</strong> : Node.js, Spring, JEE, Gitlab CI, Docker</div>
-          </li>
-          <li class="french flex">
-            <div class="flex1"><strong>Méthodologies</strong> : Agile/Lean, Team Leader (5 ans exp.)</div>
-            <div class="flex1"><strong>Bon niveau d'anglais</strong>, grâce à de nombreuses missions anglophones</div>
-          </li>
-          <li class="english flex">
-            <div class="flex1"><strong>Front-end</strong>: HTML, CSS, Javascript (React, Angular, RxJs, Redux), Mobile (Ionic)</div>
-            <div class="flex1"><strong>Back-end</strong>: Node.js, Spring, JEE, Gitlab CI, Docker</div>
-          </li>
-          <li class="english flex">
-            <div class="flex1"><strong>Management</strong>: Agile/Lean, Team Leader (5 ans exp.)</div>
-            <div class="flex1"><strong>Fluent in english</strong>, thanks to several years of work with remote english teams</div>
-          </li>
-        </ul>
-      </div>
-    </div>
   </main>
   <div id="myVideo" class="no-print"></div>
 
   <footer class="no-print footer">
     <section>
-      Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> 
-      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> 
-      is licensed by 
-      <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
+      Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a>
+      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+      is licensed by
+      <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0
+        BY</a>
     </section>
-  </footer> 
+  </footer>
 
 </body>
 <script>
 
-  // Summary / details
-  const openDetails = () => {
-    document.querySelector('details').open = true;
-  }
-
   // Printing
   (function () {
 
+    document.querySelectorAll('details').forEach(e => e.open = true);
+
     if (window.matchMedia) {
-      const mediaQueryList = window.matchMedia('print');
-      mediaQueryList.addListener((mql) => {
-        if (mql.matches) {
-          openDetails();
-        }
-        // else {
-        //   afterPrint();
-        // }
+      window.matchMedia('print').addListener((mql) => {
+        document.querySelectorAll('details').forEach(e => e.open = false);
       });
 
-      const mediaQueryMobile = window.matchMedia('(orientation: portrait)');
-      mediaQueryList.addListener((mql) => {
-        if (mql.matches) {
-          openDetails();
-        }
-      });
+      // window.matchMedia('(orientation: portrait)').addListener((mql) => {
+      //   if (mql.matches) {
+      //     document.querySelector('details').open = true;
+      //   }
+      // });
     }
 
-    window.onbeforeprint = openDetails;
-    // window.onafterprint = afterPrint;
+    window.onbeforeprint = () => document.querySelectorAll('details').forEach(e => e.open = false);
 
     // Language
     var urlParams = new URLSearchParams(window.location.search);
@@ -883,4 +961,5 @@
   }());
 </script>
 <script src="details-polyfill.js"></script>
+
 </html>
