@@ -98,18 +98,21 @@
       height: var(--button-bar-height);
     }
 
-    .icon-bar a {
+    .icon-bar .icon-button {
       margin-left: 20px;
       height: calc(var(--button-bar-height) - 1vw);
       /* useful for ff to limit img height */
       width: calc(var(--button-bar-height) - .8vw);
+      background-color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .icon-bar img {
-      height: 100%;
-      width: 100%;
-      background-color: white;
-      border-radius: 20px
+      max-height: 100%;
+      max-width: 100%;
     }
 
 
@@ -478,9 +481,10 @@
     }
 
     #myVideo {
-      background-image: url('BeZh.gif');
-      background-repeat: repeat;
-      background-size: 67%;
+      background-image: url('cowork-burlesque.jpg');
+      background-size: 140%;
+      background-position-x: -200px;
+      background-position-y: -700px;
       position: fixed;
       top: 0px;
       left: 0px;
@@ -493,23 +497,26 @@
 
 <body>
 
-  <div class="layer"></div>
+  <div class="layer">
+    <div id="myVideo"></div>
+
+  </div>
 
   <header class="header">
     <section class="icon-bar no-print">
-      <a class="tooltip french" href="cv.pdf">
+      <a class="tooltip icon-button french" href="cv.pdf">
         <img src="download-pdf.png">
         <span class="tooltiptext">Télécharger en PDF</span>
       </a>
-      <a class="tooltip english" href="cv-en.pdf">
+      <a class="tooltip english icon-button" href="cv-en.pdf">
         <img src="download-pdf.png">
         <span class="tooltiptext">Download as PDF</span>
       </a>
-      <a class="tooltip" href="index.html">
+      <a class="tooltip icon-button" href="index.html">
         <img id="flagImageFr" src="france.svg">
         <span id="flagTooltip" class="tooltiptext">Version française</span>
       </a>
-      <a class="tooltip" href="index.html?lang=en">
+      <a class="tooltip icon-button" href="index.html?lang=en">
         <img id="flagImageEn" src="united-kingdom.svg">
         <span id="flagTooltip" class="tooltiptext">English version</span>
       </a>
@@ -638,12 +645,46 @@
           <h2 class="french">Expérience Professionelle</h2>
           <h2 class="english">My Work Experience</h2>
           <div class="first-experience">
+            <h3 class="no-print">BACARDI</h3>
+            <details>
+              <summary>
+                <span class="dates french">Depuis janvier 2021</span>
+                <span class="dates english">Jan 2021 to Present</span>
+                <span class="french">Architecte Technique</span>
+                <span class="english">Software Architect</span>
+                <span class="print-only-inline"> - BACARDI</span>
+              </summary>
+              <p class="french">
+                MixlabCocktails.com 🍸
+                Application mobile et site Web E-Commerce
+                <ul class="french">
+                  <li>Définition de l'architecture applicative</li>
+                  <li>Responsable de la cohérence des développements frontend, backend et intégration des solutions tierces (IAM, moteurs de recherche, gestion des média)</li>
+                  <li>Evaluation de solutions techniques dans la cadre de chantiers transverses (Headless CMS, Worflow automation)</li>
+                  <li>Environnement 100% anglophone</li>
+                </ul>
+              </p>
+              <p class="english">
+                MixlabCocktails.com 🍸
+                Digital Marketing mobile app + website
+                <ul class="english">
+                  <li>design the software architecture</li>
+                  <li>develop POC (Headless CMS, Worflow automation)</li>
+                  <li>cloud services integration (IAM, search engine, media management)</li>
+                  <li>build reusable software components libraries</li>
+                  <li>english-speaking environment</li>
+                </ul>
+              </p>
+              <div>React Native, ReactJS, NodeJS, Azure Functions, Gigya, Algolia, Contentful, Firebase, Google Cloud Platform</div>
+            </details>
+          </div>
+          <div>
             <h3 class="french no-print">AMUE Clermont-Ferrand</h3>
             <h3 class="english no-print">Universities and Research Organizations Agency</h3>
             <details>
               <summary>
-                <span class="dates french">Depuis Mai 2018</span>
-                <span class="dates english">May 2018 to Present</span>
+                <span class="dates french">2018-2020</span>
+                <span class="dates english">2018-2020</span>
                 <span class="french">Développeur Angular-Spring</span>
                 <span class="english">Full-stack developer</span>
                 <span class="french print-only-inline"> - AMUE (Enseignement Sup. et Recherche)</span>
@@ -682,19 +723,14 @@
                 réalisation
                 d'applications
                 B2B mobiles hybrides et de leur distribution sur les différents stores.
-                Cette expérience m'a permis de développer considérablement mes compétences mobiles ainsi que
-                l'approche marketing d'un
-                produit.
+                Cette expérience m'a permis de développer considérablement mes compétences mobiles ainsi que l'approche marketing d'un produit.
                 <br />
                 Approche lean, développements Ionic 3+, Redux (NgRx), Grails 2, MySQL.
               </p>
               <p class="english">
-                As a small dev team, we built a <strong>mobile app</strong> that turn a standard mobile phone into a
-                multipurpose data
-                collecting tool.<br />
+                As a small dev team, we built a <strong>mobile app</strong> that turn a standard mobile phone into a multipurpose data collecting tool.<br />
                 Michelin experts are now using it at every Moto GP and Le Mans. <br />
-                We were with them in the races to fix bugs and improve UX, stressful but so interesting
-                experience!<br />
+                We were with them in the races to fix bugs and improve UX, stressful but so interesting experience!<br />
                 Stack: Ionic, Redux, Groovy backend
               </p>
               <p class="french">
