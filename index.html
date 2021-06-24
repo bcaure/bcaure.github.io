@@ -38,6 +38,10 @@
       font-size: var(--font-size);
     }
 
+    ul {
+      padding: 0px;
+    }
+
     h1,
     h2 {
       font-family: var(--font-header);
@@ -196,10 +200,17 @@
 
     .page {
       min-width: 400px;
-      padding: 3rem 3rem 3rem 3rem;
       background-color: white;
       z-index: 2;
       box-shadow: 20px 20px 20px 1px var(--color-dark);
+    }
+
+    .identity-resume {
+      padding: 3rem 3rem 0 3rem;
+    }
+
+    .projects-experience-education {
+      padding: 0 3rem 3rem 3rem;
     }
 
 
@@ -237,6 +248,17 @@
       list-style: none;
     }
 
+    .experience-with-image {
+      display: flex;
+      height: auto;
+      align-items: center;
+      margin-top: 20px;
+    }
+    .experience-with-image img {
+      max-width: 300px;
+      margin-right: 20px;
+    }
+
     @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) and (orientation: landscape) {
       summary:after {
         background: #fff;
@@ -269,13 +291,12 @@
       margin-left: 35px;
     }
 
-    ul {
+    details ul {
       padding-left: 27px;
       /* align with details summary */
     }
 
-    li {
-      padding-left: 15px;
+    details li {
       /* align with details summary */
       margin-bottom: 0.6em;
     }
@@ -338,6 +359,10 @@
       margin-bottom: 0px;
     }
 
+    .education li {
+      margin-bottom: 10px;
+    }
+
     /* Print  & responsive*/
 
     @media screen {
@@ -352,8 +377,8 @@
         font-family: var(--font-print);
         font-size: var(--font-size-print)!important;
       }
-
-      summary span {
+      
+      .projects-experience-education, .projects-experience-education h3, .experience, summary span {
         font-size: var(--font-size-print)!important;
       }
 
@@ -391,11 +416,11 @@
       }
 
       .no-print {
-        display: none;
+        display: none!important;
       }
 
       .mobile-only {
-        display: none;
+        display: none!important;
       }
 
       .photo {
@@ -403,6 +428,40 @@
         margin-left: 3vw;
         margin-right: 3vw;
         align-self: center;
+      }
+      
+      .identity {
+        display: block;
+      }
+      .fullname {
+        text-align: left;
+      }
+      .firstname {
+        margin-right: 10px; 
+      }
+      .contact {
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .personal-projects {
+        display: block;
+      }    
+      .personal-projects a {
+        color: black!important;
+      }
+      .personal-project {
+        display: flex;
+        align-items: center;
+        margin: 0!important;
+      }
+      .personal-project h3 {
+        font-weight: normal;
+        margin: 0 15px 0 0;
+      }
+      .personal-project .code, .personal-project .opensource {
+        width: auto;
       }
     }
 
@@ -447,6 +506,16 @@
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
+      }
+
+      .experience-with-image {
+        display: flex;
+        flex-direction: column;
+        margin: 0 0 10px 0;
+        width: 100%;
+      }
+      .experience-with-image a, .experience-with-image img {
+        min-width: 100%;
       }
     }
 
@@ -526,10 +595,10 @@
   <main class="container">
 
     <div class="page">
-      <div>
+      <div class="identity-resume">
         <div class="identity">
           <div class="fullname">
-            <h1>
+            <h1 class="print-only-flex">
               <div class="firstname">BENJAMIN</div>CAURE
             </h1>
             <div class="title">
@@ -539,8 +608,14 @@
               <span class="english">&nbsp;&nbsp;DEVELOPER</span>
             </div>
           </div>
-          <img src="id.png" class="photo" alt="Photo" />
+          <img src="id.png" class="photo no-print" alt="Photo" />
           <div class="contact">
+            <div class="contact-label print-only-flex">
+              <img class="contact-logo" src="cv.png" alt="" />
+              <span class="french">CV complet :&nbsp;</span>
+              <span class="english">Full Resume:&nbsp;</span>
+              <span><a href="https://bcaure.github.io">bcaure.github.io</a></span>
+            </div>
             <div class="contact-label">
               <img class="contact-logo no-mobile" src="network.png" alt="" />
               <a href="https://linkedin.com/in/benjamin-caure" class="no-mobile">linked.in/in/benjamin-caure</a>
@@ -556,81 +631,72 @@
               <a href="mailto:benjamin.caure@gmail.com" class="no-mobile">benjamin.caure@gmail.com</a>
               <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="gmail.png" alt="" /></a>
             </div>
-            <div class="contact-label print-only-flex">
-              <img class="contact-logo" src="cv.png" alt="" />
-              <span class="french">CV détaillé :&nbsp;</span>
-              <span class="english">Full Resume at&nbsp;</span>
-              <span><a href="https://bcaure.github.io">bcaure.github.io</a></span>
-            </div>
             <div class="contact-label no-mobile no-print">
               <img class="contact-logo" src="GitHub-Mark-64px.png" alt="" />
-              <span class="french"><a href="https://github.com/bcaure">mon Github</a></span>
-              <span class="english"><a href="https://github.com/bcaure">my Github</a></span>
+              <span><a href="https://github.com/bcaure">Github</a></span>
             </div>
           </div>
         </div>
         <p class="resume french">
           Développeur fullstack, je suis à la recherche de missions backend Python ou Nodejs, frontend ReactJS, VueJS ou React
-          Native.<br>Mobilité : dans la région de Clermont-Ferrand ou en travail à distance 100%. Disponibilité septembre 2021.<br>
+          Native.<br>Mobilité : dans la région de Clermont-Ferrand ou en travail à distance 100%.<br>
         </p>
         <p class="resume english">
           Enthusiastic Fullstack Developer with 10+ years of broad experience in Java and Javascript areas,
-          with willingness to master Nodejs, Python, ReactJS, React Native and VueJS.<br>
-          100% remote missions only, available in Sept. 2021.
+          with willingness to master Nodejs, Python, ReactJS, React Native and VueJS.
         </p>
       </div>
-      <div>
-        <hr />
-        <h2 class="french">Projets Open Sources</h2>
-        <h2 class="english">My Open Source Projects</h2>
-        <p class="english">Don't hesitate to check the code 😉</p>
-        <div class="personal-projects">
+      <div class="projects-experience-education">
+        <hr class="no-print" />
+        <h2 class="french no-print">Réalisations</h2>
+        <div class="english no-print" style="display: flex; align-items: center;"><h2 style="width: auto">My Projects</h2>&nbsp;<span>→ Check the code!</span></div>
+        <div class="personal-projects no-print">
           <div class="personal-project">
-            <h3 class="french opensource">Création du logiciel <a
-                href="https://github.com/freelance-info/freelance-compta">Freelance Compta</a></h3>
-            <h3 class="english opensource"><a href="https://github.com/freelance-info/freelance-compta">Freelance
-                Compta</a>
-              Software</h3>
-            <div>ReactJS / Electron</div>
+            <h3 class="french opensource">Articles <a href="https://www.baeldung.com/author/benjamincaure">Baeldung.com</a></h3>
+            <h3 class="english opensource">Tech Blog Author at <a href="https://www.baeldung.com/author/benjamincaure">Baeldung.com</a></h3>
+            <div class="french opensource no-print">Consultez mes articles Java et Spring</div>
+            <div class="english opensource no-print">Check my Java & Spring articles:</div>
             <span class="code">
+              <a href="https://www.baeldung.com/author/benjamincaure/">
+                www.baeldung.com/author/benjamincaure
+              </a>
+            </span>
+          </div>
+          <div class="personal-project">
+            <h3 class="french opensource">Enseignant vacataire <a href="http://isima.fr">ISIMA</a></h3>
+            <h3 class="english opensource">Javascript / ReactJS Teacher</h3>
+            <div class="french no-print">Mes cours de Javascript et ReactJS</div>
+            <div class="english no-print">Part-time activity</div>
+            <span class="code">
+              <img class="vertical-middle" src="GitHub-Mark-64px.png" style="max-width: 1em;" alt="" />&nbsp;
+              <a href="https://gitlab.com/pjben/sports-cars"><span class="french">Exercices</span><span class="english">Exercises</span></a>&nbsp;-&nbsp;
+              <a href="https://gitlab.com/pjben/tp-binome-1">Coding game</a>&nbsp;-&nbsp;
+              <a href="https://gitlab.com/pjben/tp-binome-2">Exam</a>
+            </span>
+          </div>
+          <div class="personal-project">
+            <h3 class="french opensource">
+              <a href="https://github.com/freelance-info/freelance-compta">Freelance Compta</a>
+            </h3>
+            <h3 class="english opensource">
+              <a href="https://github.com/freelance-info/freelance-compta">Freelance Compta</a>
+              Software
+            </h3>
+            <div>Logiciel ReactJS / Electron</div>
+            <span class="code no-print">
               <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 1em" alt="" />&nbsp;
-              <a href="https://github.com/freelance-info/compta">
+              <a href="https://github.com/freelance-info/freelance-compta">
                 github.com/freelance-info
               </a>
             </span>
-            </div>
-            <div class="personal-project">
-              <h3 class="french opensource">Auteur chez <a href="http://isima.fr">Baeldung.com</a></h3>
-              <h3 class="english opensource">Tech Blog Author at <a href="http://isima.fr">Baeldung.com</a></h3>
-              <div class="french">Consultez mes articles Java et Spring :</div>
-              <div class="english">Check my Java & Spring articles:</div>
-              <span class="code">
-                <a href="https://www.baeldung.com/author/benjamincaure/">
-                  www.baeldung.com/author/benjamincaure
-                </a>
-              </span>
-            </div>
-            <div class="personal-project">
-              <h3 class="french opensource">Enseignant vacataire <a href="http://isima.fr">ISIMA</a></h3>
-              <h3 class="english opensource">Javascript / ReactJS Teacher</h3>
-              <div class="french">Mes cours de Javascript et ReactJS : </div>
-              <div class="english">Part-time activity</div>
-              <span class="code">
-                <img class="vertical-middle" src="GitHub-Mark-64px.png" style="max-width: 1em;" alt="" />&nbsp;
-                <a href="https://gitlab.isima.fr/bcaure/sports-cars">
-                  gitlab.isima.fr/bcaure/sports-cars
-              </a>
-            </span>
-            </div>
-            <div class="personal-project">
-              <h3 class="french opensource">Création du site <a
-                  href="http://perfect-garage.org/?car1=5e4c011d1050a45c707d9e39&car2=5e4c011d1050a45c707d9fe4&edit=3&car=5e4c011e1050a45c707da2fa">Perfect-garage.org</a>
-              </h3>
-              <h3 class="english opensource">Website <a
-                  href="http://perfect-garage.org/?car1=5e4c011d1050a45c707d9e39&car2=5e4c011d1050a45c707d9fe4&edit=3&car=5e4c011e1050a45c707da2fa">Perfect-garage.org</a>
-              </h3>
-              <div>Gatsby / Graphql / ReactJS</div>
-            <span class="code">
+          </div>
+          <div class="personal-project">
+            <h3 class="opensource">
+              <a href="http://perfect-garage.org/?car1=5e4c011d1050a45c707d9e39&car2=5e4c011d1050a45c707d9fe4&edit=3&car=5e4c011e1050a45c707da2fa">Perfect-garage.org</a>
+            </h3>
+            <div class="french">Site Gatsby (JAMStack / Graphql / ReactJS)</div>
+            <div class="english">Gatsby Website (JAMStack / Graphql / ReactJS)</div>
+            <span class="code no-print">
               <img class="vertical-middle" src="GitHub-Mark-64px.png" style="max-width: 1em;" alt="" />&nbsp;
               <a href="https://github.com/le-garage-ideal">
                 github.com/le-garage-ideal
@@ -649,31 +715,31 @@
               <summary>
                 <span class="dates french">Depuis janvier 2021</span>
                 <span class="dates english">Jan 2021 to Present</span>
-                <span class="french">Architecte Technique</span>
-                <span class="english">Software Architect</span>
+                <span class="french">Développeur / Architecte Technique</span>
+                <span class="english">Developer / Software Architect</span>
                 <span class="print-only-inline"> - BACARDI</span>
               </summary>
-              <p class="french">
-                MixlabCocktails.com 🍸
-                Application mobile et site web grand public
-                <ul class="french">
-                  <li>Définition de l'architecture applicative</li>
-                  <li>Responsable de la cohérence des développements frontend, backend et intégration des solutions tierces (IAM, moteurs de recherche, gestion des média)</li>
-                  <li>Evaluation de solutions techniques dans la cadre de chantiers transverses (Headless CMS, Worflow automation)</li>
-                  <li>Environnement 100% anglophone</li>
-                </ul>
-              </p>
-              <p class="english">
-                MixlabCocktails.com 🍸
-                Mobile App + Website for Bacardi Consumers
-                <ul class="english">
-                  <li>design the software architecture</li>
-                  <li>develop POC (Headless CMS, Worflow automation)</li>
-                  <li>cloud services integration (IAM, search engine, media management)</li>
-                  <li>build reusable software components libraries</li>
-                  <li>english-speaking environment</li>
-                </ul>
-              </p>
+              <div class="experience-with-image">
+                <a href="https://mixlabcocktails.com"><img alt="" src="mixlab.png" /></a>
+                <div class="french">
+                  <div>Mixlabcocktails.com - app mobile et site web grand public</div>
+                  <ul class="french">
+                    <li>Architecture applicative</li>
+                    <li>Développement React Native, ReactJS et NodeJS</li>
+                    <li>Intégration headless CMS, eCommerce, IAM, moteur de recherche</li>
+                    <li>Environnement 100% anglophone</li>
+                  </ul>
+                </div>
+                <div class="english">
+                  MixlabCocktails.com - Mobile App + Website for Bacardi Consumers
+                  <ul class="english">
+                    <li>Design the software architecture</li>
+                    <li>Develop with ReactJS, React-Native and NodeJS</li>
+                    <li>Cloud services integration: Headless CMS, IAM, search engine</li>
+                    <li>English-speaking environment</li>
+                  </ul>
+                </div>  
+              </div>
               <div>React Native, ReactJS, NodeJS, Azure Functions, Gigya, Algolia, Contentful, Firebase, Google Cloud Platform</div>
             </details>
           </div>
@@ -686,11 +752,11 @@
                 <span class="dates english">2018-2020</span>
                 <span class="french">Développeur Angular-Spring</span>
                 <span class="english">Full-stack developer</span>
-                <span class="french print-only-inline"> - AMUE (Enseignement Sup. et Recherche)</span>
-                <span class="english print-only-inline"> - Minister of Education and Research</span>
+                <span class="french print-only-inline"> - AMUE</span>
+                <span class="english print-only-inline"> - Minister of Research</span>
               </summary>
               <p class="french">
-                Dans le cadre de la création du SI pour la Recherche, développement de la brique de gestion de projets
+                Pour le ministère de l'E.S. et de la Recherche, développement de la brique de gestion de projets
                 de Recherche :
                 <a href="www.amue.fr/recherche/logiciels/caplab/">www.amue.fr/recherche/logiciels/caplab</a><br />
                 Stack Angular 10+, Spring Boot 2, Postgres, scripts Nodejs et Python, Gitlab CI, Docker.
@@ -712,7 +778,7 @@
             <details>
               <summary>
                 <span class="dates">2016-2017</span>
-                <span class="french">Développeur mobile (Angular + Ionic) - Architecte SI</span>
+                <span class="french">Développeur mobile - Architecte SI</span>
                 <span class="english">Mobile developer - Software Architect</span>
                 <span class="print-only-inline"> - Michelin</span>
               </summary>
@@ -922,7 +988,7 @@
             </details>
           </div>
         </div>
-        <div>
+        <div class="education">
           <hr />
           <h2 class="french">Formation et compétences</h2>
           <h2 class="english">Education & Skills</h2>
@@ -930,10 +996,9 @@
             <li class="french flex"><strong>Diplôme</strong> : Ingénieur ISIMA</li>
             <li class="english flex">ISIMA - <strong>Master School of IT</strong></li>
             <li class="flex">
-              <div class="flex1"><strong>Front-end</strong> : Javascript (ES2017), Typescript, ReactJS, Angular, RxJs, Redux (NgRx),
-                Ionic
+              <div class="flex1"><strong>Frontend</strong> : Javascript/Typescript, ReactJS, Angular, RxJs, Redux, React-Native, Ionic
               </div>
-              <div class="flex1"><strong>Back-end</strong> : Java (certif. Oracle), NodeJS, Express, Spring, JEE, Gitlab CI, Docker
+              <div class="flex1"><strong>Backend</strong> : NodeJS, Express, Java, Spring, Gitlab CI, Docker, Google Cloud, MS Azure
               </div>
             </li>
             <li class="french flex">
