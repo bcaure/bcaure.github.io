@@ -127,18 +127,18 @@
       justify-content: space-between;
     }
 
-    .fullname {
+    .name-and-title {
       flex: 2;
       text-align: right;
       font-family: var(--font-header);
     }
 
-    .fullname,
+    .name-and-title,
     .contact {
       margin-top: 7px;
     }
 
-    .fullname h1 {
+    .fullname {
       font-weight: 600;
       font-size: var(--font-size-xxl);
       margin: 0 0 10px 0;
@@ -433,8 +433,11 @@
       .identity {
         display: block;
       }
-      .fullname {
+      .name-and-title {
         text-align: left;
+      }
+      .fullname {
+        display: flex;
       }
       .firstname {
         margin-right: 10px; 
@@ -597,9 +600,9 @@
     <div class="page">
       <div class="identity-resume">
         <div class="identity">
-          <div class="fullname">
-            <h1 class="print-only-flex">
-              <div class="firstname">BENJAMIN</div>CAURE
+          <div class="name-and-title">
+            <h1 class="fullname">
+              <div class="firstname">BENJAMIN</div><div class="lastname">CAURE</div>
             </h1>
             <div class="title">
               <span class="french">DEVELOPPEUR</span>
@@ -639,7 +642,7 @@
         </div>
         <p class="resume french">
           Développeur fullstack, je suis à la recherche de missions backend Python ou Nodejs, frontend ReactJS, VueJS ou React
-          Native.<br>Mobilité : dans la région de Clermont-Ferrand ou en travail à distance 100%.<br>
+          Native.<br>Mobilité : dans la région de Clermont-Ferrand ou en télétravail à 100%.<br>
         </p>
         <p class="resume english">
           Enthusiastic Fullstack Developer with 10+ years of broad experience in Java and Javascript areas,
@@ -1033,7 +1036,7 @@
   // Printing
   (function () {
 
-    document.querySelectorAll('details').forEach(e => e.open = true);
+    document.querySelectorAll('details').forEach((e, idx) => e.open = idx === 0);
 
     if (window.matchMedia) {
       window.matchMedia('print').addListener((mql) => {
