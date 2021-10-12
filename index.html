@@ -259,6 +259,50 @@
       margin-right: 20px;
     }
 
+    * {
+      --thumbnail-width: 130px;
+    }
+    .personal-project {
+      position: relative;
+    }
+    .thumbnails {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      max-width: calc(var(--thumbnail-width) * 2 + 30px);
+      position: absolute;
+      left: -360px;
+      top: -160px;
+    }
+    .thumbnail {
+      background-color: #EEE;
+      max-width: var(--thumbnail-width);
+      padding: 5px;
+      margin: 2px;
+      box-shadow: 10px 10px 20px 1px var(--color-dark);
+    }
+    .thumbnail:hover {
+      background-color: white;
+      border: 1px solid;
+    }
+    .thumbnail img {
+      width: var(--thumbnail-width);
+    }
+    .thumbnail figcaption {
+      text-align: center;
+      font-size: small;
+      text-overflow: ellipsis;
+      overflow-x: clip;
+      white-space: nowrap;
+    }
+    .arrow-thumbnails {
+      position: absolute;
+      width: 100px;
+      z-index: 2;
+      top: -40px;
+      left: -100px;
+    }
+
     @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) and (orientation: landscape) {
       summary:after {
         background: #fff;
@@ -641,8 +685,8 @@
           </div>
         </div>
         <p class="resume french">
-          Développeur fullstack, je suis à la recherche de missions backend Python ou Nodejs, frontend ReactJS, VueJS ou React
-          Native.<br>Mobilité : dans la région de Clermont-Ferrand ou en télétravail à 100%.<br>
+          Développeur fullstack, je suis à la recherche de missions Python, Nodejs, ReactJS, VueJS ou React
+          Native.<br />Mobilité : dans la région de Clermont-Ferrand ou en télétravail à 100%.<br>
         </p>
         <p class="resume english">
           Enthusiastic Fullstack Developer with 10+ years of broad experience in Java and Javascript areas,
@@ -664,6 +708,33 @@
                 www.baeldung.com/author/benjamincaure
               </a>
             </span>
+            <img src="fleche-haut-gauche.png" class="arrow-thumbnails no-print no-mobile" alt="" />
+            <div class="thumbnails no-print no-mobile">
+              <figure class="thumbnail">
+                <a href="https://www.baeldung.com/ops/docker-databases">
+                  <img src="article1.jpg" alt="" />
+                  <figcaption>How to Deal With Databases in Docker?</figcaption>
+                </a>
+              </figure>
+              <figure class="thumbnail">
+                <a href="https://www.baeldung.com/java-reporting-tools-comparison">
+                  <img src="article2.jpg" alt="" />
+                  <figcaption>Java Reporting Tools: a Comparison</figcaption>
+                </a>
+              </figure>
+              <figure class="thumbnail">
+                <a href="https://www.baeldung.com/java-visual-studio-code">
+                  <img src="article3.jpg" alt="" />
+                  <figcaption>How to Use Visual Studio Code with Java?</figcaption>
+                </a>
+              </figure>
+              <figure class="thumbnail">
+                <a href="https://www.baeldung.com/java-convert-bson-to-json">
+                  <img src="article4.jpg" alt="" />
+                  <figcaption>From MongoDB BSON to JSON</figcaption>
+                </a>
+              </figure>
+            </div>    
           </div>
           <div class="personal-project">
             <h3 class="french opensource">Enseignant vacataire <a href="http://isima.fr">ISIMA</a></h3>
@@ -1017,6 +1088,7 @@
           </ul>
         </div>
       </div>
+
   </main>
   <div id="myVideo" class="no-print"></div>
 
