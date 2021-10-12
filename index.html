@@ -248,6 +248,11 @@
       list-style: none;
     }
 
+    * {
+      --experience-img-width: 300px;
+      --experience-img-margin: 20px;
+      --experience-img-width-increase: 5px;
+    }
     .experience-with-image {
       display: flex;
       height: auto;
@@ -255,8 +260,13 @@
       margin-top: 20px;
     }
     .experience-with-image img {
-      max-width: 300px;
-      margin-right: 20px;
+      max-width: var(--experience-img-width);
+      margin-right: var(--experience-img-margin);
+    }
+    .experience-with-image img:hover {
+      box-shadow: 0 0 10px var(--color-highlight);
+      max-width: calc(var(--experience-img-width) + var(--experience-img-width-increase));
+      margin-right: calc(var(--experience-img-margin) - var(--experience-img-width-increase));
     }
 
     * {
@@ -796,7 +806,7 @@
               <div class="experience-with-image">
                 <a href="https://mixlabcocktails.com"><img alt="" src="mixlab.png" /></a>
                 <div class="french">
-                  <div>Mixlabcocktails.com - app mobile et site web grand public</div>
+                  <div><a href="https://mixlabcocktails.com">Mixlabcocktails.com</a> - app mobile et site web grand public</div>
                   <ul class="french">
                     <li>Architecture applicative</li>
                     <li>Développement React Native, ReactJS et NodeJS</li>
@@ -805,7 +815,7 @@
                   </ul>
                 </div>
                 <div class="english">
-                  MixlabCocktails.com - Mobile App + Website for Bacardi Consumers
+                  <div><a href="https://mixlabcocktails.com">MixlabCocktails.com</a> - Mobile App + Website for Bacardi Consumers</div>
                   <ul class="english">
                     <li>Design the software architecture</li>
                     <li>Develop with ReactJS, React-Native and NodeJS</li>
