@@ -309,10 +309,17 @@
       position: absolute;
       width: 100px;
       z-index: 2;
+    }
+    .arrow-thumbnails-1 {
       top: -40px;
       left: -100px;
     }
-
+    .arrow-thumbnails-2 {
+      top: 140px;
+      left: -100px;
+      transform: scaleY(-1);
+      display: none;
+    }
     @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) and (orientation: landscape) {
       summary:after {
         background: #fff;
@@ -659,7 +666,7 @@
               <div class="firstname">BENJAMIN</div><div class="lastname">CAURE</div>
             </h1>
             <div class="title">
-              <span class="french">DEVELOPPEUR</span>
+              <span class="french">DÉVELOPPEUR</span>
               <span class="english">FREELANCE</span>
               <span class="french">&nbsp;&nbsp;FREELANCE</span>
               <span class="english">&nbsp;&nbsp;DEVELOPER</span>
@@ -718,7 +725,8 @@
                 www.baeldung.com/author/benjamincaure
               </a>
             </span>
-            <img src="fleche-haut-gauche.png" class="arrow-thumbnails no-print no-mobile" alt="" />
+            <img src="fleche-haut-gauche.png" class="arrow-thumbnails arrow-thumbnails-1 no-print no-mobile" alt="" />
+            <img src="fleche-haut-gauche.png" class="arrow-thumbnails arrow-thumbnails-2 no-print no-mobile" alt="" />
             <div class="thumbnails no-print no-mobile">
               <figure class="thumbnail">
                 <a href="https://www.baeldung.com/ops/docker-databases">
@@ -753,17 +761,16 @@
             <div class="english no-print">Part-time activity</div>
             <span class="code">
               <img class="vertical-middle" src="GitHub-Mark-64px.png" style="max-width: 1em;" alt="" />&nbsp;
-              <a href="https://gitlab.com/pjben/sports-cars"><span class="french">Exercices</span><span class="english">Exercises</span></a>&nbsp;-&nbsp;
-              <a href="https://gitlab.com/pjben/tp-binome-1">Coding game</a>&nbsp;-&nbsp;
-              <a href="https://gitlab.com/pjben/tp-binome-2">Exam</a>
+              <a href="https://gitlab.com/pjben/restaurant"><span class="french">TD</span><span class="english">Exercises</span></a>&nbsp;-&nbsp;
+              <a href="https://gitlab.com/pjben/tp-binome-1">Coding game</a>
             </span>
           </div>
           <div class="personal-project">
             <h3 class="french opensource">
-              <a href="https://github.com/freelance-info/freelance-compta">Freelance Compta</a>
+              <a href="https://github.com/freelance-info/freelance-compta">Logiciel de comptabilité</a>
             </h3>
             <h3 class="english opensource">
-              <a href="https://github.com/freelance-info/freelance-compta">Freelance Compta</a>
+              <a href="https://github.com/freelance-info/freelance-compta">Accounting Software</a>
               Software
             </h3>
             <div>Application React / Electron</div>
@@ -776,7 +783,7 @@
           </div>
           <div class="personal-project">
             <h3 class="opensource">
-              <a href="http://perfect-garage.org/?car1=5e4c011d1050a45c707d9e39&car2=5e4c011d1050a45c707d9fe4&edit=3&car=5e4c011e1050a45c707da2fa">Perfect-garage.org</a>
+              <a href="http://perfect-garage.org/en/?car1=5e4c011d1050a45c707d9fc6&car2=5e4c011f1050a45c707da431&car3=5e51a1ac8307b5e3d4da5de0&car1-label=%231%20-%20Daily&car2-label=%232%20-%20Collector&car3-label=%233%20-%20Fast#">Perfect-garage.org</a>
             </h3>
             <div class="french">Site Gatsby (JAMStack / Graphql / React)</div>
             <div class="english">Gatsby Website (JAMStack / Graphql / React)</div>
