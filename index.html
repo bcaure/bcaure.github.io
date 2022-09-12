@@ -504,9 +504,10 @@
         margin-right: 10px; 
       }
       .contact {
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        margin: 30px 0 30px 0;
       }
 
       .personal-projects {
@@ -676,7 +677,7 @@
           <div class="contact">
             <div class="contact-label print-only-flex">
               <img class="contact-logo" src="cv.png" alt="" />
-              <span class="french">CV complet :&nbsp;</span>
+              <span class="french">CV complet & joli :&nbsp;</span>
               <span class="english">Full Resume:&nbsp;</span>
               <span><a href="https://bcaure.github.io">bcaure.github.io</a></span>
             </div>
@@ -684,8 +685,8 @@
               <img class="contact-logo no-mobile" src="network.png" alt="" />
               <a href="https://linkedin.com/in/benjamin-caure" class="no-mobile">linked.in/in/benjamin-caure</a>
               <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="linkedin-logo.png" alt="" /></a>
-              </div>
-              <div class="contact-label">
+            </div>
+            <div class="contact-label">
               <img class="contact-logo no-mobile" src="phone.png" alt="" />
               <a class="no-mobile" href="tel:+33771606631">+33 7 71 60 66 31</a>
               <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="phone.svg" alt="" /></a>
@@ -811,24 +812,36 @@
                 <span class="print-only-inline"> - BECOMS</span>
               </summary>
               <div class="experience-with-image">
+                <a href="https://becoms.tech" style="display: flex">
+                  <img alt="logo becoms" style="width: 150px" src="becoms-B.png" class="no-mobile no-print" />
+                  <img alt="logo becoms" style="min-width: auto; margin: 1vh 10vw 1vh 10vw;" src="becoms.png" class="mobile-only" />
+                </a>
                 <div class="french">
-                  <div>Valvert - application de planification de livraison</div>
+                  <div>Développement d'applications métiers pour des PME</div>
                   <ul class="french">
-                    <li>Recueil du besoin avec les utilisateurs et conduite du changement</li>
-                    <li>Intégration avec le logiciel de facturation CEGID</li>
-                    <li>Mode hors ligne avec les services worker (PWA)</li>
+                    <li>Recueil du besoin et développement de solutions web et mobile: API, application web et mobiles (PWA)</li>
+                    <li>Stack privilégiée: React, Typescript, Tailwind, React-Query, NodeJS, Express, Mongoose, Mongodb</li>
+                    <li>Construction d'offres autour logiciels de gestion existants (API / Webhook)</li>
+                    <li>Intégration d'offres Cloud (Auth0, AWS S3, Azure)</li>
+                    <li>Mise en place des processus métiers et conduite du changement</li>
                   </ul>
                 </div>
                 <div class="english">
-                  <<div>Valvert - Delivery Planning Software</div>
+                  <<div>Application Development for Small/Medium Business</div>
                   <ul class="english">
-                    <li>Requirements analysis with the end-users and change management</li>
-                    <li>Develop with React, React-Native and Node.js</li>
-                    <li>Offline mode with service workers</li>
+                    <li>Requirements analysis and development of the solution: API, Web Apps, Mobile Apps (PWA)</li>
+                    <li>Develop with React, Typescript, Tailwind, React-Query, NodeJS, Express, Mongoose, Mongodb</li>
+                    <li>Build solutions based on open-source software integration (API / Webhook)</li>
+                    <li>Integration of Cloud services (Auth0, AWS S3, Azure)</li>
                   </ul>
                 </div>  
               </div>
-              <div>React, Node.js, Express, Mongo DB, Typescript, Tailwind, React Query</div>
+              <div><span style="font-weight: bold;">Stack:</span> React, Node.js, Express, Mongo DB, Typescript, Tailwind, React Query</div>
+              <div>
+                <span style="font-weight: bold;" class="english">Softwares: </span>
+                <span  style="font-weight: bold;" class="french">Solutions: </span>
+                Dolibarr, CEGID, Sage, AWS, Azure, Auth0
+              </div>
             </details>
           </div>
           <div>
@@ -1156,7 +1169,7 @@
   // Printing
   (function () {
 
-    document.querySelectorAll('details').forEach((e, idx) => e.open = idx === 0);
+    document.querySelectorAll('details').forEach((e, idx) => e.open = idx <= 1);
 
     if (window.matchMedia) {
       window.matchMedia('print').addListener((mql) => {
