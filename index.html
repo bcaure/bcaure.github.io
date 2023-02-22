@@ -491,9 +491,6 @@
         align-self: center;
       }
       
-      .identity {
-        display: block;
-      }
       .name-and-title {
         text-align: left;
       }
@@ -503,17 +500,11 @@
       .firstname {
         margin-right: 10px; 
       }
-      .contact {
-        display: grid;
-        grid-template-columns: auto auto;
-        justify-content: center;
-        margin: 30px 0 30px 0;
-      }
 
       .personal-projects {
         display: block;
       }    
-      .personal-projects a {
+      .personal-projects a.print-black {
         color: black!important;
       }
       .personal-project {
@@ -527,6 +518,16 @@
       }
       .personal-project .code, .personal-project .opensource {
         width: auto;
+      }
+
+      .personal-project .code.courses {
+        display: block;
+      }
+      .personal-project .code.courses a {
+        display: flex;
+      }
+      .personal-project .code.courses span {
+        margin-right: 5px;
       }
     }
 
@@ -614,7 +615,7 @@
       background-color: var(--color-medium);
     }
 
-    #myVideo {
+    #my-background-image {
       background-image: url('cowork-color+.jpg');
       background-size: 140%;
       background-position-x: -0px;
@@ -632,7 +633,7 @@
 <body>
 
   <div class="layer">
-    <div id="myVideo"></div>
+    <div id="my-background-image"></div>
 
   </div>
 
@@ -667,17 +668,17 @@
               <div class="firstname">BENJAMIN</div><div class="lastname">CAURE</div>
             </h1>
             <div class="title">
-              <span class="french">DÉVELOPPEUR</span>
-              <span class="english">FREELANCE</span>
-              <span class="french">&nbsp;&nbsp;FREELANCE</span>
-              <span class="english">&nbsp;&nbsp;DEVELOPER</span>
+              <span class="french">DÉVELOPPEUR & </span>
+              <span class="english">FREELANCE DEVELOPER</span>
+              <span class="french">&nbsp;&nbsp;ARCHITECTE FREELANCE</span>
+              <span class="english">&nbsp;&nbsp; & ARCHITECT</span>
             </div>
           </div>
-          <img src="id.png" class="photo no-print" alt="Photo" />
+          <img src="id.png" class="photo" alt="Photo" />
           <div class="contact">
-            <div class="contact-label print-only-flex">
+            <div class="contact-label">
               <img class="contact-logo" src="cv.png" alt="" />
-              <span class="french">CV complet & joli :&nbsp;</span>
+              <span class="french">CV complet :&nbsp;</span>
               <span class="english">Full Resume:&nbsp;</span>
               <span><a href="https://bcaure.github.io">bcaure.github.io</a></span>
             </div>
@@ -703,8 +704,8 @@
           </div>
         </div>
         <p class="resume french">
-          Développeur fullstack, je suis à la recherche de missions Python, Node.js, React, React-Native ou Vue.<br />
-          Mobilité : dans la région de Clermont-Ferrand ou en télétravail à 100%.<br>
+          Développeur fullstack, je sais mener à bien des projets Python, Node.js, React, React-Native ou Vue de grande ampleur.<br />
+          Je maîtrise également leur intégration grâce à plusieurs missions d'architecture effectuées au sein de grands groupes.<br>
         </p>
         <p class="resume english">
           Enthusiastic Fullstack Developer with 10+ years of broad experience in Java and Javascript areas,
@@ -712,18 +713,18 @@
         </p>
       </div>
       <div class="projects-experience-education">
-        <hr class="no-print" />
-        <h2 class="french no-print">Projets Personnels</h2>
-        <div class="english no-print" style="display: flex; align-items: center;"><h2 style="width: auto">My Projects</h2>&nbsp;<span>→ Check the code!</span></div>
-        <div class="personal-projects no-print">
+        <hr />
+        <h2 class="french">Projets Personnels</h2>
+        <div class="english" style="display: flex; align-items: center;"><h2 style="width: auto">My Projects</h2>&nbsp;<span>→ Check the code!</span></div>
+        <div class="personal-projects">
           <div class="personal-project">
-            <h3 class="french opensource">Articles <a href="https://www.baeldung.com/author/benjamincaure">Baeldung.com</a></h3>
-            <h3 class="english opensource">Tech Blog Author at <a href="https://www.baeldung.com/author/benjamincaure">Baeldung.com</a></h3>
+            <h3 class="french opensource">Auteur d'articles Baeldung</h3>
+            <h3 class="english opensource">Tech Blog Author at Baeldung</h3>
             <div class="french opensource no-print">Consultez mes articles Java et Spring</div>
             <div class="english opensource no-print">Check my Java & Spring articles:</div>
             <span class="code">
               <a href="https://www.baeldung.com/author/benjamincaure/">
-                www.baeldung.com/author/benjamincaure
+                baeldung.com/author/benjamincaure
               </a>
             </span>
             <img src="fleche-haut-gauche.png" class="arrow-thumbnails arrow-thumbnails-1 no-print no-mobile" alt="" />
@@ -756,17 +757,27 @@
             </div>    
           </div>
           <div class="personal-project">
-            <h3 class="french opensource">Enseignant vacataire <a href="http://isima.fr">ISIMA</a></h3>
+            <h3 class="french opensource">Enseignant vacataire <a class="print-black" href="http://isima.fr">ISIMA</a></h3>
             <h3 class="english opensource">Javascript / React Teacher</h3>
             <div class="french no-print">Mes cours de Javascript et React</div>
             <div class="english no-print">Part-time activity</div>
-            <span class="code">
-              <img class="vertical-middle" src="GitHub-Mark-64px.png" style="max-width: 1em;" alt="" />&nbsp;
-              <a href="https://gitlab.com/pjben/restaurant"><span class="french">TD</span><span class="english">Exercises</span></a>&nbsp;-&nbsp;
-              <a href="https://gitlab.com/pjben/tp-binome-1">Coding game</a>
-            </span>
+            <div class="code courses">
+              <img class="vertical-middle no-print" src="GitHub-Mark-64px.png" style="max-width: 1em;" alt="" />&nbsp;
+              <a href="https://gitlab.com/pjben/restaurant">
+                <div class="french">TD</div>
+                <div class="english">Exercises</div>
+                <div class="print-only">:</div>
+                <div class="print-only">gitlab.com/pjben/restaurant</div>
+              </a>
+              <div class="no-print">&nbsp;-&nbsp;</div>
+              <a href="https://gitlab.com/pjben/tp-binome-1">
+                <div>Coding game</div>
+                <div class="print-only">:</div>
+                <div class="print-only">gitlab.com/pjben/tp-binome-1</div>
+              </a>
+            </div>
           </div>
-          <div class="personal-project">
+          <div class="personal-project no-print">
             <h3 class="french opensource">
               <a href="https://github.com/freelance-info/freelance-softwares">Application de comptabilité et de facturation</a>
             </h3>
@@ -775,19 +786,19 @@
               Software
             </h3>
             <div>Application React / Electron</div>
-            <span class="code no-print">
+            <div class="code no-print">
               <img class="vertical-middle" src="GitHub-Mark-64px.png" style="width: 1em" alt="" />&nbsp;
               <a href="https://github.com/freelance-info/freelance-compta">
                 github.com/freelance-info
               </a>
-            </span>
+            </div>
           </div>
-          <div class="personal-project">
+          <div class="personal-project no-print">
             <h3 class="opensource">
               <a href="http://perfect-garage.org/en/?car1=5e4c011d1050a45c707d9fc6&car2=5e4c011f1050a45c707da431&car3=5e51a1ac8307b5e3d4da5de0&car1-label=%231%20-%20Daily&car2-label=%232%20-%20Collector&car3-label=%233%20-%20Fast#">Perfect-garage.org</a>
             </h3>
-            <div class="french">Site Gatsby (JAMStack / Graphql / React)</div>
-            <div class="english">Gatsby Website (JAMStack / Graphql / React)</div>
+            <div class="french">Site NextJS (JAMStack / Strapi / React)</div>
+            <div class="english">NextJS Website (JAMStack / Strapi / React)</div>
             <span class="code no-print">
               <img class="vertical-middle" src="GitHub-Mark-64px.png" style="max-width: 1em;" alt="" />&nbsp;
               <a href="https://github.com/le-garage-ideal">
@@ -802,18 +813,17 @@
           <h2 class="french">Expérience Professionelle</h2>
           <h2 class="english">My Work Experience</h2>
           <div class="first-experience">
-            <h3 class="no-print">BECOMS</h3>
+            <h3>BECOMS</h3>
             <details>
               <summary>
                 <span class="dates french">Depuis mars 2022</span>
                 <span class="dates english">March 2022 to present</span>
-                <span class="french">Développeur Full-stack</span>
-                <span class="english">Full-stack Developer</span>
-                <span class="print-only-inline"> - BECOMS</span>
+                <span class="french">Architecte - Développeur Full-stack</span>
+                <span class="english">Architect - Full-stack Developer</span>
               </summary>
               <div class="experience-with-image">
                 <a href="https://becoms.tech" style="display: flex">
-                  <img alt="logo becoms" style="width: 150px" src="becoms-B.png" class="no-mobile no-print" />
+                  <img alt="logo becoms" style="width: 150px" src="becoms-B.png" class="no-mobile" />
                   <img alt="logo becoms" style="min-width: auto; margin: 1vh 10vw 1vh 10vw;" src="becoms.png" class="mobile-only" />
                 </a>
                 <div class="french">
@@ -827,7 +837,7 @@
                   </ul>
                 </div>
                 <div class="english">
-                  <<div>Application Development for Small/Medium Business</div>
+                  <div>Application Development for Small/Medium Business</div>
                   <ul class="english">
                     <li>Requirements analysis and development of the solution: API, Web Apps, Mobile Apps (PWA)</li>
                     <li>Develop with React, Typescript, Tailwind, React-Query, NodeJS, Express, Mongoose, Mongodb</li>
@@ -844,15 +854,15 @@
               </div>
             </details>
           </div>
+          <div class="print-only" style="page-break-before: always; margin-top: 100px;"></div>
           <div>
-            <h3 class="no-print">BACARDI</h3>
+            <h3>BACARDI</h3>
             <details>
               <summary>
                 <span class="dates french">Janvier 2021 - février 2022</span>
                 <span class="dates english">Jan 2021 to Feb 2022</span>
                 <span class="french">Développeur / Architecte Technique</span>
                 <span class="english">Developer / Software Architect</span>
-                <span class="print-only-inline"> - BACARDI</span>
               </summary>
               <div class="experience-with-image">
                 <a href="https://mixlabcocktails.com"><img alt="" src="mixlab.png" /></a>
@@ -879,6 +889,10 @@
             </details>
           </div>
           <div>
+            <h3 class="french print-only">EXPERIENCES PRECEDENTES</h3>
+            <h3 class="english print-only">OTHER EXPERIENCES</h3>
+            <i class="french print-only" style="margin-top: -1em; margin-bottom: 1em">Plus de détails sur <a href="http://bcaure.github.io">bcaure.github.io</a></i>
+            <i class="english print-only" style="margin-top: -1em; margin-bottom: 1em">More details on <a href="http://bcaure.github.io">bcaure.github.io</a></i>
             <h3 class="french no-print">AMUE Clermont-Ferrand</h3>
             <h3 class="english no-print">Universities and Research Organizations Agency</h3>
             <details>
@@ -1137,12 +1151,12 @@
               </div>
             </li>
             <li class="french flex">
-              <div class="flex1"><strong>Méthodologies</strong> : Agile/Lean, Team Leader</div>
-              <div class="flex1"><strong>Bon niveau d'anglais</strong>, grâce à de nombreuses missions anglophones
+              <div class="flex1"><strong>Méthodologies</strong> : Architecture (intégration, securité, data, infra), Agile, Team Leader</div>
+              <div class="flex1"><strong>Anglais courant</strong>, grâce à de nombreuses missions anglophones
               </div>
             </li>
             <li class="english flex">
-              <div class="flex1"><strong>Management</strong>: Agile/Lean, Team Leader (5y XP)</div>
+              <div class="flex1"><strong>Management</strong>: Architecture (integration, security, data, infra), Agile, Team Leader</div>
               <div class="flex1"><strong>Fluent in english</strong>, thanks to several years of work with remote
                 coworkers</div>
             </li>
@@ -1151,7 +1165,7 @@
       </div>
 
   </main>
-  <div id="myVideo" class="no-print"></div>
+  <div id="my-background-image" class="no-print"></div>
 
   <footer class="no-print footer">
     <section>
@@ -1173,17 +1187,20 @@
 
     if (window.matchMedia) {
       window.matchMedia('print').addListener((mql) => {
-        document.querySelectorAll('details').forEach(e => e.open = false);
+        document.querySelectorAll('details').forEach((e, i) => {
+          if (i > 2) {
+            e.open = false;
+          }
+        });
       });
 
-      // window.matchMedia('(orientation: portrait)').addListener((mql) => {
-      //   if (mql.matches) {
-      //     document.querySelector('details').open = true;
-      //   }
-      // });
     }
 
-    window.onbeforeprint = () => document.querySelectorAll('details').forEach(e => e.open = false);
+    window.onbeforeprint = () => document.querySelectorAll('details').forEach((e, i) => {
+      if (i > 2) {
+        e.open = false;
+      }
+    });
 
     // Language
     var urlParams = new URLSearchParams(window.location.search);
