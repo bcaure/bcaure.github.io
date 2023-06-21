@@ -260,6 +260,9 @@
       background-size: cover;
       background-position: center;
     }
+    .experience-with-image img {
+      flex: 1;
+    }
     .experience-with-image a:hover {
       box-shadow: 0 0 10px var(--color-highlight);
     }
@@ -394,7 +397,7 @@
       border-bottom: 1px solid var(--color-highlight);
       padding-left: 20px;
       margin-left: 20px;
-      margin-top: 150px;
+      margin-top: 40px;
       height: fit-content;
     }
 
@@ -468,6 +471,10 @@
         margin-top: 4em;
       }
 
+      .photo-div {
+        max-height: 115px; overflow-y: hidden;
+      }
+
       .LI-profile-badge {
         top: 0px;
       }
@@ -498,28 +505,12 @@
       }
 
       .personal-projects {
-        margin-top: 50px;
-      }
-      .personal-projects a.print-black {
-        color: black!important;
+        display: none;
       }
 
-      .personal-project h3 {
-        font-weight: normal;
-        margin: 0 15px 0 0;
-      }
-      .personal-project .code, .personal-project .opensource {
-        width: auto;
-      }
-
-      .personal-project .code.courses {
-        display: block;
-      }
-      .personal-project .code.courses a {
-        display: flex;
-      }
-      .personal-project .code.courses span {
-        margin-right: 5px;
+      .experience-title {
+        font-weight: bold;
+        font-size: 1.4em;
       }
     }
 
@@ -664,15 +655,15 @@
               <div class="firstname">BENJAMIN</div><div class="lastname">CAURE</div>
             </h1>
             <div class="title">
-              <span class="french">ARCHITECTE</span>
-              <span class="english">FREELANCE DEVELOPER</span>
-              <span class="french">&nbsp;&nbsp;FREELANCE</span>
+              <span class="french">ARCHITECTE &</span>
+              <span class="french" style="white-space: nowrap;">DÉVELOPPEUR FULL-STACK</span>
+              <span class="english">FULL-STACK DEVELOPER</span>
               <span class="english">&nbsp;&nbsp; & ARCHITECT</span>
             </div>
           </div>
-          <img src="id.png" class="photo" alt="Photo" />
+          <div class="photo-div"><img src="id.jpg" class="photo" alt="Photo" /></div>
           <div class="contact">
-            <div class="contact-label print-only">
+            <div class="contact-label print-only-flex">
               <img class="contact-logo" src="cv.png" alt="" />
               <span class="french">CV complet :&nbsp;</span>
               <span class="english">Full Resume:&nbsp;</span>
@@ -695,13 +686,14 @@
             </div>
             <div class="contact-label no-mobile no-print">
               <img class="contact-logo" src="GitHub-Mark-64px.png" alt="" />
-              <span><a href="https://github.com/bcaure">Github</a></span>
+              <span class="french"><a href="https://github.com/bcaure">Mon Github</a></span>
+              <span class="english"><a href="https://github.com/bcaure">My Github</a></span>
             </div>
           </div>
         </div>
         <p class="resume french">
-          Je mène des projets de développement pour des grands groupes et PME, plus particulièrement dans les domaines B2C et B2B.<br>
-          Je réalise également des études d'architecture pour faciliter la transformation numérique de celles-ci.
+          Architecte solution depuis 10 ans, j'interviens dans la transformation numérique des entreprises : architecture applicative, infrastructure, sécurité et data.
+          Je tiens à continuer ma passion, le développement, afin de conserver mon expertise technique opérationnelle. 
         </p>
         <p class="resume english">
           Enthusiastic Fullstack Developer with 10+ years of broad experience in Java and Javascript areas,
@@ -714,25 +706,26 @@
           <h2 class="french">Expérience Professionnelle</h2>
           <h2 class="english">My Work Experience</h2>
           <div class="first-experience">
-            <h3 class="no-mobile">BECOMS</h3>
-            <a href="https://becoms.tech" class="mobile-only"">
-              <img src="becoms.png" style="height: 2em;" />
-            </a>
             <details>
               <summary>
+                <h3 class="no-mobile no-print">BECOMS</h3>
+                <span class="experience-title print-only">BECOMS</span>
+                <a href="https://becoms.tech" class="mobile-only">
+                  <img src="becoms.png" style="height: 2em;" />
+                </a>
                 <span class="dates french">Depuis mars 2022</span>
                 <span class="dates english">March 2022 to present</span>
-                <span class="french">Ingénieur full-stack</span>
+                <span class="french">Architecte - Développeur full-stack</span>
                 <span class="english">Architect - Full-stack Developer</span>
               </summary>
               <div class="french" style="margin-top: 15px">Je mène différents projets au sein de Becoms, une startup Clermontoise :</div>
               <div class="experience-with-image">
                 <div>
                   <ul class="french">
-                    <li>Etude de marché pour la migration de la plateforme eCommerce de Besson Chaussures (Shopify, Medusa, Big Commerce)</li>
-                    <li>Réalisation d'application métiers s'appuyant sur des solutions de gestion commerciales (CEGID, Sage, Dolibarr)</li>
-                    <li>Intégration d'application terrain de remontée de données dans le SI Michelin Motorsport</li>
-                    <li>Intégration de données IoT dans un système big data (Mongodb)</li>
+                    <li>Développements spécifiques autour de solutions open-source du marché (Cegid, Dolibarr, React, Nodejs, Auth0)</li>
+                    <li>Étude d'architecture pour la migration eCommerce dans le domaine du prêt-à-porter (Shopify, Medusa, Big Commerce)</li>
+                    <li>Développement d'une application terrain de remontée de données dans le SI Michelin Motorsport (React, Nodejs, Mongodb)</li>
+                    <li>Intégration de données IoT dans un système big data (Python, Mongodb)</li>
                   </ul>
                 </div>
                 <div class="english">
@@ -745,31 +738,36 @@
                   </ul>
                 </div>  
                 <a href="https://becoms.tech" class="no-mobile" style="height: 240px; background-image: url(becoms.gif)!important; margin-left: 20px;">
-                  <img src="becoms-B.png" class="print-only" style="height: 240px;" />
+                  <img src="becoms-B.png" class="print-only" style="height: 190px;" />
                 </a>
               </div>
             </details>
           </div>
           <div>
-            <h3>BACARDI</h3>
             <details>
               <summary>
+                <h3 class="no-print">BACARDI</h3>
+                <span class="experience-title print-only">BACARDI</span>
                 <span class="dates french">Janvier 2021 - février 2022</span>
                 <span class="dates english">Jan 2021 to Feb 2022</span>
                 <span class="french">Architecte SI</span>
                 <span class="english">Developer / Software Architect</span>
               </summary>
               <div class="experience-with-image">
-                <a href="https://mixlabcocktails.com" style="height: 240px; background-image: url('mixlab.png'); margin-right: 20px;">
-                  <img src="mixlab.png" class="print-only" style="margin-top: 40px; height: 140px; width: 230px" />
-                </a>
+                <a href="https://mixlabcocktails.com" class="no-print" style="height: 240px; background-image: url('mixlab.png'); margin-right: 20px;"></a>
+                <img src="mixlab-vertical.png" class="print-only" style="height: 250px;" />
                 <div class="french">
                   <ul class="french">
-                    <li>MixlabCocktails - réalisation d'une application mobile et d'un site web B2C</li>
-                    <li>Intégration à la plateforme eCommerce et marketing existante</li>
-                    <li>Réalisation d'une étude de marché des plateformes headless eCommerce : Saleforce, Amplience, VTEX</li>
-                    <li>Migration de données clients SAP dans le nouveau CRM Salesforce</li>
-                    <li>Equipe 100% anglophone</li>
+                    <li>MixlabCocktails - app mobile / site B2C : lead équipe internatoniale de 10 personnes (React Native, PHP)</li>
+                    <li>Intégration d'outils marketing : Analytics, OneTrust, Algolia, Youtube, Vimeo, Pinterest</li>
+                    <li>Étude de migration vers les plateformes Salesforce (marketing automation) et SAP (IAM + login Google / Facebook / Apple)</li>
+                    <li>Réalisation d'études de sourcing : 
+                      <ul style="list-style-type: circle;">
+                        <li>headless commerce : Saleforce, Amplience, VTEX, Shopify</li>
+                        <li>headless CMS : Contentful, Contentstack, Strapi</li>
+                        <li>Process automation: Camunda, ProcessMaker, Kissflow, Zapier</li>
+                      </ul>
+                    </li>
                   </ul>
                 </div>
                 <div class="english">
@@ -788,27 +786,24 @@
           <section class="flex experience-with-personal-projects">
             <aside>
               <div>
-                <h3 class="french print-only">EXPERIENCES PRECEDENTES</h3>
-                <h3 class="english print-only">OTHER EXPERIENCES</h3>
-                <i class="french print-only" style="margin-top: -1em; margin-bottom: 1em">Plus de détails sur <a href="http://bcaure.github.io">bcaure.github.io</a></i>
-                <i class="english print-only" style="margin-top: -1em; margin-bottom: 1em">More details on <a href="http://bcaure.github.io">bcaure.github.io</a></i>
                 <h3 class="french no-print">AMUE Clermont-Ferrand</h3>
                 <h3 class="english no-print">Universities and Research Organizations Agency</h3>
                 <details>
                   <summary>
                     <span class="dates french">2018-2020</span>
                     <span class="dates english">2018-2020</span>
-                    <span class="french">Architecte / Développeur Angular-Spring</span>
+                    <span class="french">Développeur full-stack</span>
                     <span class="english">Full-stack developer</span>
                     <span class="french print-only-inline"> - AMUE</span>
                     <span class="english print-only-inline"> - Minister of Research</span>
                   </summary>
                   <p class="french">
-                    Pour le ministère de l'E.S. et de la Recherche, développement de la brique de gestion de projets
+                    Pour le ministère de la Recherche, développement de la brique de gestion de projets
                     de Recherche :
                     <a href="www.amue.fr/recherche/logiciels/caplab/">www.amue.fr/recherche/logiciels/caplab</a><br />
-                    Stack Angular 10+, Spring Boot 2, Postgres, scripts Node.js et Python, Gitlab CI, Docker.
-                    Tests: Karma, Protractor, Mockito
+                    Définition des briques applicatives, intégration avec le SI existant. Mise en place de la CI et de la TAO.<br />
+                    Stack Angular 10+, Spring Boot 2, Postgres, Keycloack, Gitlab CI, Docker.<br />
+                    TAO: Karma, Protractor, Mockito
                   </p>
                   <p class="english">
                     Help Scientific Researcher to collaborate and manage their teams in a centralized application called
@@ -821,224 +816,10 @@
                   </p>
                 </details>
               </div>
-              <div>
-                <h3 class="no-print">CGI Clermont-Ferrand</h3>
-                <details>
-                  <summary>
-                    <span class="dates">2016-2017</span>
-                    <span class="french">Développeur mobile - Architecte SI</span>
-                    <span class="english">Mobile developer - Software Architect</span>
-                    <span class="print-only-inline"> - Michelin</span>
-                  </summary>
-                  <p class="french">
-                    Au sein d'une
-                    <strong>squad spécialisée dans le développement web et mobile</strong> Michelin, j'ai participé à la
-                    réalisation
-                    d'applications
-                    B2B mobiles hybrides et de leur distribution sur les différents stores.
-                    Cette expérience m'a permis de développer considérablement mes compétences mobiles ainsi que l'approche marketing d'un produit.
-                    <br />
-                    Angular 2, Ionic 3, Redux (NgRx 1), Groovy (Grails), MySQL.
-                  </p>
-                  <p class="english">
-                    As a small dev team, we built a <strong>mobile app</strong> that turn a standard mobile phone into a multipurpose data collecting tool.<br />
-                    Michelin experts are now using it at every Moto GP and Le Mans. <br />
-                    We were with them in the races to fix bugs and improve UX, stressful but so interesting experience!<br />
-                    Stack: Ionic, Redux, Groovy backend
-                  </p>
-                  <p class="french">
-                    J'ai continué d'intervenir en tant qu'architecte SI sur des projets de refonte du CRM Michelin avec
-                    Salesforce.com.
-                  </p>
-                  <p class="english">
-                    Technical architecture on B2B applications integration with Salesforce.com CRM.
-                  </p>
-                  <p class="french">
-                    Je participe également à plusieurs initiatives pour le recrutement, la montée en compétences de
-                    développeurs et
-                    l'amélioration
-                    continue de la filère technique de mon entreprise.
-                  </p>
-                  <p class="english">
-                    Recruitment, software craftmanship and students mentor.
-                  </p>
-                </details>
-              </div>
-              <div>
-                <details>
-                  <summary>
-                    <span class="dates">2013-2015</span>
-                    <span class="french">Développeur Java - Architecte SI</span>
-                    <span class="english">Java Developer - Software Architect</span>
-                    <span class="print-only-inline"> - Michelin</span>
-                  </summary>
-                  <p class="french">
-                    Au sein du domaine B2B Michelin, j'ai été le leader technique de la réécriture et la modernisation du
-                    portail <a href="https://bibserve.com" target="_blank">e-Commerce Europe</a>.
-                  </p>
-                  <p class="french">
-                    J'ai lancé l'initiative de revoir l'infrastructure sous-jacente afin de migrer l'architecture
-                    Mainframe Z/OS vers
-                    x86/Linux.
-                    Ce projet "Replatforming" a permis de diviser ses coûts d'infrastructure et de maintenance.
-                  </p>
-                  <p class="french">
-                    Suite à cette expérience réussie, on m'a confié le rôle d'<strong>architecte sur le domaine Marketing
-                      et
-                      Ventes</strong>.
-                    Pour différents projets du domaine, j'ai été amené à définir les dossiers d'architecture et
-                    accompagner les équipes dans
-                    la réalisation de ces préconisations.
-                  </p>
-                  <p class="english">
-                    Development of the brand new <a href="https://bibserve.com" target="_blank">eCommerce Europe
-                      portal</a>
-                  </p>
-                  <p class="english">
-                    After revamping the B2B Portal UI (bibserve.com), I convinced my Sr Architect to move it from its
-                    legacy platform (IBM
-                    Z) to a more standard one (Red Hat), which was not an easy move... but successfull! A big cost
-                    reduction.
-                  </p>
-                  <p class="english">
-                    After that, I was called back as the IS Architect for the B2B Domain, to design technical platforms,
-                    data integration
-                    and security for new projects.
-                  </p>
-                </details>
-              </div>
-              <div>
-                <details>
-                  <summary>
-                    <span class="dates">2010-2013</span>
-                    <span class="french">Tech Leader Java</span>
-                    <span class="english">Java Lead Developer</span>
-                    <span class="french print-only-inline"> - Ministère de l'Agriculture</span>
-                    <span class="english print-only-inline"> - Minister of Agriculture</span>
-                  </summary>
-                  <p class="french">
-                    <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
-                    <br />Pilotage du développement de plusieurs projets au forfait.
-                    <br />Management des équipes de 2 à 6 développeurs dont backoffice en Inde
-                    <br />jQuery - PHP 5 (Zend) - JEE 6 - Websphere 8 - JBoss - Oracle 11
-                  </p>
-                  <p class="english">
-                    <strong>IFCE (Minister of Agriculture) and Michelin Supply chain</strong>
-                    <br />Project technical leader
-                    <br />2 - 6 developers teams, India backoffice management
-                    <br />jQuery - PHP 5 (Zend) - JEE - Websphere - JBoss - Oracle
-                  </p>
-                </details>
-              </div>
-              <div>
-                <details>
-                  <summary>
-                    <span class="dates">2009-2010</span>
-                    <span class="french">Analyste Fonctionnel</span>
-                    <span class="english">Functional Analyst</span>
-                    <span class="print-only-inline"> - Michelin</span>
-                    </summary>
-                  <p class="french">
-                    <strong>Supply chain Michelin</strong>
-                    <br />Mise en place d'un progiciel de Gestion d'entrepôts pour l'Europe et l'Amérique du Nord
-                    <br />Recueil du besoin, rédaction des spécifications fonctionnelles, recette.
-                  </p>
-                  <p class="english">
-                    <strong>Michelin Supply chain</strong>
-                    <br />Warehouse management system integration for Europe and North America
-                    <br />Requirements analysis, functional and technical specifications, tests.
-                  </p>
-                </details>
-              </div>
-              <div>
-                <details>
-                  <summary>
-                    <span class="dates">2008-2009</span>
-                    <span>Devops Jenkins</span>
-                    <span class="print-only-inline"> - Michelin</span>
-                  </summary>
-                  <p class="french">
-                    <strong>Supply chain Michelin</strong>
-                    <br />Participation à la mise en place de l'intégration continue des applications
-                    <br />Jenkins - JEE 5 - Websphere 7 - Oracle 10 - MQ6
-                  </p>
-                  <p class="english">
-                    <strong>Michelin Supply chain</strong>
-                    <br />Devops : continuous delivery of Java projects and software packages.
-                    <br />Jenkins - JEE 5 - Websphere 7 - Oracle 10 - MQ6
-                  </p>
-                </details>
-              </div>
-              <h3 class="no-print">Aquisystem Bordeaux</h3>
-              <div>
-                <details>
-                  <summary>
-                    <span class="dates">2006-2008</span>
-                    <span class="french">Développeur Java</span>
-                    <span class="english">Java Developer</span>
-                    <span class="french print-only-inline"> - Crédit Agricole</span>
-                    <span class="english print-only-inline"> - Crédit Agricole (bank)</span>
-                    </summary>
-                  <p class="french">
-                    <strong>Crédit Agricole</strong>
-                    <br />Participation à la réalisation du projet GED (Gestion Electronique de Documents)
-                    <br />Développements de batchs d'intégration de documents
-                    <br />Java - Perl - Awk
-                  </p>
-                  <p class="english">
-                    <strong>Crédit Agricole (bank)</strong>
-                    <br />Electronic Document Management system installation
-                    <br />Java batchs dévelopment
-                    <br />Java - Perl - Awk
-                  </p>
-                  <p class="french">
-                    <strong>Groupe Les Mousquetaires</strong>
-                    <br />Développement d'un référenciel articles
-                    <br />STRUTS - Websphere - Oracle
-                  </p>
-                  <p class="english">
-                    <strong>Les Mousquetaires Group (mass retail)</strong>
-                    <br />Articles management system
-                    <br />STRUTS - Websphere - Oracle
-                  </p>
-                </details>
-              </div>
-              <h3 class="no-print">Sopra Paris</h3>
-              <div>
-                <details>
-                  <summary>
-                    <span class="dates">2005-2006</span>
-                    <span class="french">Développeur .Net</span>
-                    <span class="english">.Net Developer</span>
-                    <span class="french print-only-inline"> - Nestlé, Les Mousquetaires</span>
-                    <span class="english print-only-inline"> - Nestlé, Les Mousquetaires (Mass Retail)</span>
-                  </summary>
-                  <p class="french">
-                    <strong>Groupe Nestlé</strong>
-                    <br />Développement d'une application supply chain
-                    <br />.Net - SQL Sever
-                  </p>
-                  <p class="english">
-                    <strong>Nestlé Group (food industry)</strong>
-                    <br />Supply chain management development
-                    <br />.Net - SQL Sever
-                  </p>
-                  <p class="french">
-                    <strong>Petit Forestier</strong> - Locations de véhicules
-                    <br />Développements d'une application Web de gestion du parc, des commandes et de la facturation.
-                    <br />ASP .Net - C# - SQL Server
-                  </p>
-                  <p class="english">
-                    <strong>Petit Forestier</strong> - vehicle leasing
-                    <br />Web application of vehicle management, contracts, orders and billing
-                    <br />ASP .Net - C# - SQL Server
-                  </p>
-                </details>
-              </div>     
             </aside>
             <aside class="personal-projects">
               <h4 class="french">Mes projets personnels</h4>
-              <div class="english" style="display: flex; align-items: center;"><h2 style="width: auto">My Projects</h2>&nbsp;<span>→ Check the code!</span></div>
+              <h4 class="english">My Projects</h4>
               <div class="personal-project">
                 <h5 class="french opensource">Auteur d'articles Baeldung</h5>
                 <h5 class="english opensource">Tech Blog Author at Baeldung</h5>
@@ -1101,7 +882,208 @@
               </div>
             </aside>      
           </section>
-
+          <div>
+            <h3 class="no-print">CGI Clermont-Ferrand</h3>
+            <details>
+              <summary>
+                <span class="dates">2016-2017</span>
+                <span class="french">Développeur mobile - Architecte SI</span>
+                <span class="english">Mobile developer - Software Architect</span>
+                <span class="print-only-inline"> - Michelin</span>
+              </summary>
+              <p class="french">
+                Au sein d'une <strong>squad spécialisée dans le développement web et mobile</strong> Michelin, j'ai participé à la réalisation d'applications
+                B2B mobiles hybrides et de leur distribution sur les différents stores.<br />
+                Cette expérience m'a permis de développer considérablement mes compétences mobiles ainsi que l'approche marketing d'un produit.
+                <br />
+                Angular 2, Ionic 3, Redux (NgRx 1), Groovy (Grails), MySQL.
+              </p>
+              <p class="english">
+                As a small dev team, we built a <strong>mobile app</strong> that turn a standard mobile phone into a multipurpose data collecting tool.<br />
+                Michelin experts are now using it at every Moto GP and Le Mans. <br />
+                We were with them in the races to fix bugs and improve UX, stressful but so interesting experience!<br />
+                Stack: Ionic, Redux, Groovy backend
+              </p>
+              <p class="french">
+                J'ai continué d'intervenir en tant qu'architecte SI sur des projets de refonte du CRM Michelin avec
+                Salesforce.com.
+              </p>
+              <p class="english">
+                Technical architecture on B2B applications integration with Salesforce.com CRM.
+              </p>
+              <p class="french">
+                Je participe également à plusieurs initiatives de la filère technique : recrutement, formation, cycles de certification des développeurs.
+              </p>
+              <p class="english">
+                Recruitment, software craftmanship and students mentor.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2013-2015</span>
+                <span class="french">Développeur Java - Architecte SI</span>
+                <span class="english">Java Developer - Software Architect</span>
+                <span class="print-only-inline"> - Michelin</span>
+              </summary>
+              <p class="french">
+                Au sein du domaine B2B Michelin, j'ai été débuté comme dev lead pour la réécriture et la modernisation du
+                portail <a href="https://bibserve.com" target="_blank">e-Commerce Europe</a>.
+              </p>
+              <p class="french">
+                J'ai lancé l'initiative de revoir l'infrastructure sous-jacente afin de migrer l'architecture Mainframe vers Linux.
+                Ce projet "Replatforming" a permis de diviser ses coûts d'infrastructure et de maintenance.
+              </p>
+              <p class="french">
+                Suite à cette expérience réussie, on m'a confié le rôle d'<strong>architecte sur le domaine Marketing et Ventes</strong>.<br />
+                Pour différents projets du domaine, j'ai été amené à définir les dossiers d'architecture et accompagner les équipes dans la réalisation de ces préconisations.
+              </p>
+              <p class="english">
+                Development of the brand new <a href="https://bibserve.com" target="_blank">eCommerce Europe
+                  portal</a>
+              </p>
+              <p class="english">
+                After revamping the B2B Portal UI (bibserve.com), I convinced my Sr Architect to move it from its
+                legacy platform (IBM
+                Z) to a more standard one (Red Hat), which was not an easy move... but successfull! A big cost
+                reduction.
+              </p>
+              <p class="english">
+                After that, I was called back as the IS Architect for the B2B Domain, to design technical platforms,
+                data integration
+                and security for new projects.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2010-2013</span>
+                <span class="french">Tech Leader Java</span>
+                <span class="english">Java Lead Developer</span>
+                <span class="french print-only-inline"> - Ministère de l'Agriculture</span>
+                <span class="english print-only-inline"> - Minister of Agriculture</span>
+              </summary>
+              <p class="french">
+                <strong>IFCE (ministère de l'agriculture) et Supply chain Michelin</strong>
+                <br />Pilotage du développement de plusieurs projets au forfait.
+                <br />Management des équipes de 2 à 6 développeurs dont backoffice en Inde
+                <br />jQuery - PHP 5 (Zend) - JEE 6 - Websphere 8 - JBoss - Oracle 11
+              </p>
+              <p class="english">
+                <strong>IFCE (Minister of Agriculture) and Michelin Supply chain</strong>
+                <br />Project technical leader
+                <br />2 - 6 developers teams, India backoffice management
+                <br />jQuery - PHP 5 (Zend) - JEE - Websphere - JBoss - Oracle
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2009-2010</span>
+                <span class="french">Analyste Fonctionnel</span>
+                <span class="english">Functional Analyst</span>
+                <span class="print-only-inline"> - Michelin</span>
+                </summary>
+              <p class="french">
+                <strong>Supply chain Michelin</strong>
+                <br />Mise en place d'un progiciel de Gestion d'entrepôts pour l'Europe et l'Amérique du Nord
+                <br />Recueil du besoin, rédaction des spécifications fonctionnelles, recette.
+              </p>
+              <p class="english">
+                <strong>Michelin Supply chain</strong>
+                <br />Warehouse management system integration for Europe and North America
+                <br />Requirements analysis, functional and technical specifications, tests.
+              </p>
+            </details>
+          </div>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2008-2009</span>
+                <span>Devops</span>
+                <span class="print-only-inline"> - Michelin</span>
+              </summary>
+              <p class="french">
+                <strong>Supply chain Michelin</strong>
+                <br />Participation à la mise en place de l'intégration continue des applications
+                <br />Jenkins - JEE 5 - Websphere 7 - Oracle 10 - MQ6
+              </p>
+              <p class="english">
+                <strong>Michelin Supply chain</strong>
+                <br />Devops : continuous delivery of Java projects and software packages.
+                <br />Jenkins - JEE 5 - Websphere 7 - Oracle 10 - MQ6
+              </p>
+            </details>
+          </div>
+          <h3 class="no-print">Aquisystem Bordeaux</h3>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2006-2008</span>
+                <span class="french">Développeur Java</span>
+                <span class="english">Java Developer</span>
+                <span class="french print-only-inline"> - Crédit Agricole</span>
+                <span class="english print-only-inline"> - Crédit Agricole (bank)</span>
+                </summary>
+              <p class="french">
+                <strong>Crédit Agricole</strong>
+                <br />Participation à la réalisation du projet GED (Gestion Electronique de Documents)
+                <br />Développements de batchs d'intégration de documents
+                <br />Java - Perl - Awk
+              </p>
+              <p class="english">
+                <strong>Crédit Agricole (bank)</strong>
+                <br />Electronic Document Management system installation
+                <br />Java batchs dévelopment
+                <br />Java - Perl - Awk
+              </p>
+              <p class="french">
+                <strong>Groupe Les Mousquetaires</strong>
+                <br />Développement d'un référenciel articles
+                <br />STRUTS - Websphere - Oracle
+              </p>
+              <p class="english">
+                <strong>Les Mousquetaires Group (mass retail)</strong>
+                <br />Articles management system
+                <br />STRUTS - Websphere - Oracle
+              </p>
+            </details>
+          </div>
+          <h3 class="no-print">Sopra Paris</h3>
+          <div>
+            <details>
+              <summary>
+                <span class="dates">2005-2006</span>
+                <span class="french">Développeur .Net</span>
+                <span class="english">.Net Developer</span>
+                <span class="french print-only-inline"> - Nestlé, Les Mousquetaires</span>
+                <span class="english print-only-inline"> - Nestlé, Les Mousquetaires (Mass Retail)</span>
+              </summary>
+              <p class="french">
+                <strong>Groupe Nestlé</strong>
+                <br />Développement d'une application supply chain
+                <br />.Net - SQL Sever
+              </p>
+              <p class="english">
+                <strong>Nestlé Group (food industry)</strong>
+                <br />Supply chain management development
+                <br />.Net - SQL Sever
+              </p>
+              <p class="french">
+                <strong>Petit Forestier</strong> - Locations de véhicules
+                <br />Développements d'une application Web de gestion du parc, des commandes et de la facturation.
+                <br />ASP .Net - C# - SQL Server
+              </p>
+              <p class="english">
+                <strong>Petit Forestier</strong> - vehicle leasing
+                <br />Web application of vehicle management, contracts, orders and billing
+                <br />ASP .Net - C# - SQL Server
+              </p>
+            </details>
+          </div>     
         </div>
         <div class="education">
           <hr />
@@ -1149,13 +1131,17 @@
   // Printing
   (function () {
 
-    document.querySelectorAll('details').forEach((e, idx) => e.open = idx <= 1);
+    document.querySelectorAll('details').forEach((e, idx) => {
+      e.open = true;
+    });
 
     if (window.matchMedia) {
       window.matchMedia('print').addListener((mql) => {
         document.querySelectorAll('details').forEach((e, i) => {
-          if (i > 2) {
+          if (i > 3) {
             e.open = false;
+          } else {
+            e.open = true;
           }
         });
       });
@@ -1163,8 +1149,10 @@
     }
 
     window.onbeforeprint = () => document.querySelectorAll('details').forEach((e, i) => {
-      if (i > 2) {
+      if (i > 3) {
         e.open = false;
+      } else {
+        e.open = true;
       }
     });
 
