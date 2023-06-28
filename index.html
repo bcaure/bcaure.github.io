@@ -142,6 +142,8 @@
       font-weight: 600;
       font-size: var(--font-size-xxl);
       margin: 0 0 10px 0;
+      line-height: 1.1;
+      letter-spacing: .1em;
     }
 
     .title {
@@ -150,6 +152,7 @@
       font-family: Source Sans Pro;
       font-weight: bold;
       font-size: var(--font-size-xl);
+      letter-spacing: .1em;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
@@ -201,6 +204,7 @@
 
     .page {
       min-width: 400px;
+      max-width: 1280px;
       background-color: white;
       z-index: 2;
       box-shadow: 20px 20px 20px 1px var(--color-dark);
@@ -472,7 +476,7 @@
       }
 
       .photo-div {
-        max-height: 115px; overflow-y: hidden;
+        max-height: 115px; overflow: hidden;
       }
 
       .LI-profile-badge {
@@ -655,19 +659,19 @@
               <div class="firstname">BENJAMIN</div><div class="lastname">CAURE</div>
             </h1>
             <div class="title">
-              <span class="french">ARCHITECTE &</span>
-              <span class="french" style="white-space: nowrap;">DÉVELOPPEUR FULL-STACK</span>
-              <span class="english">FULL-STACK DEVELOPER</span>
-              <span class="english">&nbsp;&nbsp; & ARCHITECT</span>
+              <span class="french architect">ARCHITECTE SOLUTIONS<span class="dev">&nbsp;&</span></span>
+              <span class="french dev" style="white-space: nowrap;">DÉVELOPPEUR FULL-STACK</span>
+              <span class="english dev">FULL-STACK DEVELOPER</span>
+              <span class="english architect"><span class="dev">&nbsp;&nbsp;&&nbsp;</span>SOLUTIONS ARCHITECT</span>
             </div>
           </div>
           <div class="photo-div"><img src="id.jpg" class="photo" alt="Photo" /></div>
           <div class="contact">
-            <div class="contact-label print-only-flex">
+            <div class="contact-label print-only-flex dev architect">
               <img class="contact-logo" src="cv.png" alt="" />
-              <span class="french">CV complet :&nbsp;</span>
-              <span class="english">Full Resume:&nbsp;</span>
               <span><a href="https://bcaure.github.io">bcaure.github.io</a></span>
+              <span class="french" style="white-space: nowrap;">&nbsp;(CV)</span>
+              <span class="english" style="white-space: nowrap;">&nbsp;(Resume)</span>
             </div>
             <div class="contact-label">
               <img class="contact-logo no-mobile" src="network.png" alt="" />
@@ -715,7 +719,9 @@
                 </a>
                 <span class="dates french">Depuis mars 2022</span>
                 <span class="dates english">March 2022 to present</span>
-                <span class="french">Architecte - Développeur full-stack</span>
+                <span class="french architect">Architecte Solutions - Développeur full-stack</span>
+                <span class="french dev">Développeur full-stack</span>
+                <span class="english">Architect - Full-stack Developer</span>
                 <span class="english">Architect - Full-stack Developer</span>
               </summary>
               <div class="french" style="margin-top: 15px">Je mène différents projets au sein de Becoms, une startup Clermontoise :</div>
@@ -737,7 +743,7 @@
                     <li>Integration of Cloud services (Auth0, AWS S3, Azure)</li>
                   </ul>
                 </div>  
-                <a href="https://becoms.tech" class="no-mobile" style="height: 240px; background-image: url(becoms.gif)!important; margin-left: 20px;">
+                <a href="https://becoms.tech" class="no-mobile" style="min-height: 240px; align-self: stretch; background-image: url(becoms.gif)!important; margin-left: 20px;">
                   <img src="becoms-B.png" class="print-only" style="height: 190px;" />
                 </a>
               </div>
@@ -750,8 +756,10 @@
                 <span class="experience-title print-only">BACARDI</span>
                 <span class="dates french">Janvier 2021 - février 2022</span>
                 <span class="dates english">Jan 2021 to Feb 2022</span>
-                <span class="french">Architecte SI</span>
-                <span class="english">Developer / Software Architect</span>
+                <span class="french architect">Architecte SI</span>
+                <span class="french dev">Architecte & développeur full-stack</span>
+                <span class="english dev">Solutions Architect - Full-stack Developer</span>
+                <span class="english architect">Solutions Architect</span>
               </summary>
               <div class="experience-with-image">
                 <a href="https://mixlabcocktails.com" class="no-print" style="height: 240px; background-image: url('mixlab.png'); margin-right: 20px;"></a>
@@ -782,7 +790,7 @@
               </div>
             </details>
           </div>
-          <div class="print-only" style="page-break-before: always; margin-top: 100px;"></div>
+          <div class="print-only" style="page-break-before: always; height: 100px;"></div>
           <section class="flex experience-with-personal-projects">
             <aside>
               <div>
@@ -887,8 +895,8 @@
             <details>
               <summary>
                 <span class="dates">2016-2017</span>
-                <span class="french">Développeur mobile - Architecte SI</span>
-                <span class="english">Mobile developer - Software Architect</span>
+                <span class="french">Architecte SI - Développeur mobile</span>
+                <span class="english">Software Architect - Mobile developer</span>
                 <span class="print-only-inline"> - Michelin</span>
               </summary>
               <p class="french">
@@ -1093,9 +1101,9 @@
             <li class="french flex"><strong>Diplôme</strong> : Ingénieur ISIMA</li>
             <li class="english flex">ISIMA - <strong>Master School of IT</strong></li>
             <li class="flex">
-              <div class="flex1"><strong>Frontend</strong> : Javascript/Typescript, React, Angular, RxJs, Redux, React-Native, Ionic
+              <div class="flex1"><strong>Frontend</strong> : Javascript/Typescript, React, Angular, React-Native, Tailwind, Tanstack Query
               </div>
-              <div class="flex1"><strong>Backend</strong> : Node.js, Express, Java, Spring, Gitlab CI, Docker, Google Cloud, MS Azure
+              <div class="flex1"><strong>Backend</strong> : NodeJS, Express, Java, SpringBoot, Gitlab CI, Docker, Google Cloud, Azure, AWS, Postgres, Mongodb
               </div>
             </li>
             <li class="french flex">
@@ -1212,6 +1220,11 @@
     } else {
       document.querySelectorAll('.english').forEach(el => el.style.display = 'none');
       document.getElementById('flagImageEn').style.opacity = 0.5;
+    }
+    if (urlParams.get('type') === 'dev') {
+      document.querySelectorAll('.architect').forEach(el => el.style.display = 'none');
+    } else if (urlParams.get('type') === 'architect') {
+      document.querySelectorAll('.dev').forEach(el => el.style.display = 'none');
     }
   }());
 </script>
