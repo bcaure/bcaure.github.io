@@ -153,6 +153,7 @@
       font-weight: bold;
       font-size: var(--font-size-xl);
       letter-spacing: .1em;
+      white-space: nowrap;
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
@@ -203,8 +204,6 @@
     }
 
     .page {
-      min-width: 400px;
-      max-width: 1280px;
       background-color: white;
       z-index: 2;
       box-shadow: 20px 20px 20px 1px var(--color-dark);
@@ -319,7 +318,18 @@
       z-index: 2;
     }
 
+    .mixlab-link-image {
+      height: 240px;
+      background-image: url('mixlab.png');
+      margin-right: 20px;
+    }
+
     @media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) and (orientation: landscape) {
+      .page {
+        min-width: 1024px;
+        max-width: 1280px;
+      }
+
       summary:after {
         background: #fff;
         content: '˃';
@@ -512,9 +522,21 @@
         display: none;
       }
 
+      .experience-with-image {
+        margin-top: 15px;
+      }
+
       .experience-title {
         font-weight: bold;
         font-size: 1.4em;
+      }
+      
+      .mixlab-link-image {
+        height: 250px;
+      }
+      .mixlab-print-spacer {
+        width: 20px;
+        height: 100%;
       }
     }
 
@@ -660,9 +682,9 @@
             </h1>
             <div class="title">
               <span class="french architect">ARCHITECTE SOLUTIONS<span class="dev">&nbsp;&</span></span>
-              <span class="french dev" style="white-space: nowrap;">DÉVELOPPEUR FULL-STACK</span>
+              <span class="french dev">DÉVELOPPEUR FULL-STACK</span>
               <span class="english dev">FULL-STACK DEVELOPER</span>
-              <span class="english architect"><span class="dev">&nbsp;&nbsp;&&nbsp;</span>SOLUTIONS ARCHITECT</span>
+              <span class="english architect"><span class="dev">&&nbsp;</span>SOLUTIONS ARCHITECT</span>
             </div>
           </div>
           <div class="photo-div"><img src="id.jpg" class="photo" alt="Photo" /></div>
@@ -701,7 +723,7 @@
         </p>
         <p class="resume english">
           Enthusiastic Fullstack Developer with 10+ years of broad experience in Java and Javascript areas,
-          with willingness to master Node.js, Python, React, React Native and Vue.
+          with willingness to master other technologies in the SSR family (Remix, Solid, Astro, Sveltekit...), or languages (Python, Go, Rust...).
         </p>
       </div>
       <div class="projects-experience-education">
@@ -721,13 +743,13 @@
                 <span class="dates english">March 2022 to present</span>
                 <span class="french architect">Architecte Solutions - Développeur full-stack</span>
                 <span class="french dev">Développeur full-stack</span>
-                <span class="english">Architect - Full-stack Developer</span>
-                <span class="english">Architect - Full-stack Developer</span>
+                <span class="english architect">Solution Architect / Developer</span>
+                <span class="english dev">Full-stack Developer</span>
               </summary>
               <div class="french" style="margin-top: 15px">Je mène différents projets au sein de Becoms, une startup Clermontoise :</div>
               <div class="experience-with-image">
-                <div>
-                  <ul class="french">
+                <div class="french">
+                  <ul>
                     <li>Développements spécifiques autour de solutions open-source du marché (Cegid, Dolibarr, React, Nodejs, Auth0)</li>
                     <li>Étude d'architecture pour la migration eCommerce dans le domaine du prêt-à-porter (Shopify, Medusa, Big Commerce)</li>
                     <li>Développement d'une application terrain de remontée de données dans le SI Michelin Motorsport (React, Nodejs, Mongodb)</li>
@@ -735,12 +757,12 @@
                   </ul>
                 </div>
                 <div class="english">
-                  <div>Application Development for Small/Medium Business</div>
+                  <div class="english" style="margin-top: 15px">I'm working on projects for small and medium businesses, in a wide variety of fields:</div>
                   <ul class="english">
-                    <li>Requirements analysis and development of the solution: API, Web Apps, Mobile Apps (PWA)</li>
-                    <li>Develop with React, Typescript, Tailwind, React-Query, NodeJS, Express, Mongoose, Mongodb</li>
-                    <li>Build solutions based on open-source software integration (API / Webhook)</li>
-                    <li>Integration of Cloud services (Auth0, AWS S3, Azure)</li>
+                    <li>Mobile Apps for professionals working in the field (React Native, React PWA)</li>
+                    <li>IoT platform to process vehicle data (Python, MongoDB)</li>
+                    <li>OSS & cloud software integration (API / Webhook, NodeJS, Auth0, AWS S3, Azure)</li>
+                    <li>Case study to integrate Commerce Platform in an existing information system</li>
                   </ul>
                 </div>  
                 <a href="https://becoms.tech" class="no-mobile" style="min-height: 240px; align-self: stretch; background-image: url(becoms.gif)!important; margin-left: 20px;">
@@ -762,8 +784,9 @@
                 <span class="english architect">Solutions Architect</span>
               </summary>
               <div class="experience-with-image">
-                <a href="https://mixlabcocktails.com" class="no-print" style="height: 240px; background-image: url('mixlab.png'); margin-right: 20px;"></a>
-                <img src="mixlab-vertical.png" class="print-only" style="height: 250px;" />
+                <a href="https://mixlabcocktails.com" class="no-print mixlab-link-image"></a>
+                <img src="mixlab-vertical.png" class="print-only mixlab-link-image" />
+                <section class="print-only mixlab-print-spacer"></section>
                 <div class="french">
                   <ul class="french">
                     <li>MixlabCocktails - app mobile / site B2C : lead équipe internatoniale de 10 personnes (React Native, PHP)</li>
@@ -779,12 +802,12 @@
                   </ul>
                 </div>
                 <div class="english">
-                  <div><a href="https://mixlabcocktails.com">MixlabCocktails.com</a> - Mobile App + Website for Bacardi Consumers</div>
+                  <div>Working as Bacardi Architect, I've had several achievements on my own:</div>
                   <ul class="english">
-                    <li>Design the software architecture</li>
-                    <li>Develop with React, React-Native and Node.js</li>
-                    <li>Cloud services integration: Headless CMS, IAM, search engine</li>
-                    <li>English-speaking environment</li>
+                    <li>MixlabCocktails: B2C website and mobile app: design of the solution architecture and integration with Salesforce</li>
+                    <li>Cloud services integration: Gigya IAM, Algolia Search, Youtube, Vimeo, Bazaarvoice, Analytics tools, ...</li>
+                    <li>Headless CMS Benchmark (Contentful, Contentstack, Amplience, Strapi), BPMN (Camunda, Processmaker, PowerApps)</li>
+                    <li>Great integration with 100% remove and english-speaking teams</li>
                   </ul>
                 </div>  
               </div>
@@ -871,7 +894,7 @@
                 <h5 class="french opensource">Enseignant vacataire <a class="print-black" href="http://isima.fr">ISIMA</a></h5>
                 <h5 class="english opensource">Javascript / React Teacher</h5>
                 <div class="french no-print">Mes cours de Javascript et React</div>
-                <div class="english no-print">Part-time activity</div>
+                <div class="english no-print">@ISIMA IT Engineering School</div>
                 <div class="code courses">
                   <img class="vertical-middle no-print" src="GitHub-Mark-64px.png" style="max-width: 1em;" alt="" />&nbsp;
                   <a href="https://gitlab.com/pjben/restaurant">
@@ -1125,7 +1148,7 @@
           <div>
             <h4 class="french opensource">Enseignant vacataire <a class="print-black" href="http://isima.fr">ISIMA</a></h4>
             <div class="french opensource no-print">Développement web, React</div>
-            <h4 class="english opensource">Javascript / React Teacher</h4>
+            <h4 class="english opensource"><div>Javascript / React Teacher</div>@ISIMA IT Engineering School</h4>
 
             <h4 class="french opensource">Auteur d'articles Baeldung</h4>
             <h4 class="english opensource">Tech Blog Author at Baeldung</h4>
