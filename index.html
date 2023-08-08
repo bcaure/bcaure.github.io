@@ -421,7 +421,7 @@
     }
 
     .personal-project {
-      margin-bottom: 40px;
+      margin-bottom: 10px;
     }
 
     .personal-project h3 {
@@ -529,6 +529,7 @@
 
       .experience-with-image {
         margin-top: 15px;
+        align-items: center;
       }
 
       .experience-title {
@@ -539,9 +540,13 @@
       .mixlab-link-image {
         height: 250px;
       }
-      .mixlab-print-spacer {
+      .horizontal-print-spacer {
         width: 20px;
         height: 100%;
+      }
+      .vertical-print-spacer {
+        height: 20px;
+        width: 100%;
       }
     }
 
@@ -697,8 +702,8 @@
             <div class="contact-label print-only-flex dev architect">
               <img class="contact-logo" src="cv.png" alt="" />
               <span><a href="https://bcaure.github.io">bcaure.github.io</a></span>
-              <span class="french" style="white-space: nowrap;">&nbsp;(CV)</span>
-              <span class="english" style="white-space: nowrap;">&nbsp;(Resume)</span>
+              <span class="french" style="white-space: nowrap;">&nbsp;(page perso)</span>
+              <span class="english" style="white-space: nowrap;">&nbsp;(my site)</span>
             </div>
             <div class="contact-label">
               <img class="contact-logo no-mobile" src="network.png" alt="" />
@@ -763,7 +768,7 @@
                   <ul>
                     <li>Développement d'applications métiers sur une architecture micro-services, s’appuyant sur les API REST d’un ERP open-source (Dolibarr, React, React Native, Typescript, Tailwind, Nodejs, Redis, Auth0)</li>
                     <li>Déploiement d'application sur les plateformes Cloud Azure Containers et AWS S3</li>
-                    <li>Développement d'application dans le SI Michelin Motorsport (Azure, Docker, Kubernetes)</li>
+                    <li>Développement d'application dans le SI Michelin Motorsport (React, PWA, Azure, Docker, Kubernetes)</li>
                   </ul>
                 </div>
                 <div class="english">
@@ -771,15 +776,16 @@
                   <ul class="english">
                     <li>Apps for professionals working in the field: React, Typescript, NodeJS, Mongodb</li>
                     <li>IoT platform to process vehicle data: NodeJS, Python, MongoDB</li>
-                    <li>OSS & cloud software integration: <b>API / Webhook, NodeJS, Auth0, AWS S3, Gitlab CI, Azure Containers</b></li>
+                    <li>OSS & cloud software integration: API / Webhook, NodeJS, Auth0, AWS S3, Gitlab CI, Azure Containers</li>
                   </ul>
                 </div>  
-                <a href="https://becoms.tech" class="no-mobile" style="min-height: 240px; align-self: stretch; background-image: url(becoms.gif)!important; margin-left: 20px;">
-                  <img src="becoms-B.png" class="print-only" style="height: 190px;" />
+                <a href="https://becoms.tech" class="no-mobile no-print" style="min-height: 240px; align-self: stretch; background-image: url(becoms.gif)!important; margin-left: 20px;">
                 </a>
+                <img src="becoms-B.png" class="print-only" style="height: 150px; width: 150px" />
               </div>
             </details>
           </div>
+          <div class="print-only" style="height: 50px;"></div>
           <div>
             <details>
               <summary>
@@ -795,18 +801,13 @@
               <div class="experience-with-image">
                 <a href="https://mixlabcocktails.com" class="no-print mixlab-link-image"></a>
                 <img src="mixlab-vertical.png" class="print-only mixlab-link-image" />
-                <section class="print-only mixlab-print-spacer"></section>
+                <section class="print-only horizontal-print-spacer"></section>
                 <div class="french">
                   <ul class="french">
                     <li>MixlabCocktails - app mobile / site B2C : lead équipe de 10 personnes (React Native, PHP)</li>
                     <li>Intégration d'outils marketing : Analytics, OneTrust, Elastic Search, Youtube, Vimeo, Pinterest</li>
                     <li>Étude de migration vers les plateformes Salesforce (marketing automation) et SAP (IAM + login Google / Facebook / Apple)</li>
-                    <li>Réalisation de benchmarks : 
-                      <ul style="list-style-type: circle;">
-                        <li>headless CMS / JAMStack : Contentful, Contentstack, Strapi, Next.js, GraphQL</li>
-                        <li>Process automation: Camunda, ProcessMaker, Kissflow, Zapier</li>
-                      </ul>
-                    </li>
+                    <li>Réalisation de POC headless CMS / e-Commerce avec NextJS et GraphQL : Contentful, Contentstack, Strapi, Amplience, VTEX</li>
                   </ul>
                 </div>
                 <div class="english">
@@ -814,8 +815,8 @@
                   <div class="dev">Working as Bacardi Tech Lead, I've had several achievements on my own:</div>
                   <ul class="english">
                     <li>MixlabCocktails B2C website and mobile app: design app architecture, continuous integration and automated testing</li>
-                    <li><b>Using NodeJS Azure Functions</b>, I designed and developed data flow from Cloud solutions (Gigya IAM, Algolia Search, Youtube and Vimeo videos)</li>
-                    <li>I made a headless CMS benchmark & develop POC: Contentful, Contentstack, Strapi, Amplience using Next.js and GraphQL</li>
+                    <li>Using NodeJS Azure Functions, I designed and developed data flow from Cloud solutions (Gigya IAM, Algolia Search, Youtube and Vimeo videos)</li>
+                    <li>Using Next.js and GraphQL, I developed POC to compare headless CMS & e-commerce platforms : Contentful, Contentstack, Strapi, Amplience, VTEX</li>
                     <li>Management of 100% english-speaking teams</li>
                   </ul>
                 </div>  
@@ -844,15 +845,15 @@
                     Définition des briques applicatives, intégration avec le SI existant. Mise en place de la CI et de la TAO.<br />
                     Stack Angular, Material, Spring Boot, Postgres, Keycloack, Gitlab CI, Docker.<br />
                     Tests automatisés: Karma, Protractor, Mockito<br />
-                    Integration: Apache Camel, Rabbit MQ
+                    Integration: Python, Apache Camel, Rabbit MQ
                   </p>
                   <p class="english">
                     Help Scientific Researcher to collaborate and manage their teams in a centralized application called
                     CAPLAB.<br />
-                    My achievements: <b>automate 80% of manual tests</b>, unify developers around the devops approach, and spread
+                    My achievements: automate 80% of manual tests, unify developers around the devops approach, and spread
                     the peer review
                     practices<br />
-                    <b>Angular 10+, Springboot, Postgres, Gitlab CI and Docker-based platorm. Node.js and Python scripts.</b>
+                    Angular, Springboot, Postgres, Gitlab CI and Docker-based platorm. Node.js and Python scripts.
                     Tests: Karma, Protractor, Mockito
                   </p>
                 </details>
@@ -864,8 +865,6 @@
               <div class="personal-project">
                 <h5 class="french opensource">Auteur d'articles Baeldung</h5>
                 <h5 class="english opensource">Tech Blog Author at Baeldung</h5>
-                <div class="french opensource no-print">Consultez mes articles Java et Spring</div>
-                <div class="english opensource no-print">Check my Java & Spring articles:</div>
                 <span class="code">
                   <a href="https://www.baeldung.com/author/benjamincaure/">
                     baeldung.com/author/benjamincaure
@@ -903,7 +902,6 @@
               <div class="personal-project">
                 <h5 class="french opensource">Enseignant vacataire <a class="print-black" href="http://isima.fr">ISIMA</a></h5>
                 <h5 class="english opensource">Javascript / React Teacher</h5>
-                <div class="french no-print">Mes cours de Javascript et React</div>
                 <div class="english no-print">@ISIMA IT Engineering School</div>
                 <div class="code courses">
                   <img class="vertical-middle no-print" src="GitHub-Mark-64px.png" style="max-width: 1em;" alt="" />&nbsp;
@@ -1143,7 +1141,6 @@
             </li>
             <li class="french flex">
               <div class="flex1"><strong>Méthodologies</strong> : Architecture (intégration, securité, data, infra), Agile, Team Leader</div>
-              </div>
             </li>
             <li class="english flex">
               <div class="flex1"><strong>Management</strong>: Architecture (integration, security, data, infra), Agile, Team Leader</div>
@@ -1158,7 +1155,7 @@
           <h2 class="english">My Projects</h2>
           <div>
             <h4 class="french opensource">Enseignant vacataire <a class="print-black" href="http://isima.fr">ISIMA</a></h4>
-            <div class="french opensource no-print">Développement web, React</div>
+            <div class="french opensource">Développement web : React, Flask, <strong>Python</strong></div>
             <h4 class="english opensource"><div>Javascript / React Teacher</div>@ISIMA IT Engineering School</h4>
 
             <h4 class="french opensource">Auteur d'articles Baeldung</h4>
