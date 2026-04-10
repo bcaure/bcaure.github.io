@@ -261,6 +261,7 @@
       display: flex;
       height: auto;
       align-items: center;
+      column-gap: 1em;
     }
     .experience-with-image a {
       flex: 1;
@@ -387,25 +388,35 @@
 
     .tooltip .tooltiptext {
       visibility: hidden;
-      width: 200px;
-      background-color: lightgray;
-      color: var(--color-medium);
+      opacity: 0;
+      width: max-content;
+      max-width: 200px;
+      background-color: #333;
+      color: #fff;
       text-align: center;
-      padding: 5px 0;
+      padding: 6px 12px;
       border-radius: 6px;
-
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      white-space: nowrap;
 
       position: absolute;
-      top: 110%;
-      right: 0%;
-      margin-left: -50px;
+      top: calc(100% + 8px);
+      right: 0;
       z-index: 1;
+
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      transform: translateY(-4px);
     }
 
     /* Show the tooltip text when you mouse over the tooltip container */
 
     .tooltip:hover .tooltiptext {
       visibility: visible;
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Personal projects */
@@ -565,12 +576,34 @@
         font-size: 2em !important;
       }
 
+      h3 {
+        font-size: 2em !important;
+      }
+
       .page {
         width: var(--white-page-width-phone);
       }
 
       .no-mobile {
         display: none
+      }
+
+      .icon-bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        justify-content: flex-start;
+      }
+
+      .icon-bar .icon-button {
+        margin-left: 20px;
+        height: calc(var(--button-bar-height) / 2);
+        /* useful for ff to limit img height */
+        width: calc(var(--button-bar-height) / 2);
+        background-color: white;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
       }
 
       .contact {
@@ -664,11 +697,11 @@
     <section class="icon-bar no-print">
       <a class="tooltip icon-button french" href="cv.pdf">
         <img src="download-pdf.png" alt="">
-        <span class="tooltiptext">Télécharger en PDF</span>
+        <span class="tooltiptext">Version PDF</span>
       </a>
       <a class="tooltip english icon-button" href="cv-en.pdf">
         <img src="download-pdf.png" alt="">
-        <span class="tooltiptext">Download as PDF</span>
+        <span class="tooltiptext">Download PDF</span>
       </a>
       <a class="tooltip icon-button" href="index.html">
         <img id="flagImageFr" src="france.svg" alt="">
@@ -711,11 +744,6 @@
               <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="linkedin-logo.png" alt="" /></a>
             </div>
             <div class="contact-label">
-              <img class="contact-logo no-mobile" src="phone.png" alt="" />
-              <a class="no-mobile" href="tel:+33771606631">+33 7 71 60 66 31</a>
-              <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="phone.svg" alt="" /></a>
-            </div>
-            <div class="contact-label">
               <img class="contact-logo no-mobile" src="mail.png" alt="" />
               <a href="mailto:benjamin.caure@gmail.com" class="no-mobile">benjamin.caure@gmail.com</a>
               <a class="mobile-only" href="tel:+33771606631"><img class="contact-logo" src="gmail.png" alt="" /></a>
@@ -732,12 +760,12 @@
           Je tiens à continuer ma passion, le développement, afin de conserver mon expertise technique opérationnelle. 
         </p>
         <p class="resume french dev">
-          Développeur depuis plus de 10 ans, j'interviens dans la transformation numérique des entreprises.
-          J'ai pu ainsi acquérir une expertise autour de Javascript (Node.JS, Typescript, React, Angular), les plateformes Cloud (Azure, AWS) et DEVOPS (Gitlab CI, Docker, Kubernetes)
+          Je suis développeur depuis une éternité maintenant. Mais j'aime toujours ça, alors ...
+          Le métier change, je change avec lui ma façon de travailler et de résoudre ce problème : comment faire du sur-mesure pour les entreprises, en restant dans un budget tenable.
         </p>        
         <p class="resume english">
-          Enthusiastic Developer with 10+ years of broad experience in Javascript areas, with willingness to 
-          design scalable micro-services solutions.
+          Enthusiastic Developer with 20+ years of broad experience in multiple languages / frameworks as you can imagine.
+          Claude is working for me as I'm keeping this page up-to-date.
         </p>
       </div>
       <div class="projects-experience-education">
@@ -753,8 +781,82 @@
                 <a href="https://becoms.tech" class="mobile-only">
                   <img src="becoms.png" style="height: 2em;" />
                 </a>
-                <span class="dates french">Depuis mars 2022</span>
-                <span class="dates english">March 2022 to present</span>
+                <span class="dates french">Depuis juin 2025</span>
+                <span class="dates english">June 2025 to present</span>
+                <span class="french architect">Architecte Solutions</span>
+                <span class="french architect dev">-</span>
+                <span class="french dev">Développeur web et mobile</span>
+                <span class="english architect">Solution Architect</span>
+                <span class="english architect dev">-</span>
+                <span class="english dev">Full-stack Developer</span>
+              </summary>
+              <div class="french" style="margin-top: 15px">De retour chez Becoms, en CDI cette fois !</div>
+              <div class="experience-with-image">
+                <div class="french">
+                  <ul>
+                    <li>Michelin : application mobile de contrôle logistique par RFID</li>
+                    <li>Office du tourisme Côte d'Azur : assistant de découverte de points d'intérêts et d'itinéraire (RAG base touristique, agent de géolocalisation)</li>
+                  </ul>
+                </div>
+                <div class="english">
+                  <div class="english" style="margin-top: 15px">Becoms is back in CDI this time!</div>
+                  <ul class="english">
+                    <li>Michelin: RFID control logistics application (Android)</li>
+                    <li>Office du tourisme Côte d'Azur: discovering points of interest and itinerary (base touristic RAG, geolocation assistant)</li>
+                  </ul>
+                </div>  
+                <a href="https://becoms.tech" class="no-mobile no-print" style="min-height: 240px; align-self: stretch; background-image: url(becoms.gif)!important; margin-left: 20px;">
+                </a>
+                <img src="becoms-B.png" class="print-only" style="height: 150px; width: 150px" />
+              </div>
+            </details>
+          </div>
+          <div class="print-only" style="height: 50px;"></div>
+          <div>
+            <details>
+              <summary>
+                <h3 class="no-print">MICHELIN</h3>
+                <span class="experience-title print-only">MICHELIN</span>
+                <span class="dates french">Juillet 2023 - juin 2025</span>
+                <span class="dates english">Jul 2023 to jun 2025</span>
+                <span class="french architect">Architecte Solution</span>
+                <span class="french dev">Développeur full-stack</span>
+                <span class="english dev">Full-stack Developer</span>
+                <span class="english architect">Solutions Architect</span>
+              </summary>
+              <div class="experience-with-image">
+                <img src="i40.jpg" style="height: 12em;width: 14em;" />
+                <section class="print-only horizontal-print-spacer"></section>
+                <div class="french">
+                  <div>J'ai travaillé au sein d'une équipe d'exploration autour de l'IA, où j'ai acquis des compétences ML-OPS :</div>
+                  <ul>
+                    <li>Forklift Flows Optimizer : outil d'optimisation de flux logistiques basés sur la géolocalisation en intérieur (LIDAR)</li>
+                    <li>BU BOT : assistant intelligent pour la maintenance de machines en usine (LLM, RAG, base vectorielle)</li>
+                    <li>Energy Copilot : simulateur et assistant pour interpréter les données de consommation d'énergie de machines en usine (LLM + XG Boost model)</li>
+                  </ul>
+                </div>
+                <div class="english">
+                  <div>I worked within an AI exploration team, where I acquired ML-OPS skills:</div>
+                  <ul>
+                    <li>Forklift Flows Optimizer: indoor logistics flow optimization tool based on indoor geolocation (LIDAR)</li>
+                    <li>BU BOT: intelligent assistant for factory machine maintenance (LLM, RAG, vector database)</li>
+                    <li>Energy Copilot: simulator and assistant for interpreting energy consumption data from factory machines (LLM + XGBoost model)</li>
+                  </ul>
+                </div>  
+              </div>
+            </details>
+          </div>
+          <div class="print-only" style="height: 50px;"></div>
+          <div>
+            <details>
+              <summary>
+                <h3 class="no-mobile no-print">BECOMS</h3>
+                <span class="experience-title print-only">BECOMS</span>
+                <a href="https://becoms.tech" class="mobile-only">
+                  <img src="becoms.png" style="height: 2em;" />
+                </a>
+                <span class="dates french">Mars 2022 - juillet 2023</span>
+                <span class="dates english">March 2022 - july 2023</span>
                 <span class="french architect">Architecte Solutions</span>
                 <span class="french architect dev">-</span>
                 <span class="french dev">Développeur web et mobile</span>
